@@ -2,8 +2,17 @@
 using namespace std;
 
 int main() {
-	/* Modulo Math
-	*/
+	int num = 0;
+	int den = 0;
+
+	cout << "Numerator: ";
+	cin >> num;
+
+	cout << "Denominator: ";
+	cin >> den;
+
+	int ans = num % den;
+	cout << "Answer: " << ans << endl;
 
 	return 0;
 }
