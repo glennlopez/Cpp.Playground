@@ -8,6 +8,10 @@ using namespace std;
 // 1/2 performs an integer division so the expression evaluates to 0
 
 int main() {
+	/*
+	Integer only stores whole value numbers.
+	Change 'int' to 'float' to get rid of floating point exceptions
+	*/
 	int num = 0;
 	int den = 0;
 
