@@ -12,12 +12,18 @@ int main() {
    int numTacos  = 0;
    int totalCost = 0;
 
-   numDrinks = 4;
-   numTacos  = 6;
+   //numDrinks = 4;
+	cout << "How many drinks: ";
+	cin >> numDrinks;
+
+   //numTacos  = 6;
+	cout << "How many tacos: ";
+	cin >> numTacos;
 
    /* Your solution goes here  */
+	totalCost = (numDrinks * 2) + (numTacos * 3);
 
-   cout << "Total cost: " << totalCost << endl;
+   cout << "Total cost: $" << totalCost << endl;
 
    return 0;
 }
