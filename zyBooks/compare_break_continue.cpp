@@ -10,8 +10,8 @@ int main(int argc, char const *argv[]) {
 	//un-comment desired functions to compare
 
 	//Regular();
-	//Break();
-	//Continue();
+	Break();
+	Continue();
 
 	return 0;
 }
