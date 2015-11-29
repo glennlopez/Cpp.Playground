@@ -17,6 +17,7 @@ int main(int argc, char const *argv[]) {
 }
 
 
+
 /**************
 	FUNCTIONS
 ***************/
@@ -25,6 +26,9 @@ int main(int argc, char const *argv[]) {
 void Regular(){
 	cout << "------ Regular Loop \n";
 	for (int i = 0; i < 5; i++){
+		/*
+			Does a regular loop
+		*/
 		cout << "i = " << i << endl;
 		// break or continue
 		cout << "Do some more stuff with " << i << endl;
@@ -36,6 +40,9 @@ void Regular(){
 void Break(){
 	cout << "------ Break Loop \n";
 	for (int i = 0; i < 5; i++){
+		/*
+			when i == 2 then stop the loop
+		*/
 		cout << "i = " << i << endl;
 		// break or continue
 		if (i == 2){
@@ -51,6 +58,9 @@ void Break(){
 void Continue(){
 	cout << "------ Continue Loop \n";
 	for (int i = 0; i < 5; i++){
+		/*
+			when i == 2 then skip 1 iteration & continue the loop
+		*/
 		cout << "i = " << i << endl;
 		// break or continue
 		if (i == 2){
