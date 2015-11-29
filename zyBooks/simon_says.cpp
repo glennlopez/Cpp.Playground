@@ -19,20 +19,44 @@ int main() {
    simonPattern = "RRGBRYYBGY";
    userPattern  = "RRGBBRYBGY";
 
-   /*
-		Your solution goes here
-		for this we need to use the .at() function in <string>
- 		iterate through the string 1 char at a time and compare
+   /*	Your solution goes here:*/
+
+	/*
+		Note: for this we need to use the .at() function in <string>
+		and iterate through the string 1 char at a time and compare
 	*/
 
-	//cout how many chars in the string + place it in a var
+	char stringPosSimon = '?';
+	char stringPosUser = '?';
+	int stringSize = 0;
 
-	//for loop an iteration through every char using .at()
-	for (size_t i = 0; i < count; i++) {
-		// check to see if userPattern == Simon
+	//Cout the string tize of simonPattern to get a base number of when
+	//when to stop iterating through the char.
+	stringSize = simonPattern.length();
+
+	//iterate till we reach the last char in simonPattern
+	for (i = 0; i < stringSize; i++){
+
+		//put the value of the char in a var so we can compare it
+		//"i" increases so we can use this var for .at()
+		stringPosSimon = simonPattern.at(i);
+		stringPosUser = userPattern.at(i);
+
+		//compare the vars | if it matches +1 point else, break the loop
+		if (stringPosSimon == stringPosUser){
+			userScore++;
+			continue;
+		}
+		else{
+			break;
+		}
+
+		//Debug
+		//cout << stringPosSimon << endl;
+		//cout << stringPosUser << endl;
+
 	}
 
-	int stringPos = 0;
 
    cout << "userScore: " << userScore << endl;
 
