@@ -47,6 +47,7 @@ int main() {
 			userScore++;
 			continue;
 		}
+
 		else{
 			break;
 		}
