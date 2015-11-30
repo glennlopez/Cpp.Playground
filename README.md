@@ -2,7 +2,7 @@
 
 C++ Playground
 =================
-This is where I keep all the things I do with C++. This is a repo for showcasing my capabilities to future employers for ealuation, and to documenting my progress with C++.
+This is where I keep all the things I do with C++ that is not project specific. Its a simple repo for showcasing my capabilities to future employers for evaluation, and documenting my progress with C++.
 
 
 ![alt text](https://s-media-cache-ak0.pinimg.com/736x/a6/64/bf/a664bfae939ac4da62d6783442e560ee.jpg "C++ Logo")
@@ -20,3 +20,4 @@ This is where I keep all the things I do with C++. This is a repo for showcasing
 * http://www.cplusplus.com/doc/tutorial/
 * http://stackoverflow.com/questions/tagged/c%2B%2B
 * https://www.reddit.com/r/cpp/
+* https://zybooks.zyante.com/#/zybook/ProgrammingInCppR11/dashboard
