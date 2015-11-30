@@ -13,8 +13,8 @@ This is where I keep all the things I do with C++ that is not project specific. 
 
 | Folder Name        | Description           |
 | ------------- |:--------------------:|
-| zyBooks     | zyBooks interactive lesson answers |
-| sandbox      | random misc c++ source |  
+| zyBooks     | my solution for zyBooks C++ online lesson |
+| sandbox      | random trials for cpp lang |  
 
 ### Learning/Referance material
 * http://www.cplusplus.com/doc/tutorial/
