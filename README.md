@@ -2,7 +2,7 @@
 
 C++ Playground
 =================
-This is where I keep all the things I do with C++. This is a repo not only for showcasing my capabilities for employers to evaluate, but also for documenting my progress.
+This is where I keep all the things I do with C++. This is a repo for showcasing my capabilities to future employers for ealuation, and to documenting my progress with C++.
 
 
 ![alt text](https://s-media-cache-ak0.pinimg.com/736x/a6/64/bf/a664bfae939ac4da62d6783442e560ee.jpg "C++ Logo")
