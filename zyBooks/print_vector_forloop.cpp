@@ -36,8 +36,7 @@ int main() {
 	for (i = NUM_VALS - 1; i >= 0; i--){
 		cout << courseGrades.at(i) << " ";
 	}
-
-
 	cout << endl;
+
    return 0;
 }
