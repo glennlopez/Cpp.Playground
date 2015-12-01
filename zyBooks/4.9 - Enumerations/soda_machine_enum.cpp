@@ -20,7 +20,13 @@ int main() {
    }
 
    /* Your solution goes here  */
-	
+	else if (usrInput == ADD_DIME){
+		totalDeposit = totalDeposit + 10;
+	}
+
+	else if (usrInput == ADD_NICKEL){
+		totalDeposit = totalDeposit + 5;
+	}
 
    else {
       cout << "Invalid coin selection." << endl;
