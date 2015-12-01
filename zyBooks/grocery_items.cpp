@@ -13,5 +13,29 @@ int main() {
 
    /* Your solution goes here  */
 
+	switch (userItem) {
+		case 0:
+		cout << "Fruit";
+		break;
+
+		case 1:
+		cout << "Fruit";
+		break;
+
+		case 2:
+		cout << "Drink";
+		break;
+
+		case 3:
+		cout << "Drink";
+		break;
+
+		default:
+		cout << "Unknown";
+	}
+
+
+
+	cout << endl;
    return 0;
 }
