@@ -8,15 +8,19 @@ int main(int argc, char const *argv[]) {
 
 	const int NUM_VALS = 8;
 	vector<int> usrValues(NUM_VALS);
+	int maxVal = 0;
 
 	cout << "Enter 8 integer values..." << endl;
 	for (int i = 0; i < NUM_VALS; i++){
 		cout << "Value (" << i << "): ";
 		cin >> usrValues.at(i);
-		cout << endl;
+
+		if (usrValues.at(i) > maxVal){
+			maxVal = usrValues.at(i);
+		}
 	}
 
-	cout << "Value for (4): " << usrValues.at(4);
+	cout << "Highest Value: " << maxVal;
 
 	cout << endl;
 	return 0;
