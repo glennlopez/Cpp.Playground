@@ -27,7 +27,16 @@ int main(int argc, char const *argv[]) {
 		}
 	}
 
-	cout << "Highest Value: " << maxVal;
+	//count the number of negVal
+	int negVal = 0;
+	for (int x = 0; x < NUM_VALS; x++){
+		if (usrValues.at(x) < 0){
+			negVal++;
+		}
+	}
+
+	cout << "Highest Value: " << maxVal << endl;
+	cout << "Number of Negative numbers: " << negVal;
 
 	cout << endl;
 	return 0;
