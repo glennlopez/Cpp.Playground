@@ -2,10 +2,11 @@
 
 C++ Playground
 =================
-This is where I keep all the things I do with C++ that is not project specific. Its a simple repo for showcasing my capabilities to future employers for evaluation, and documenting my progress with C++.
+This is where I keep all the things I do with C++ that is not project specific. Its a simple repo for documenting my progress with C++.
 
-
+<!--
 ![alt text](https://s-media-cache-ak0.pinimg.com/736x/a6/64/bf/a664bfae939ac4da62d6783442e560ee.jpg "C++ Logo")
+-->
 
 >C++ is a general-purpose programming language. It has imperative, object-oriented and generic programming features, while also providing facilities for low-level memory manipulation. It was designed with a bias toward system programming and embedded, resource-constrained and large systems, with performance, efficiency and flexibility of use as its design highlights..
 
