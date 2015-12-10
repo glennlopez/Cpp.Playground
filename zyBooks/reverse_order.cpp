@@ -11,7 +11,6 @@ using namespace std;
 int main(int argc, char const *argv[]) {
 
 	int i = 0;
-	int j = 0;
 	int swapMem = 0;
 
 	const int LISTNUM = 7;
@@ -34,8 +33,10 @@ int main(int argc, char const *argv[]) {
 
 	/*
 		NOTE: we /2 because we only need to make the swap
-		by half the number of elements in the vector.
+		by
+		half the number of elements in the vector.
 	*/
+	
 	for (i = 0; i < (LISTNUM/2); i++){
 		//put last number in swapMem
 		swapMem = list.at((LISTNUM - 1) - i);
@@ -45,9 +46,7 @@ int main(int argc, char const *argv[]) {
 
 		//put swap number in first
 		list.at(i) = swapMem;
-
 	}
-
 
 	//output modified
 	for(i = 0; i < LISTNUM; i++){
