@@ -10,13 +10,13 @@ using namespace std;
 		~~~~~
 		x!x!x
 	*/
+	
 
 void PrintTicTacToe(char horizChar, char vertChar) {
 
    /* Your solution goes here  */
 
    return;
-}
 
 int main() {
    PrintTicTacToe('~', '!');
