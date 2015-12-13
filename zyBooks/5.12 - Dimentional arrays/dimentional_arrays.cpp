@@ -22,7 +22,7 @@ int main( ) {
    milesTracker[1][1] = 40;
 
    /* Your solution goes here  */
-	maxMiles = milesTracker[0][0];
+	maxMiles = milesTracker[0][0]; //<-- must be initiated to teh first entity
 	minMiles = milesTracker[0][0];
 		/*
 			NOTE: max and min Miles cannot be initiated to zero. If you do that
