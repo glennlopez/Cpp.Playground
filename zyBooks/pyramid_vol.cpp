@@ -9,6 +9,9 @@ using namespace std;
 */
 
 /* Your solution goes here  */
+double PyramidVolume(double baseLength, double baseWidth, double pyramidHeight){
+	return (baseLength * baseWidth * pyramidHeight) / 3;
+}
 
 int main() {
    cout << "Volume for 1.0, 1.0, 1.0 is: " << PyramidVolume(1.0, 1.0, 1.0) << endl;
