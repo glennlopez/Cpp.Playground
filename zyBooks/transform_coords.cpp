@@ -6,6 +6,12 @@ using namespace std;
 */
 
 /* Your solution goes here  */
+void CoordTransform(int xVal, int yVal, int& xValNew, int& yValNew){
+	xValNew = (xVal + 1) * 2;
+	yValNew = (yVal + 1) * 2;
+
+	return;
+}
 
 int main() {
    int xValNew = 0;
