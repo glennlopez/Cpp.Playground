@@ -20,6 +20,7 @@ int main() {
    string userName = "";
 
    /* Your solution goes here  */
+	GetUserInfo(userAge, userName);
 
    cout << userName << " is " << userAge << " years old." << endl;
 
