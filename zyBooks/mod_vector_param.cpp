@@ -6,6 +6,32 @@ using namespace std;
 */
 
 /* Your solution goes here  */
+void SwapVectorEnds(vector<int>& regVector){
+	int i = 0;
+	int tempVal = regVector.at(0);
+	int vectorsize = regVector.size();
+
+	tempVal = regVector.at(i);
+	regVector.at(i) = regVector.at(vectorsize - 1 - i);
+	regVector.at(vectorsize - 1 - i) = tempVal;
+
+	return;
+}
+/* end of solution */
+
+void SwapAll(vector<int>& regVector){
+	int i = 0;
+	int tempVal = regVector.at(0);
+	int vectorsize = regVector.size();
+
+	for (i = 0; i < vectorsize / 2; i++){
+		tempVal = regVector.at(i);
+		regVector.at(i) = regVector.at(vectorsize - 1 - i);
+		regVector.at(vectorsize - 1 - i) = tempVal;
+	}
+
+	return;
+}
 
 int main() {
    vector<int> sortVector(4);
