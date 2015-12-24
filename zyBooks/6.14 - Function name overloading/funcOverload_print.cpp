@@ -13,6 +13,12 @@ void PrintSalutation(string personName) {
 }
 
 // Define void  PrintSalutation(string personName, string customSalutation)...
+void PrintSalutation(string personName, string customSalutation){
+	cout << customSalutation << ", " << personName;
+
+	cout << endl;
+	return;
+}
 
 /* Your solution goes here  */
 
