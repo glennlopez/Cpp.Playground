@@ -11,23 +11,16 @@
 //user generated library
 #include "everything_learned.h"
 
-
 using namespace std;
-
-void printVector(const vector<int>& vecNums);
-
+void PrintVector(const vector<int>& vecNums);
 
 int main(int argc, char const *argv[]) {
-	//default variables
+
 	int numToGenerate = DEFAULT;
 	char userOrComp = DEFAULT_CHAR;
 
-	//ask user for ammount of numbers to generate
-	do{
-		cout << "How many numbers would you like: ";
-		cin >> numToGenerate;
-	}
-	while (numToGenerate <= 0);
+	//ask user how many numbers to generate
+	AskAmountToGenerate(numToGenerate);
 	vector<int> usrVectors(numToGenerate);
 
 
@@ -36,6 +29,9 @@ int main(int argc, char const *argv[]) {
 	YesOrNo(userOrComp);
 
 	if (userOrComp == 'y'){
+		
+
+
 		cout << "random gen";
 		cout << endl;
 	}
@@ -47,7 +43,8 @@ int main(int argc, char const *argv[]) {
 	}
 
 	//print results
-	printVector(usrVectors);
+	int UserOrCompGeneration(usrVectors, userOrComp, numToGenerate);
+	PrintVector(usrVectors);
 
 	cout << endl;
 	return 0;
@@ -66,10 +63,19 @@ void YesOrNo(char& errorChar){
 	}
 }
 
-void printVector(const vector<int>& vecNums){
+void PrintVector(const vector<int>& vecNums){
 	for (int i = 0; i < vecNums.size(); i++){
 		cout << vecNums.at(i) << " ";
 	}
 	return;
+}
 
+
+//** PROCEDURAL FUNCTIONS **//
+void AskAmountToGenerate(int& numToGenerate){
+	do{
+		cout << "How many numbers would you like: ";
+		cin >> numToGenerate;
+	}
+	while (numToGenerate <= 0);
 }

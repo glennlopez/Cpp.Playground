@@ -8,7 +8,9 @@
 #define DEFAULT 0;
 
 //prototypes
-void YesOrNo(char& errorYN);		//checks for 'y' or 'n' input
+void YesOrNo(char& errorYN);
+void AskAmountToGenerate(int& numToGenerate);
+
 
 
 
