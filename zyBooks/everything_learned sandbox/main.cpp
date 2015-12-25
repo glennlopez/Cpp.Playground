@@ -4,14 +4,14 @@
 #include <string>
 
 //user defined libs
-#include "main.h"				//defines and prototypes
+#include "main.h"
 #include "menu.cpp"			//navigation
 #include "randNumGen.cpp"	//generates random numbers
+#include "simonSays.cpp"	//game of simon says
 
 using namespace std;
 
 int menuSelection = 0;
-
 int main(int argc, char const *argv[]) {
 
 	//load text menu
@@ -19,17 +19,22 @@ int main(int argc, char const *argv[]) {
 	GetMenuAction(menuSelection);
 
 	//switch case -- main menu selections
-	//needs a do while statement so it doesnt exit on invalid num
 	switch (menuSelection) {
 		case 1:
-		//GENERATE RANDOM NUMBER
+		//GENERATE RANDOM NUMBER ----
 			LoadMenu1();
 			GetMenuAction(menuSelection);
 			RandomNumberCase(menuSelection);
 		break;
 
+		case 2:
+		//PLAY SIMON SAYS ----
+			PlaySimonSays();
+		break;
+
 		default:
-		cout << "That number is outside the parameters." << endl;
+		cout << "Exiting: number picked is outside the parameters." << endl;
+		cout << endl;
 		break;
 	}
 
