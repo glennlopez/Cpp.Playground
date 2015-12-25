@@ -3,10 +3,14 @@
 	chapter 2 to chapter 6.
 */
 
+//standard library
 #include <iostream>
-#include <string>				//need to use strings
-#include <vector>				//use vectors
-#include "prototypes.h"		//put prototypes in a seperate file
+#include <string>
+#include <vector>
+
+//user generated library
+#include "everything_learned.h"
+
 
 using namespace std;
 
@@ -15,8 +19,8 @@ void printVector(const vector<int>& vecNums);
 
 int main(int argc, char const *argv[]) {
 	//default variables
-	int numToGenerate = 0;
-	char userOrComp = '?';
+	int numToGenerate = DEFAULT;
+	char userOrComp = DEFAULT_CHAR;
 
 	//ask user for ammount of numbers to generate
 	do{
@@ -33,6 +37,7 @@ int main(int argc, char const *argv[]) {
 
 	if (userOrComp == 'y'){
 		cout << "random gen";
+		cout << endl;
 	}
 	if (userOrComp == 'n'){
 		for(int i = 0; i < numToGenerate; i++){
@@ -41,14 +46,15 @@ int main(int argc, char const *argv[]) {
 		}
 	}
 
-
+	//print results
+	printVector(usrVectors);
 
 	cout << endl;
 	return 0;
 }
 
 
-//*** FUNCTIONS ***//
+//*** COMMON FUNCTIONS ***//
 void YesOrNo(char& errorChar){
 	while (true) {
 	    cout << "Yes or No [y/n]: ";
@@ -65,4 +71,5 @@ void printVector(const vector<int>& vecNums){
 		cout << vecNums.at(i) << " ";
 	}
 	return;
+
 }
