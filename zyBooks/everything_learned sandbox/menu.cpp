@@ -16,6 +16,7 @@ void LoadMenuMain(){
 	cout << "MAIN MENU" << endl;
 	cout << "1) Random Number Generator" << endl;
 	cout << "2) Play Simon Says" << endl;
+	cout << "3) Decimal to Binary Converter" << endl;
 }
 
 //1) MENU

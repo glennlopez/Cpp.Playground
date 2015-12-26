@@ -6,36 +6,69 @@
 #include <vector>
 using namespace std;
 
-//random number storage
+//menu title
+void TitleBlock(){
+	cout << endl;
+	cout << "GENERATE RANDOM NUMBERS" << endl;
+}
+
+//claculate total sum
+int GetSum(vector<int> randNums, int vectorSize){
+	int total = 0;
+
+	for (int i = 0; i < vectorSize; i++){
+		total = total + randNums.at(i);
+	}
+	return total;
+}
+
+//print footer details
+void PrintVectorDetails(vector<int> randNums, int vectorSize){
+	cout << endl;
+	cout << "---------------" << endl;
+	cout << "Sum of all numbers: " << GetSum(randNums, vectorSize);
+}
+
+
+
+//** RANDOM NUMBER GENERATORS **//
 int vectorSize = 1000;
 vector<int> randNums(vectorSize);
 
-//generate a single random number
 int GenerateRandomNumber(int seed = 0){
 	srand(time(NULL) + seed);					//use date + time as rand seed
 	int randomNumber = rand() % 10;			//rand range 0 - 9
 	return randomNumber;
 }
 
-//generate x number of random numbers
 void xGenerateRandomNumber(vector<int>& randNums, int& vectorSize){
-
+	TitleBlock();
 	cout << "How many numbers do you need (1000 max): ";
 	cin >> vectorSize;
 
+	system("clear");
+	TitleBlock();
+	cout << "Numbers Generated: ";
 	for(int i = 0; i < vectorSize; i++){
 		randNums.at(i) = GenerateRandomNumber(i);
 		cout << randNums.at(i);
 	}
+	cout << endl;
 }
 
-void xXGenerateRandomNumber(){
+void AllGenerateRandomNumber(vector<int>& randNums, int& vectorSize){
 	srand(time(NULL));
-	int userDefined = rand() % 200;
+	vectorSize = rand() % 1000;
 
-	for(int i = 0; i < userDefined; i++){
-		cout << GenerateRandomNumber(i) << " ";
+	system("clear");
+	TitleBlock();
+	cout << "Numbers Generated: ";
+	for(int i = 0; i < vectorSize; i++){
+		randNums.at(i) = GenerateRandomNumber(i);
+		cout << randNums.at(i);
 	}
+
+	cout << endl;
 }
 
 
@@ -44,21 +77,22 @@ void RandomNumberCase(int menuSelection){
 	switch (menuSelection) {
 		case 1:
 		system("clear");
+		TitleBlock();
 		cout << "Number Generated: ";
-		cout << endl;
 		cout << GenerateRandomNumber() << endl;
+		cout << endl;
 		break;
 
 		case 2:
 		system("clear");
 		xGenerateRandomNumber(randNums, vectorSize);
-		//xGenerateRandomNumber();
+		PrintVectorDetails(randNums, vectorSize);
 		cout << endl;
 		break;
 
 		case 3:
 		system("clear");
-		xXGenerateRandomNumber();
+		AllGenerateRandomNumber(randNums, vectorSize);
 		cout << endl;
 		break;
 
@@ -68,26 +102,3 @@ void RandomNumberCase(int menuSelection){
 		break;
 	}
 }
-
-//backup
-
-/*void xGenerateRandomNumber(){
-	int userDefined = 0;
-
-	cout << "How many numbers do you need: ";
-	cin >> userDefined;
-
-	for(int i = 0; i < userDefined; i++){
-		cout << GenerateRandomNumber(i) << " ";
-	}
-}*/
-
-/*void xXGenerateRandomNumber(){
-	srand(time(NULL));
-	int userDefined = rand() % 200;
-
-	for(int i = 0; i < userDefined; i++){
-		cout << GenerateRandomNumber(i) << " ";
-	}
-}
-*/
