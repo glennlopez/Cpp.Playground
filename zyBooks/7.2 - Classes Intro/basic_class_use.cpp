@@ -31,12 +31,17 @@ int PersonInfo::GetNumKids() const {
    return numKids;
 }
 
+
+
 int main() {
    PersonInfo person1;
 
    person1.SetNumKids(3);
 
    /* Your solution goes here  */
+	cout << "Kids: " << person1.GetNumKids() << endl;
+	person1.IncNumKids();
+	cout << "New baby, kids now: " << person1.GetNumKids() << endl;
 
    return 0;
 }
