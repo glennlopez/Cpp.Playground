@@ -12,7 +12,7 @@ using namespace std;
 		[x] Menu for manipulation
 
 	Bonus:
-		[ ] Allow user to add chequing, savings, or join accounts
+		[ ] Allow user to add chequing, savings, or joint accounts
 		[ ] Allow users to add more users accounts
 */
 
