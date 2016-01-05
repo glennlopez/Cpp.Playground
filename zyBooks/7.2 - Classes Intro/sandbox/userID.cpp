@@ -56,11 +56,11 @@ void user::PrintNames(){
 //** MAIN FUNCTION **//
 int main() {
 
-	user glenn;
-	glenn.SetUsrName();
-	glenn.SetFirstName();
-	glenn.SetLastName();
-	glenn.PrintNames();
+	user test;
+	test.SetUsrName();
+	test.SetFirstName();
+	test.SetLastName();
+	test.PrintNames();
 
 
 	return 0;
