@@ -15,20 +15,15 @@ using namespace std;
 class Music{
 	public:
 	//constructor
-	Music(): songNum(3){
+	Music(): songNum(0){
 		CDTitle = "undefined";
-		CDTracks = 0;
 	}
 
 	//mutators
 	void setTitle(string title);
-	void setTracks(int tracks);
 	void addSong(string song);
 
 	//accessors
-	int getTracks(){
-		return CDTracks;
-	}
 	string getTitle(){
 		return CDTitle;
 	}
@@ -37,12 +32,14 @@ class Music{
 	//private access
 	private:
 		string CDTitle;
-		int CDTracks;
 		vector<string> songNum;
 };
 
 
-
+//** OBJECT DEFINITIONS **//
+void Music::setTitle(string title){
+	CDTitle = title;
+}
 void Music::addSong(string song){
 	songNum.push_back(song);
 }
@@ -51,18 +48,15 @@ void Music::printCDInfo(){
 	int i = 0;
 
 	for(i = 0; i < songNum.size(); i++){
-		cout << "Song Title: " << songNum.at(i) << endl;
+		cout << "Song #" << i + 1 << ": " << songNum.at(i) << endl;
 	}
 	cout << endl;
 }
 
 
-
+//** MAIN **//
 int main (){
 	Music newCD;
-
-	// newCD.addSong("New song title.");
-	// newCD.addSong("One more song added!");
 
 	//user add new songs
 	int NumNewSongs = 0;
@@ -70,15 +64,18 @@ int main (){
 	cin >> NumNewSongs;
 
 
-	for(int i = 0; i < NumNewSongs; i++){
-		string SongTitle;
-		SongTitle = "test";
-		cout << "Title of new Song: ";
-		cin >> SongTitle;
-		//getline(cin, SongTitle);
-		newCD.addSong(SongTitle);
-	}
+	 for(int i = 0; i < NumNewSongs; i++){
+	 	string SongTitle;
+	 	SongTitle = "test";
+	 	cout << "Title of new Song: ";
+	 	cin >> SongTitle;
+	 	//getline(cin, SongTitle);
+ 		newCD.addSong(SongTitle);
+ 	}
+	cout << endl;
 
+	newCD.setTitle("Album Title");
+	cout << newCD.getTitle() << endl;
 
 	newCD.printCDInfo();
 
