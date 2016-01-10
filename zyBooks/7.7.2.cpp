@@ -15,7 +15,7 @@ class SampleClass {
       vector<int> itemList;
 };
 
-SampleClass::SampleClass() : itemList(2) {
+SampleClass::SampleClass() : itemList(5) {
    // itemList gets constructed with size 2
    return;
 }
@@ -23,12 +23,14 @@ SampleClass::SampleClass() : itemList(2) {
 void SampleClass::Print() const {
    cout << "Item1: " << itemList.at(0) << endl;
    cout << "Item2: " << itemList.at(1) << endl;
+	cout << "Item5: " << itemList.at(4) << endl;
 
    return;
 }
 
 int main() {
    SampleClass myClass;
+
 
    myClass.Print();
 
