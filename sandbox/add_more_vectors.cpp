@@ -47,9 +47,11 @@ void Music::addSong(string song){
 void Music::printCDInfo(){
 	int i = 0;
 
+	cout << "-------------" << endl;
 	for(i = 0; i < songNum.size(); i++){
 		cout << "Song #" << i + 1 << ": " << songNum.at(i) << endl;
 	}
+	cout << "-------------" << endl;
 	cout << endl;
 }
 
