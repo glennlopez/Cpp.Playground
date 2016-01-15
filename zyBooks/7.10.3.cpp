@@ -4,7 +4,7 @@ using namespace std;
 /*
 	When an operator like + has been overloaded, the compiler determines which + operation to invoke based on the operand types. In 4 + 9, the compiler sees two integer operands and thus applies the built-in + operation. In time1 + time2, where time1 and time2 are TimeHrMn objects, the compiler sees two TimeHrMn operands and thus invokes the programmer-defined function.
 
-	A programmer can define several functions that overload the same operator, as long as each involves different types so that the compiler can determine which to invoke.
+		A programmer can define several functions that overload the same operator, as long as each involves different types so that the compiler can determine which to invoke.
 */
 
 class TimeHrMn {
