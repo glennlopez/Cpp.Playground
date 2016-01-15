@@ -5,18 +5,18 @@ using namespace std;
 
 class PowerUpTime{
 private:
-	double minutes;
-	double hours;
+	double minutes; 	//<-- notice this is double and params are int below
+	double hours;		//<-- is double to take decimals after the / operator
 	string name;
 
 public:
 	PowerUpTime(int hrs = 0, int min = 0, string param = "-"){ //<-- always define
 		name = param;
-		hours = hrs + (min/60); 	//<-- added compensation formula
-		minutes = min % 60;		//<-- compensation is a min to hour converter
+		hours = hours + (hrs + (min/60)); 	//<-- added compensation formula
+		minutes = minutes + (min % 60);			//<-- compensation is a min to hour converter
 
-		//minutes = min;		//<-- old method for simplfication
-		//hours = hrs;		//<-- old method for simplification
+		//minutes = min;				//<-- old method for simplfication
+		//hours = hrs;					//<-- old method for simplification
 	}
 
 	PowerUpTime operator+(PowerUpTime rhs){
@@ -56,6 +56,26 @@ public:
 
 	}
 
+	void AddTime(){
+		char usrAns = '?';
+
+		cout << "Add time for " << name << " (y/n): ";
+		cin >> usrAns;
+
+		if((usrAns == 'y') || (usrAns == 'Y')){
+			int usrHrs = 0;
+			int usrMin = 0;
+
+			cout << "How many more hours: ";
+			cin >> usrHrs;
+			cout << "How many more minutes: ";
+			cin >> usrMin;
+
+			hours = hours + usrHrs;
+			minutes = minutes + usrMin;
+		}
+	}
+
 };
 
 
@@ -66,6 +86,9 @@ int main(int argc, char const *argv[]) {
 	PowerUpTime goku(1, 70, "Goku");
 	PowerUpTime vegeta(2, 61, "Vegeta");
 	PowerUpTime gogeta;
+
+	//goku.AddTime();
+	vegeta.AddTime();
 
 	goku.Print();
 	vegeta.Print();
