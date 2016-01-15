@@ -19,6 +19,15 @@ public:
 		//hours = hrs;					//<-- old method for simplification
 	}
 
+	PowerUpTime operator+(int rhsNum){
+		PowerUpTime addInt;
+
+		addInt.hours = hours + rhsNum;
+		addInt.minutes = minutes;
+
+		return addInt;
+	}
+
 	PowerUpTime operator+(PowerUpTime rhs){
 		PowerUpTime totalTime;
 
@@ -86,16 +95,20 @@ int main(int argc, char const *argv[]) {
 	PowerUpTime goku(1, 70, "Goku");
 	PowerUpTime vegeta(2, 61, "Vegeta");
 	PowerUpTime gogeta;
+	PowerUpTime gohan;
+
+	//gohan = goku + 5;
+	//goku.Print();
+	//gohan.Print();
 
 	//goku.AddTime();
-	vegeta.AddTime();
+	//vegeta.AddTime();
 
-	goku.Print();
-	vegeta.Print();
+	//goku.Print();
+	//vegeta.Print();
 
-	//notice how adding the string "Goku" + "Vegeta" results in the default being displayed
-	gogeta = goku / vegeta;
-	gogeta.Print();
+	//gogeta = goku / vegeta;
+	//gogeta.Print();
 
 	cout << endl;
 	return 0;
