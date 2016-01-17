@@ -8,28 +8,90 @@ using namespace std;
 
 //animal scope
 namespace animal{
-	int age = 0;
-	string name = "undefined";
-	string race = "undefined";
+	class Set{
+	private:
+		int setAge;
+		string name;
+		string race;
+
+	public:
+		Set(int param = 0, string race = "Undefined", string name = "No Name"){
+			setAge = param;
+			this-> name = name;
+			this-> race = race;
+		}
+		Set operator+(Set rhs){
+			Set totalAge;
+			totalAge.setAge = setAge + rhs.setAge;
+			return totalAge;
+		}
+
+		void Print(){
+			cout << "------- " << name << " -------" << endl;
+			cout << "Animal race: " << race << endl;
+			cout << "Age: " << setAge << endl;
+
+			unsigned int i = 0;
+			for(i = 0; i < name.size(); i++){
+				cout << "-";
+			}
+
+			cout << "----------------" << endl;
+		}
+
+	};
 }
 
-//owner scope
-namespace owner{
-	int age = 0;
-	string name = "undefined";
-	string race = "undefined";
-}
+//animal scope
+namespace human{
+	class Set{
+	private:
+		int setAge;
+		string name;
+		string race;
 
+	public:
+		Set(int param = 0, string race = "Undefined", string name = "No Name"){
+			setAge = param;
+			this-> name = name;
+			this-> race = race;
+		}
+		Set operator+(Set rhs){
+			Set totalAge;
+			totalAge.setAge = setAge + rhs.setAge;
+			return totalAge;
+		}
+
+		void Print(){
+			cout << "------- " << name << " -------" << endl;
+			cout << "Race: " << race << endl;
+			cout << "Age: " << setAge << endl;
+
+			unsigned int i = 0;
+			for(i = 0; i < name.size(); i++){
+				cout << "-";
+			}
+
+			cout << "----------------" << endl;
+		}
+
+	};
+}
 
 int main(){
-	cout << "Type owner name: ";
-	cin >> owner::name;
+	//syntax = age:race:name
+	animal::Set dog(10, "Dog");
+	animal::Set cat(5, "Cat", "Fluffy");
+	animal::Set dogcat = dog + cat;
 
-	cout << "Type pet race: ";
-	cin >> animal::race;
+	human::Set carlos(21, "Jamaican", "Carlos");
+	human::Set heejoo(18, "Korean", "Heejoo");
 
-	cout << "Owner: " << owner::name << endl;
-	cout << "Pet type: " << animal::race << endl;
+	//human::Set dogjoo = animal::dog + heejoo;	//<-- why doesnt this work
+
+	cat.Print();
+	dog.Print();
+	heejoo.Print();
 
 	cout << endl;
 	return 0;
