@@ -2,7 +2,6 @@
 #include "subject.cpp"
 using namespace std;
 
-
 /*
 	This practice session simulates school grading system
 */
