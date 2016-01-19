@@ -11,8 +11,8 @@ int main(){
 	//cout << temp2.fahrenheit(-30, 'c') << endl;
 	//cout << temp3.kelvin(230, 'f') << endl;
 
-	//celcius(200, 'f');
-	kelvin(33, 'c');
+	celcius(200, 'k');
+	//kelvin(33, 'c');
 	//fahrenheit(38, 'c');
 
 	cout << endl;
