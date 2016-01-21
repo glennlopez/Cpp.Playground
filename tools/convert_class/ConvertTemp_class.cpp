@@ -3,41 +3,25 @@
 using namespace std;
 /*------- HOW TO IMPLIMENT ---------
 
-
-
-++++++++++++++++++++++++++++++++++++
 10F to celcius (raw):
-	Convert temp1.celcius(10, 'f');
+	ConvertTemp temp1.celcius(10, 'f');
 	temp:unit
 
 Alternatively (printout):
 	celcius(10,'f'); will convert
 	10 Fahrenheit to celcius.
-++++++++++++++++++++++++++++++++++++
-
-++++++++++++++++++++++++++++++++++++
-Base 10 to Binary (raw):
-	Convert item.base(10, 2, 1987);
-	base1:base2:variables
-
-Alternatively (printout):
-	base(10, 2, 1987); will convert
-	1987 to 11111000011
 
 By: github.com/glennlopez
-++++++++++++++++++++++++++++++++++++
-
-
 
 -----------------------------------*/
-class Convert{
+class ConvertTemp{
 private:
 	double num;
 	char unit;
 	double result;
 
 public:
-	Convert();
+	ConvertTemp();
 	void getTemp();
 
 	//Temp Conversions
@@ -53,19 +37,19 @@ public:
 
 
 //** CLASS OBJECT DEFINITIONS **//
-Convert::Convert(){
+ConvertTemp::ConvertTemp(){
 	//defaults - error markers
 	num = -1;
 	unit = '?';
 	result = -9999.99;
 }
 
-void Convert::getTemp(){
+void ConvertTemp::getTemp(){
 	cout << num << endl;
 }
 
 //** 	Temp Conversions **//
-double Convert::celcius(double setNum, char setUnit){
+double ConvertTemp::celcius(double setNum, char setUnit){
 	num = setNum;
 	unit = setUnit;
 
@@ -79,7 +63,7 @@ double Convert::celcius(double setNum, char setUnit){
 	return result;
 }
 
-double Convert::fahrenheit(double setNum, char setUnit){
+double ConvertTemp::fahrenheit(double setNum, char setUnit){
 	num = setNum;
 	unit = setUnit;
 
@@ -94,7 +78,7 @@ double Convert::fahrenheit(double setNum, char setUnit){
 	return result;
 }
 
-double Convert::kelvin(double setNum, char setUnit){
+double ConvertTemp::kelvin(double setNum, char setUnit){
 	num = setNum;
 	unit = setUnit;
 
@@ -115,16 +99,16 @@ double Convert::kelvin(double setNum, char setUnit){
 
 //** PRINT FUNCTIONS **//
 void celcius(double setNum, char setUnit){
-	Convert param;
+	ConvertTemp param;
 	cout << param.celcius(setNum, setUnit) << "°C"; //<< endl;
 }
 
 void fahrenheit(double setNum, char setUnit){
-	Convert param;
+	ConvertTemp param;
 	cout << param.fahrenheit(setNum, setUnit) << "°F"; //<< endl;
 }
 
 void kelvin(double setNum, char setUnit){
-	Convert param;
+	ConvertTemp param;
 	cout << param.kelvin(setNum, setUnit) << "°K"; //<< endl;
 }
