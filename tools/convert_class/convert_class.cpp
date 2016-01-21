@@ -1,23 +1,35 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
 /*------- HOW TO IMPLIMENT ---------
-10F to celcius:
+
+
+
+++++++++++++++++++++++++++++++++++++
+10F to celcius (raw):
 	Convert temp1.celcius(10, 'f');
 	temp:unit
 
-200K to celcius:
-	Convert temp2.celcius(200, 'k');
-	temp:unit
+Alternatively (printout):
+	celcius(10,'f'); will convert
+	10 Fahrenheit to celcius.
+++++++++++++++++++++++++++++++++++++
 
-Alternatively:
-	celcius(10,'f'); will convert 10 Fahrenheit
-	to celcius.
+++++++++++++++++++++++++++++++++++++
+Base 10 to Binary (raw):
+	Convert item.base(10, 2, 1987);
+	base1:base2:variables
+
+Alternatively (printout):
+	base(10, 2, 1987); will convert
+	1987 to 11111000011
 
 By: github.com/glennlopez
------------------------------------*/
+++++++++++++++++++++++++++++++++++++
 
+
+
+-----------------------------------*/
 class Convert{
 private:
 	double num;
@@ -42,6 +54,7 @@ public:
 
 //** CLASS OBJECT DEFINITIONS **//
 Convert::Convert(){
+	//defaults - error markers
 	num = -1;
 	unit = '?';
 	result = -9999.99;
