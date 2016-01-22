@@ -15,8 +15,6 @@ int main(){
 	//kelvin(33, 'c');
 	fahrenheit(-28, 'c');
 
-
-
 	cout << endl;
 	return 0;
 }
