@@ -5,19 +5,34 @@
 #include <string>
 
 #include "Students.h"
+#include "Students.cpp"
 using namespace std;
 
 void fillVector(vector<Students>&);
 	//fillVector - fill in student information
 	//@param vector<Setudents>& - students in class
 
+void printVector(const vector<Students>&);
+	//print vector - prints all objects in class
+	//@param const vector<Students>& - students in class
+
+
+
+
+//** MAIN **//
 int main(){
 	vector<Students> myClass;
 
+	fillVector(myClass);
+	printVector(myClass);
 
 	cout << endl;
 	return 0;
 }
+
+
+
+
 
 //** FUNCTION DEFINITIONS **//
 void fillVector(vector<Students>& newMyClass){
@@ -40,4 +55,16 @@ void fillVector(vector<Students>& newMyClass){
 		newMyClass.push_back(newStudent);
 		cout << endl;
 	}
+	cout << endl;
+}
+
+void printVector(const vector<Students>& newMyClass){
+	unsigned int size = newMyClass.size();
+
+	for(unsigned int i = 0; i < size; i++){
+		cout << "Student Name: " << newMyClass[i].getName() << endl;
+		cout << "Student Grade: " << newMyClass[i].getGrade() << endl;
+	}
+
+
 }
