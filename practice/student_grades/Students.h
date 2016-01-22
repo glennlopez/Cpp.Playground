@@ -32,7 +32,14 @@ public:
 		//@reutrn char - get grade of student
 
 	//Mutators
-	
+	void setName(string);
+		//setName
+		//@param string - set the name of student
+
+	void setGrade(char);
+		//setGrade
+		//@param char - set the grade of students
+
 };
 
 #endif

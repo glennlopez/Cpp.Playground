@@ -21,3 +21,10 @@ char Students::getGrade() const{
 }
 
 //Mutators
+void Students::setName(string name){
+	newName = name;
+}
+
+void Students::setGrade(char grade){
+	newGrade = grade;
+}
