@@ -24,6 +24,8 @@ using namespace std;
 
 void Fill(vector<int>& vectorname);
 void Print(const vector<int>& vectorname);
+void PrintReverse(const vector<int>& vectorname);
+void PrintEven(const vector<int>& vectorname);
 
 
 int main(){
@@ -31,11 +33,16 @@ int main(){
 
 	Fill(myVector);
 	Print(myVector);
+	PrintReverse(myVector);
+	PrintEven(myVector);
 
 	cout << endl;
 	return 0;
 }
 
+
+
+//** FUNCTIONS **//
 void Fill(vector<int>& vectorname){
 	int usrNum = 0;
 
@@ -57,7 +64,6 @@ void Fill(vector<int>& vectorname){
 			}
 		}
 	}
-
 }
 
 void Print(const vector<int>& vectorname){
@@ -66,5 +72,35 @@ void Print(const vector<int>& vectorname){
 	for(i = 0; i < vectorname.size(); i++){
 		cout << vectorname[i] << ", ";
 	}
+	cout << endl;
+}
 
+void PrintReverse(const vector<int>& vectorname){
+	cout << "In Reverse: ";
+	int i = 0;
+
+	for(i = vectorname.size() - 1; i > -1; i--){
+		cout << vectorname[i] << ", ";
+	}
+	cout << endl;
+}
+
+void PrintEven(const vector<int>& vectorname){
+	//even numbers are divisible by 2
+	unsigned int i = 0;
+	int evenNum = -1;
+
+	cout << "Even Numbers: ";
+
+	for(i = 0; i < vectorname.size(); i++){
+		//check to see if element is divisable by 2
+		evenNum = vectorname[i] % 2;
+
+		//if element is divisable by 2 (mod 2 = 0) then print it out
+		if(evenNum == 0){
+			cout << vectorname[i] << ", ";
+		}
+	}
+
+	cout << endl;
 }
