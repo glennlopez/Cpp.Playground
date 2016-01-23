@@ -19,6 +19,9 @@ int main(){
 		myVector.clear();				<-- removes all elements in vector
 		myVector.empty();				<-- returns 1 or 0 if its empty
 
+		myVector.insert();			<-- insers vector at specified spot
+		myVector.erase();				<-- removes vector at specified spot
+
 		myVector.insert(myVector.begin() +i, value);
 		myVector.erase(myVector.begin() +i);
 
