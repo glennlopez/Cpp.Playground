@@ -8,6 +8,21 @@
 #include "Student.cpp"
 using namespace std;
 
+/*	SYNOPSIS:
+
+	Promt user for Name and grade
+	store those in a variable
+
+	Pass name and grade variables to a class object...
+	then push_back that object into a vector
+
+	Output all elements in the vector | ie:
+	vector1 name, grade
+	vector2 name, grade
+	vector3 name, grade
+
+*/
+
 void fillVector(vector<Student>&);
 void printStudent(const vector<Student>&);
 
