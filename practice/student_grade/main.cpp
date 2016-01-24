@@ -27,48 +27,56 @@ using namespace std;
 
 */
 
+void addStudents(vector<Student>& vectorName);
+void printStudents(vector<Student>& vectorName);
+
 
 int main(){
-
 	//Vector for storing students in the classroom
-	vector<Student> myClassroom;
-	string name;
-	int grade;
-	unsigned int classroomSize = 0;
+	vector<Student> schoolSubject;
 
-	//FIXME: add these functions after everything is complete
-	//addStudents(myClassroom);
-	//printVectorElements(myClassroom);
-
-	cout << "How many students to add: ";
-	cin >> classroomSize;
-
-	unsigned int i = 0;
-	for(i = 0; i < classroomSize; i++){
-		cout << "Student Name: ";
-		cin >> name;
-
-		cout << "Student Grade: ";
-		cin >> grade;
-
-		//pass the variables to an object
-		Student English(name, grade); //<-- instatiate the object English
-
-		//push the object to a vector
-		myClassroom.push_back(English);
-	}
-
-/*
-	//print object elements
-	unsigned int j = 0;
-	for(j = 0; j < myClassroom.size(); j++){
-		cout << "Name: " << myClassroom.at(j).getName() << endl;
-		cout << "Grade: " << myClassroom[j].getGrade() << endl;
-	}
-*/
-
-
+	addStudents(schoolSubject);
+	printStudents(schoolSubject);
 
 	cout << endl;
 	return 0;
+}
+
+void addStudents(vector<Student>& vectorName){
+	unsigned int numStudents = 0;
+	unsigned int i = 0;
+
+	cout << "How many students to add: ";
+	cin >> numStudents;
+
+	for(i = 0; i < numStudents; i++){
+		cout << "Enter Student Name: ";
+		string sName;
+		cin >> sName;
+
+		cout << "Enger Student Grade: ";
+		char sGrade;
+		cin >> sGrade;
+
+		//pass name and grade to an object
+		Student newObject; //<-- instatiate an object for Student class
+		newObject.setName(sName);
+		newObject.setGrade(sGrade);
+
+		//push the object to a vactor
+		vectorName.push_back(newObject); //<-- push english
+	}
+}
+
+void printStudents(vector<Student>& vectorName){
+	unsigned int size = vectorName.size();
+	unsigned int i = 0;
+	for(i = 0; i < size; i++){
+		cout << "Student Name: " << vectorName.at(i).getName();
+		cout << endl;
+
+		cout << "Student Grade: " << vectorName[i].getGrade();
+		cout << endl;
+	}
+	cout << endl;
 }

@@ -10,16 +10,20 @@ using namespace std;
 
 /*	SYNOPSIS:
 
-	Promt user for Name and grade
-	store those in a variable
+	Ask user how many students to add -> (x), then loop{
 
-	Pass name and grade variables to a class object...
-	then push_back that object into a vector
+		Promt user for Name and grade
+		store those in a variable
 
-	Output all elements in the vector | ie:
-	vector1 name, grade
-	vector2 name, grade
-	vector3 name, grade
+		Pass name and grade variables to a class object...
+		then push_back that object into a vector
+
+		Output all elements in the vector | ie:
+		vector1 name, grade
+		vector2 name, grade
+		vector3 name, grade
+
+	} (x) number of times
 
 */
 
