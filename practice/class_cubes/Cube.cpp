@@ -13,7 +13,7 @@
 
 		Calculate when asked
 		Draw when asked
-		Print info when asked
+		PrintItem info when asked
 
 */
 using namespace std;
@@ -116,6 +116,11 @@ void AddCube(vector<Cube>& vectorname){
 	cout << endl;
 }
 
+void AddCube(vector<Cube>& vectorname, double length, double height, double width){
+	Cube newCube(width, length, height);
+	vectorname.push_back(newCube);
+}
+
 void AddSquare(vector<Square>& vectorname){
 	unsigned int numSquares, i;
 
@@ -138,28 +143,30 @@ void AddSquare(vector<Square>& vectorname){
 }
 
 void AddSquare(vector<Square>& vectorname, double length, double height){
-
 	Square newSquare(length, height);
 	vectorname.push_back(newSquare);
-
 }
 
-void Print(vector<Cube>& vectorname){
+void PrintItem(vector<Cube>& vectorname){
 
 	unsigned int size = vectorname.size(), i;
 	for(i = 0; i < size; i++){
 		cout << "Item " << i + 1 << " ";
-		cout << "volume: " << vectorname[i].getVolume() << endl;
+		cout << "volume: " << vectorname[i].getVolume()
+		<< " Cubed"
+		<< endl;
 	}
 	cout << endl;
 }
 
-void Print(vector<Square>& vectorname){
+void PrintItem(vector<Square>& vectorname){
 
 	unsigned int size = vectorname.size(), i;
 	for(i = 0; i < size; i++){
 		cout << "Item " << i + 1 << " ";
-		cout << "area: " << vectorname[i].getArea() << endl;
+		cout << "area: " << vectorname[i].getArea()
+		<< " Squared"
+		<< endl;
 	}
 	cout << endl;
 }
