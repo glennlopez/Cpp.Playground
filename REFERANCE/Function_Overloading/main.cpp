@@ -6,15 +6,15 @@ using namespace std;
 
 /*	FUNCTION REFERENCE IN CUBE.CPP
 
-	vector<Square> ...
+	vector<Square> ...				<-- Instantiate vector Cube or Square class
 	vector<Cube> ...
 
-	Populate(vector);
-	Populate(vector, x, y);
-	Populate(vector, x, y, z);
+	Populate(vector);					<-- F(n) Overload: Square or Cube
+	Populate(vector, x, y);			<-- F(n) Overload: Square class
+	Populate(vector, x, y, z);		<-- F(n) Overload: Cube class
 
-	ItemInfo(vector);
-	Draw(vector);
+	ItemInfo(vector);					<-- Prints area or volume of Cube or Square
+	Draw(vector);						<-- Draws Cube or Square on screen using *
 */
 
 int main(){
