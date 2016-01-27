@@ -4,18 +4,16 @@
 #include "Cube.h"
 
 /*	SYNOPSYS:
-		Calculating cubes defined by the user:
 
-		Ask user how many cubes they would like to make then loop{
+		Collect x, y, z vars for cubes from user
+		Collect x, y vars for squares from user
 
-			Prompt: Width
-			Prompt: Length
-			Prompt: Height
+		Pass variables to an object
+		Push the object to a vector
 
-			pass variables above to an object
-			push the object into "Cube" vector
-
-		}(n) number of times
+		Calculate when asked
+		Draw when asked
+		Print info when asked
 
 */
 using namespace std;
@@ -95,7 +93,7 @@ void Square::setHeight(double height){
 
 
 //** FUNCTIONS **//
-void AddCubes(vector<Cube>& vectorname){
+void AddCube(vector<Cube>& vectorname){
 	cout << "How many cubes would you like to add: ";
 	unsigned int numCubes = 0;
 	cin >> numCubes;
@@ -139,12 +137,29 @@ void AddSquare(vector<Square>& vectorname){
 	cout << endl;
 }
 
+void AddSquare(vector<Square>& vectorname, double length, double height){
+
+	Square newSquare(length, height);
+	vectorname.push_back(newSquare);
+
+}
+
 void Print(vector<Cube>& vectorname){
 
 	unsigned int size = vectorname.size(), i;
 	for(i = 0; i < size; i++){
 		cout << "Item " << i + 1 << " ";
 		cout << "volume: " << vectorname[i].getVolume() << endl;
+	}
+	cout << endl;
+}
+
+void Print(vector<Square>& vectorname){
+
+	unsigned int size = vectorname.size(), i;
+	for(i = 0; i < size; i++){
+		cout << "Item " << i + 1 << " ";
+		cout << "area: " << vectorname[i].getArea() << endl;
 	}
 	cout << endl;
 }
@@ -166,5 +181,11 @@ void Draw(vector<Square>& vectorname){
 			cout << endl;
 		}
 	}
+	cout << endl;
+}
+
+void Draw(vector<Cube>& vectorname){
+	cout << endl;
+	cout << "Error: Cannot draw 3D in 2D yet...";
 	cout << endl;
 }
