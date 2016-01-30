@@ -11,23 +11,38 @@ private:
 	string name_first;
 	string name_last;
 
-	unsigned int birth_y;
+	char gender;
+
 	unsigned int birth_m;
 	unsigned int birth_d;
-
-	char gender;
+	unsigned int birth_y;
 
 public:
 	//default constructor
 	StudentInfo();
 
-	//overload constructor
+	//overload constructor - fname, lname, gender, m, d, y
+	StudentInfo(string, string, char, int, int, int);
 
 	//accessors
+	string getFname();
+	string getLname();
+
+	char getGender();
+
+	int getBirthMonth();
+	int getBirthDay();
+	int getBirthYear();
 
 	//mutators
+	void setFname();
+	void setLname();
 
+	void setGender();
 
+	void setBirthMonth();
+	void setBirthDay();
+	void setBirthYear();
 };
 
 #endif
