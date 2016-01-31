@@ -3,9 +3,14 @@
 #include "Student.cpp"
 using namespace std;
 
-int main(){
+/*
+	Test the student class in this main.cpp
+		- accessors
+		- mutators
+		- functions
+*/
 
-	//Test the student class in this main.cpp
+int main(){
 
 	cout << endl;
 	return 0;
