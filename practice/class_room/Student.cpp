@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include "Student.h"
 using namespace std;
 
@@ -75,3 +76,18 @@ void StudentInfo::setBirthYear(int year){
 
 
 //** Function Definitions **//
+
+//Add Student to a vector
+void AddStudent(vector<StudentInfo>& vectorname){
+	/* TODO:
+		- define variables to add
+		- place variables into an object
+		- push object to vector
+	*/
+
+	cout << "How many students to add: ";
+	unsigned int numStudents;
+	cin >> numStudents;
+
+	//FIXME: add a forloop for adding (x) students
+}
