@@ -3,14 +3,22 @@ using namespace std;
 
 
 int main(){
+	int myNum = 0;
+	int* myPtr = 0;
+	int myIsolatedNum = 99;
+
+	cout << "Enter any number: ";
+	cin >> myNum;
+
+	myPtr = &myNum;
+
+	cout << "myPtr: " << *myPtr;
+
+	myPtr = &myIsolatedNum;
 	cout << endl;
 
-	int num1;
-	int* const p1 = &num1;
+	cout << "myPtr: " << *myPtr;
 
-	num1 = 20;
-
-	cout << *p1 << endl;
 
 	cout << endl;
 	return 0;
