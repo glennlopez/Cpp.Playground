@@ -12,6 +12,14 @@ using namespace std;
 
 int main(){
 
+	StudentInfo st_01;
+
+	st_01.setFname("Glenn");
+	st_01.setLname("Lopez");
+
+	cout << st_01.getFname() << " " << st_01.getLname() << endl;
+
+
 	cout << endl;
 	return 0;
 }
