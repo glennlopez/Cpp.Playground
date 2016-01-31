@@ -35,14 +35,14 @@ public:
 	int getBirthYear();
 
 	//mutators
-	void setFname();
-	void setLname();
+	void setFname(string);
+	void setLname(string);
 
-	void setGender();
+	void setGender(char);
 
-	void setBirthMonth();
-	void setBirthDay();
-	void setBirthYear();
+	void setBirthMonth(int);
+	void setBirthDay(int);
+	void setBirthYear(int);
 };
 
 #endif
