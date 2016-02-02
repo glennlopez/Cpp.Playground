@@ -31,7 +31,8 @@ int main(){
 		int* p = new int;
 		*p = 5;
 
-		delete p;
+		delete p; 
+		p = 0;
 
 		p = new int(10);
 
