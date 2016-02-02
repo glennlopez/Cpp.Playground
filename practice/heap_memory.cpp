@@ -1,7 +1,9 @@
+//https://www.youtube.com/watch?v=CSVRA4_xOkw
+
 #include <iostream>
 //using namespace std;
 using std::cout;
-using std::endl;	//<-- to save codespace we stop using namespace 
+using std::endl;	//<-- to save codespace we stop using namespace
 
 /*
 	A look at dynamically alocated memory
