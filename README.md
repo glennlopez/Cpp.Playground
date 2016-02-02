@@ -17,9 +17,12 @@ This is where I keep all my non project related C++ source codes. Its a simple r
 | zyBooks     | my solution for zyBooks C++ online lesson |
 | sandbox      | random trials for cpp lang |  
 | practice      | my ABC (always be coding) incentive |
+| tools      | programs or classes in C++ that i've made for myself |
+| REFERANCE      | example codes for myself if I ever forget how to do them |
 
 ### Learning/Referance material
 * http://www.cplusplus.com/doc/tutorial/
 * http://stackoverflow.com/questions/tagged/c%2B%2B
 * https://www.reddit.com/r/cpp/
 * https://zybooks.zyante.com/#/zybook/ProgrammingInCppR11/dashboard
+* https://www.youtube.com/playlist?list=PL2_aWCzGMAwLZp6LMUKI3cc7pgGsasm2_
