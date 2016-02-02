@@ -10,7 +10,7 @@ int main(){
 	cout << "Enter any number: ";
 	cin >> myNum;
 
-	myPtr = &myNum;
+	myPtr = &myNum;C
 
 	cout << "myPtr: " << *myPtr;
 
