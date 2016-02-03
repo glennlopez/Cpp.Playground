@@ -5,6 +5,7 @@ using std::endl;
 /*
 	NEW CONCEPTS
 		-> is a member class operator for pointers
+		p->a is similar to (*p).a
 
 */
 
