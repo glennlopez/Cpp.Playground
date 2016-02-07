@@ -3,7 +3,7 @@
 using namespace std;
 
 /*
-	Assign the first instance of The in movieTitle to movieResult. 
+	Assign the first instance of The in movieTitle to movieResult.
 */
 
 int main() {
@@ -11,6 +11,7 @@ int main() {
    char* movieResult = 0;
 
    /* Your solution goes here  */
+	movieResult = strstr(movieTitle, "The");
 
    cout << "Movie title contains The? ";
    if (movieResult != 0) {
