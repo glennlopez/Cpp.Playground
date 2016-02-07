@@ -1,0 +1,5 @@
+These are notes for my self so I can practice concepts I'm not understanding when I have time.
+
+Lacking an understanding of the following:
+	[ ] this-> operator
+	[ ] how can I utilize pointers in c++?
