@@ -12,6 +12,7 @@ int main() {
    char* searchResult = 0;
 
    /* Your solution goes here  */
+	searchResult = strchr(personName, searchChar);
 
    if (searchResult != 0) {
       cout << "Character found." << endl;
