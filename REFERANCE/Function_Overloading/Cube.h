@@ -6,6 +6,10 @@ using namespace std;
 #define CUBE_H
 
 class Cube{
+	/*
+		NOTE: This class is responsible for cube data structures only.
+				built-in functions for this class are defined in Cube.cpp
+	*/
 private:
 	//class members vars
 	double c_width;		// cm
@@ -46,6 +50,10 @@ public:
 };
 
 class Square{
+	/*
+		NOTE: This class is responsible for square data structures only.
+				built-in functions for this class are defined in Cube.cpp
+	*/
 private:
 	double s_legth;
 	double s_height;
@@ -64,6 +72,7 @@ public:
 
 	//operator overload +
 	Square operator+(Square rhs);
+		// add squares together to get total area
 
 	//destructor
 	~Square();
