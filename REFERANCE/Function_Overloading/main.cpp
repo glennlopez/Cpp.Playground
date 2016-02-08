@@ -1,5 +1,17 @@
 #include <iostream>
 #include <vector>
+/*
+	NOTE: This example facilitates the practical use of overloading functions
+	 		as well as providing built in class functions outside of class.
+
+			It also illustrates why grouping functions into its related
+			class cleans up the main.cpp file to look less verbose and more
+			legible.
+
+			The 3rd party coder needs not know the math or underworkings behind
+			how cubes and squares are calculated. They simply just need the
+			information provided below:
+*/
 
 #include "Cube.cpp"
 using namespace std;
