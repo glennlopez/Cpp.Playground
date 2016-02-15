@@ -26,3 +26,4 @@ This is where I keep all my non project related C++ source codes. Its a simple r
 * https://www.reddit.com/r/cpp/
 * https://zybooks.zyante.com/#/zybook/ProgrammingInCppR11/dashboard
 * https://www.youtube.com/playlist?list=PL2_aWCzGMAwLZp6LMUKI3cc7pgGsasm2_
+* http://alumni.cs.ucr.edu/~pdiloren/C++_Pointers/
