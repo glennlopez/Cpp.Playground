@@ -14,7 +14,7 @@ int main(){
 	glenn = new Person;		//<-- place the object in heap memoery
 	anon = new Person;
 
-	/*	NOTES:
+	/*	NOTES: ->: member access operator
 	 * When referancing pointers for objects, you use (*object).memberclass()
 	 * rather than *object.memeberclass()
 	 *
@@ -27,6 +27,18 @@ int main(){
 
 	anon->setAge(22);
 	cout << "Anon: " << anon->getAge() << endl;
+
+	/* NOTES:
+	 * To dealocate memory from heap we use the delete operator.
+	 * ie: delete pointerVar;
+	 */
+
+	delete glenn;
+	delete anon;
+	cout << endl;
+
+	cout << "glenn after delete: " << glenn->getAge() << endl;
+	cout << "anon after delete: " << anon->getAge() << endl;
 
 	cout << endl;
 	return 0;
