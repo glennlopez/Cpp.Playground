@@ -3,11 +3,10 @@ using namespace std;
 
 int main(){
 
-	int a;
-	int b;
+	int a = 10;
 
-	//& means "address of" so cout << &a will output the address of int a
-	cout << &a;
+	//& means "address of"
+	cout << &a;					//<-- will output the address of int a;
 
 	cout << endl;
 	return 0;
