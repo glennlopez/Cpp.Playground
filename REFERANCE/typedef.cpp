@@ -34,7 +34,7 @@ int main(){
 			uShort A = 1;		is the same as 	unsigned short int A = 1;
 	*/
 
-	typedef unsigned short int uShort;
+	typedef unsigned short int uShort;	//<-- assigns uShort as a typedef
 	uShort AA = 1;
 	uShort BB = 2;
 	uShort CC = 3;
