@@ -17,7 +17,11 @@ using namespace std;
 */
 
 int main(){
-	int param = 603;	//<-- CHANGE THIS NUMBER TO TRY IT OUT
+	int param;
+
+	cout << "Enter a number: ";
+	cin >> param;
+	cout << endl;
 
 	//example for using calcPrime.cpp
 	cout << param << " returns a " << calcPrime(param) << endl;
