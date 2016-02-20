@@ -78,11 +78,16 @@ namespace human{
 	};
 }
 
+//
+#define MakeAnimal animal::Set
+
 int main(){
 	//syntax = age:race:name
 	animal::Set dog(10, "Dog");
 	animal::Set cat(5, "Cat", "Fluffy");
+	animal::Set poodle(1, "Dog", "Poochie");
 	animal::Set dogcat = dog + cat;
+	MakeAnimal crab(5, "Crab", "Mr.Crab");
 
 	human::Set carlos(21, "Jamaican", "Carlos");
 	human::Set heejoo(18, "Korean", "Heejoo");
@@ -92,6 +97,8 @@ int main(){
 	cat.Print();
 	dog.Print();
 	heejoo.Print();
+	poodle.Print();
+	crab.Print();
 
 	cout << endl;
 	return 0;
