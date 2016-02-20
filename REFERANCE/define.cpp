@@ -1,35 +1,90 @@
 #include <iostream>
-using std::cout;
-using std::endl;
+#include <string>
+using namespace std;
+
 void print();
+int calculate(int, int);
 
-namespace make{
+namespace Genesis{
 
-	class animal{
+	class Animal{
 	private:
+		short age;
+		string type;
+		string name;
 
 	public:
+		Animal(){
+			age = 0;
+			type = "?";
+			name = "?";
+		}
+
+		Animal(short a_age, string a_type, string a_name){
+			age = a_age;
+			type = a_type;
+			name = a_name;
+		}
+
+		void print(){
+			cout << "Name: " << name << endl;
+			cout << "Type: " << type << endl;
+			cout << "Age: " << age << endl;
+			cout << endl;
+		}
 	};
 
-	class human{
+	class Plant{
 	private:
+		short age;
+		string type;
+		string name;
 
 	public:
+		Plant(){
+			age = 0;
+			type = "?";
+			name = "?";
+		}
+
+		Plant(short a_age, string a_type, string a_name){
+			age = a_age;
+			type = a_type;
+			name = a_name;
+		}
+
+		void print(){
+			cout << "Name: " << name << endl;
+			cout << "Type: " << type << endl;
+			cout << "Age: " << age << endl;
+			cout << endl;
+		}
 	};
 
 };
 
-/* This is an example of how we can use #define
- *
- */
 
 
 #define SaySomething print();
+#define sum(x,y) calculate(x, y);
+#define MakeAnimal Genesis::Animal
+#define MakePlant Genesis::Plant
 
 int main(){
-	//simple cout function
+	/* We can use #define to create a simple function macro
+	 * to clean up or make our functions easier to understand
+	 */
 	SaySomething;
+	cout << sum(3, 5);
 
+	/* We can use #define to create a scope macro
+	 * for our object definitions
+	 */
+	MakeAnimal dog(5, "Dog", "Buddy");
+	dog.print();
+
+	MakePlant flower(1, "Lily", "Lilith");
+	flower.print();
 
 
 
@@ -42,4 +97,9 @@ int main(){
 //** FUNCTIONS **//
 void print(){
 	cout << "testing 1, 2, 3..." << endl;
+	cout << endl;
+}
+
+int calculate(int x, int y){
+	return x + y;
 }
