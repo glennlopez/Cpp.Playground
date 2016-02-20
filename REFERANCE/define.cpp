@@ -67,12 +67,15 @@ namespace Genesis{
 
 };
 
-
-
 #define SaySomething print();
 #define sum(x,y) calculate(x, y);
 #define MakeAnimal Genesis::Animal
 #define MakePlant Genesis::Plant
+
+
+
+
+
 
 int main(){
 	/* We can use #define to create a simple function macro
@@ -93,12 +96,13 @@ int main(){
 	MakeAnimal human(12, "Human", "Glenn");
 	human.print();
 
-
-
-
 	cout << endl;
 	return 0;
 }
+
+
+
+
 
 
 //** FUNCTIONS **//
