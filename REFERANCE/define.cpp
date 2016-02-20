@@ -2,6 +2,10 @@
 #include <string>
 using namespace std;
 
+/* Below is an example of how to make macros using #define
+ * on objects, classes, functions, etc..
+ */
+
 void print();
 int calculate(int, int);
 
@@ -85,6 +89,9 @@ int main(){
 
 	MakePlant flower(1, "Lily", "Lilith");
 	flower.print();
+
+	MakeAnimal human(12, "Human", "Glenn");
+	human.print();
 
 
 
