@@ -3,3 +3,4 @@ These are notes for my self so I can practice concepts I'm not understanding whe
 Lacking an understanding of the following:
 	[ ] this-> operator
 	[ ] how can I utilize pointers in c++?
+	[ ] practice (*a).b aka a->b pointer operators on class member accessors
