@@ -5,8 +5,8 @@ using namespace std;
 /*
 	WITHOUT USING MATH.H (using Eulers Theorym)
 	This is a simple way of calculating if a number is prime or not
-	using 6n-1 and 6n+1. It is only ~90% acurate and you cannot test
-	primes below 7. Examples of inacuracies are 25, 917 etc.. these
+	using 6n-1 and 6n+1. It is only ~90% acurate (1-10000) and increasing
+	as the number gets larger. Examples of inacuracies are 25, 917 etc.. these
 	will register as a prime number (they are not).
 
 	Formula is: 6n-1 = 'your number' || 6n+1 = 'your number'
