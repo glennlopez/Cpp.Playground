@@ -3,7 +3,7 @@
 #include "calcGCF.cpp"
 #include "calcFactorsOf.cpp"
 using namespace std;
-void test_calcGCF();
+void test_gcf();
 void test_factorsOf();
 
 /*	How to use:
@@ -16,7 +16,7 @@ void test_factorsOf();
 
 int main(){
 
-	//test_calcGCF();			//<-- Try it!
+	//test_gcf();			//<-- Try it!
 	//gcf(52,12);				//<-- Raw version
 
 	test_factorsOf();			//<-- Try it!
@@ -30,7 +30,7 @@ int main(){
 
 
 //** TRY IT FUNCTIONS **//
-void test_calcGCF(){
+void test_gcf(){
 	double x, y;
 
 	cout << "First Number: ";
