@@ -15,3 +15,10 @@ int lcm(int x, int y){
 
 	return ((x * y)/gcf_div);
 }
+
+	/* NOTE: You can loop this function and replace one of the two
+	 * numbers with the LCM of the previious two numbers as many times
+	 * as you need:
+	 *
+	 *		This allows you to do LCM of 3 to 100x using a for loop
+	 */
