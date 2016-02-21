@@ -1,5 +1,5 @@
 #include <iostream>
-#include "ConvertTemp_class.cpp"
+#include "ConvertTemp.cpp"
 using namespace std;
 
 //How to use Example:
