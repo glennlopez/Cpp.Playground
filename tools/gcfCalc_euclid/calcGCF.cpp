@@ -1,7 +1,9 @@
 double gcf(double x, double y){
-	double num1 = x;
-	double num2 = y;
-	double a, b, temp;
+	typedef short gcf_type;	//change to diffrent datatype if error in calc
+
+	gcf_type num1 = x;
+	gcf_type num2 = y;
+	gcf_type a, b, temp;
 
 	a = num1;
 	b = num2;
