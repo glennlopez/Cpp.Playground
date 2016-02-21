@@ -9,7 +9,7 @@
 //#include "calcGCF.cpp"  	//<-- THIS FUNCTION REQUIRES calcGCF.cpp dependency
 using namespace std;
 void factorsOf(int x){
-	//testing for number 18 as a multiple of...
+
 	int uNum, i, j, gcf_num, temp;
 	uNum = x;
 	vector<int> multiples(uNum);		//<-- stores raw factors
