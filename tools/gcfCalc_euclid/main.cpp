@@ -2,7 +2,7 @@
 #include "calcGCF.cpp"
 using namespace std;
 
-/* Without using math.h we can find the GCF using between 2 numbers
+/* Without using math.h we can find the GCF between 2 numbers using
 	Euclids algorythm:
 
 		Replace the larger number with the diffrance between the two
