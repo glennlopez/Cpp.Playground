@@ -8,13 +8,16 @@ void test_calcGCF();
 /*	How to use:
 		#include calcGCF.cpp into your main.cpp and call the function "gcf()"
 		to calculate the GCF between two numbers.
+
+		#include calcFactorsOf.cpp and calcGCF.cpp if you wish to use the function
+		for calculating the factors of a number using euclids theorm
 */
 
 int main(){
 
-	//test_calcGCF();		//<-- Try it!
-	//gcf(52,12);			//<-- Raw version
-	factorsOf(24);			//<-- this function makes use of gfc();
+	//test_calcGCF();			//<-- Try it!
+	//gcf(52,12);				//<-- Raw version
+	factorsOf(300);			//<-- this function makes use of gfc();
 
 	cout << endl;
 	return 0;

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+//#include "calcGCF.cpp"  	//<-- THIS FUNCTION REQUIRES calcGCF.cpp dependency
 using namespace std;
 void factorsOf(int x){
 	//testing for number 18 as a multiple of...
