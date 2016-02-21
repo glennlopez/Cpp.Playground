@@ -2,8 +2,10 @@
 #include <vector>
 #include "calcGCF.cpp"
 #include "calcFactorsOf.cpp"
+#include "calcLCM.cpp"
 using namespace std;
 void test_gcf();
+void test_lcm();
 void test_factorsOf();
 
 /*	How to use:
@@ -17,10 +19,14 @@ void test_factorsOf();
 int main(){
 
 	//test_gcf();				//<-- Try it!
-	//gcf(52,12);				//<-- Raw version
+	//gcf(52,12);				//<-- Raw format
 
-	test_factorsOf();			//<-- Try it!
-	//factorsOf(300);			//<-- this function makes use of gfc();
+	//test_factorsOf();		//<-- Try it!
+	//factorsOf(300);			//<-- Raw format
+
+	test_lcm();					//<-- Try it!
+	//lcm(6, 8);				//<-- Raw format
+
 
 	cout << endl;
 	return 0;
@@ -50,4 +56,17 @@ void test_factorsOf(){
 	cin >> x;
 
 	factorsOf(x);
+}
+
+void test_lcm(){
+	int num1, num2;
+
+	cout << "First Number: ";
+	cin >> num1;
+
+	cout << "Second Number: ";
+	cin >> num2;
+
+	cout << "LCM of " << num1 << " and " << num2
+	<< " is: " << lcm(num1, num2) << endl;
 }
