@@ -16,7 +16,7 @@ void test_factorsOf();
 
 int main(){
 
-	//test_gcf();			//<-- Try it!
+	//test_gcf();				//<-- Try it!
 	//gcf(52,12);				//<-- Raw version
 
 	test_factorsOf();			//<-- Try it!
