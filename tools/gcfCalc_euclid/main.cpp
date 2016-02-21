@@ -1,9 +1,11 @@
 #include <iostream>
 #include <vector>
-#include "calcGCF.cpp"
-#include "calcFactorsOf.cpp"
-#include "calcLCM.cpp"
-using namespace std;
+
+//This calculator includes 2 others that makes use of GCF
+#include "calcGCF.cpp"				//<-- For calculating GCF
+#include "calcLCM.cpp"				//<-- For calculating LCM (uses GCF)
+#include "calcFactorsOf.cpp"		//<-- For calculating factors of a number (uses GCF)
+
 void test_gcf();
 void test_lcm();
 void test_factorsOf();
@@ -17,6 +19,8 @@ void test_factorsOf();
 */
 
 int main(){
+	using std::cout;
+	using std::endl;
 
 	//test_gcf();				//<-- Try it!
 	//gcf(52,12);				//<-- Raw format
