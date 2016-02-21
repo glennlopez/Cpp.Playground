@@ -1,18 +1,30 @@
 #include <iostream>
+#include <vector>
 #include "calcGCF.cpp"
+#include "calcFactorsOf.cpp"
 using namespace std;
+void test_calcGCF();
 
-/* Without using math.h we can find the GCF between 2 numbers using
-	Euclids algorythm:
-
-		Replace the larger number with the diffrance between the two
-		numbers until both numbers are equal, to reveal its GCF.
-
-	#include calcGCF.cpp into your main.cpp and call the function "gcf()"
-	to calculate the GCF between two numbers.
+/*	How to use:
+		#include calcGCF.cpp into your main.cpp and call the function "gcf()"
+		to calculate the GCF between two numbers.
 */
 
 int main(){
+
+	//test_calcGCF();		//<-- Try it!
+	//gcf(52,12);			//<-- Raw version
+	factorsOf(24);			//<-- this function makes use of gfc();
+
+	cout << endl;
+	return 0;
+}
+
+
+
+
+//** TRY IT FUNCTIONS **//
+void test_calcGCF(){
 	double x, y;
 
 	cout << "First Number: ";
@@ -23,7 +35,4 @@ int main(){
 
 	cout << "GCF of " << x << " and " << y << ": ";
 	cout << gcf(x, y) << endl;
-
-	cout << endl;
-	return 0;
 }
