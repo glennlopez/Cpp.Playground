@@ -4,6 +4,7 @@
 #include "calcFactorsOf.cpp"
 using namespace std;
 void test_calcGCF();
+void test_factorsOf();
 
 /*	How to use:
 		#include calcGCF.cpp into your main.cpp and call the function "gcf()"
@@ -17,7 +18,9 @@ int main(){
 
 	//test_calcGCF();			//<-- Try it!
 	//gcf(52,12);				//<-- Raw version
-	factorsOf(300);			//<-- this function makes use of gfc();
+
+	test_factorsOf();			//<-- Try it!
+	//factorsOf(300);			//<-- this function makes use of gfc();
 
 	cout << endl;
 	return 0;
@@ -38,4 +41,13 @@ void test_calcGCF(){
 
 	cout << "GCF of " << x << " and " << y << ": ";
 	cout << gcf(x, y) << endl;
+}
+
+void test_factorsOf(){
+	int x;
+
+	cout << "Number to find factors of: ";
+	cin >> x;
+
+	factorsOf(x);
 }
