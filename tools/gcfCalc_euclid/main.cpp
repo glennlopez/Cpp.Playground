@@ -10,6 +10,8 @@ void test_gcf();
 void test_lcm();
 void test_factorsOf();
 
+void common_multiples(int, int);	//for debug
+
 /*	How to use:
 		#include calcGCF.cpp into your main.cpp and call the function "gcf()"
 		to calculate the GCF between two numbers.
@@ -28,10 +30,13 @@ int main(){
 	//test_factorsOf();		//<-- Try it!
 	//factorsOf(300);			//<-- Raw format
 
-	test_lcm();					//<-- Try it!
+	test_lcm();				//<-- Try it!
 	//lcm(6, 8);				//<-- Raw format
 
 
+
+	//debug function
+	//common_multiples(3,4);
 	cout << endl;
 	return 0;
 }
@@ -73,4 +78,20 @@ void test_lcm(){
 
 	cout << "LCM of " << num1 << " and " << num2
 	<< " is: " << lcm(num1, num2) << endl;
+}
+
+
+//debug functions
+void common_multiples(int x, int y){
+	int i;
+
+	for(i = 0; i < 20; i++){
+		cout << x * i << " ";
+	}
+
+	cout << endl;
+
+	for(i = 0; i < 20; i++){
+		cout << y * i << " ";
+	}
 }
