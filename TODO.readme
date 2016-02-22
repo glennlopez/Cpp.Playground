@@ -1,4 +1,0 @@
-setup.sh
-	[] check to see if dependancies for are installed
-		- gcc, g++, gdb, clang
-	[] install missing dependecies
