@@ -1,6 +1,10 @@
 #include <iostream>
 using namespace std;
 
+/*
+	Assign negativeCntr with the number of negative values in the linked list. 
+*/
+
 class IntNode {
 public:
    IntNode(int dataInit = 0, IntNode* nextLoc = 0);
