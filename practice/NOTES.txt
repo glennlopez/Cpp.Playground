@@ -3,5 +3,8 @@ These are notes for my self so I can practice concepts I'm not understanding whe
 Lacking an understanding of the following:
 	[ ] this-> operator
 	[ ] how can I utilize pointers in c++?
+
+Practice the following:
 	[ ] practice (*a).b aka a->b pointer operators on class member accessors
 	[ ] practice linked lists (could be important to know how to do this)
+	[ ] practice vectors and arrays
