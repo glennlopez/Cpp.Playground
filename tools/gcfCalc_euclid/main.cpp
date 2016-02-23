@@ -5,11 +5,13 @@
 #include "calcLCM.cpp"				//<-- For calculating LCM (uses GCF)
 #include "calcFactorsOf.cpp"		//<-- For calculating factors of a number (uses GCF)
 #include "calcPrime.cpp"			//<-- For testing if a number is prime (uses GCF)
+#include "listPrimes.cpp"			//<-- For listing x number of prime numbers
 
 void test_gcf();
 void test_lcm();
 void test_factorsOf();
 void test_calcPrime();
+void test_listPrimes();
 
 void common_multiples(int, int);	//for debug
 
@@ -34,8 +36,10 @@ int main(){
 	//test_lcm();				//<-- Try it!
 	//lcm(6, 8);				//<-- Raw format
 
-	test_calcPrime();			//<-- Try it!
+	//test_calcPrime();		//<-- Try it!
 	//calcPrime(12);			//<-- Raw format (1 = prime)
+
+	test_listPrimes();		//Try it!
 
 
 	//debug function
@@ -95,6 +99,14 @@ void test_calcPrime(){
 	else{
 		cout << num << " is not a prime number." << endl;
 	}
+}
+
+void test_listPrimes(){
+	int num;
+	cout << "How many primes to list: ";
+	cin >> num;
+
+	listPrimes(num);
 }
 
 

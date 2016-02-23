@@ -16,12 +16,12 @@ double gcf(double x, double y){
 	b = num2;
 
 	while(num1 != num2){
-		if(a < b){
+		if(a < b){				//<-- makes sure a is always larger than b
 			temp = a;
 			a = b;
 			b = temp;
 
-			num2 = a - b;
+			num2 = a - b;		
 		}
 		else{
 			num1 = a - b;
