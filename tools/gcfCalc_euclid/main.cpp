@@ -4,7 +4,7 @@
 #include "calcGCF.cpp"				//<-- For calculating GCF
 #include "calcLCM.cpp"				//<-- For calculating LCM (uses GCF)
 #include "calcFactorsOf.cpp"		//<-- For calculating factors of a number (uses GCF)
-#include "calcPrime.cpp"			//<-- For testing if a number is prime
+#include "calcPrime.cpp"			//<-- For testing if a number is prime (uses GCF)
 
 void test_gcf();
 void test_lcm();

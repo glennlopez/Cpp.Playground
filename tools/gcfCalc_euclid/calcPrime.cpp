@@ -37,7 +37,7 @@ int calcPrime(int x){
 		}
 	}
 
-	//find the size of the vector
+	//find the size of the new vector
 		//if its more than 1 then its not a prime number
 		//else, its a prime number
 
