@@ -1,14 +1,15 @@
 #include <iostream>
 #include <vector>
 
-//This calculator includes 2 others that makes use of GCF
 #include "calcGCF.cpp"				//<-- For calculating GCF
 #include "calcLCM.cpp"				//<-- For calculating LCM (uses GCF)
 #include "calcFactorsOf.cpp"		//<-- For calculating factors of a number (uses GCF)
+#include "calcPrime.cpp"			//<-- For testing if a number is prime
 
 void test_gcf();
 void test_lcm();
 void test_factorsOf();
+void test_calcPrime();
 
 void common_multiples(int, int);	//for debug
 
@@ -27,12 +28,14 @@ int main(){
 	//test_gcf();				//<-- Try it!
 	//gcf(52,12);				//<-- Raw format
 
-	test_factorsOf();		//<-- Try it!
+	//test_factorsOf();		//<-- Try it!
 	//factorsOf(300);			//<-- Raw format
 
 	//test_lcm();				//<-- Try it!
 	//lcm(6, 8);				//<-- Raw format
 
+	test_calcPrime();			//<-- Try it!
+	//calcPrime(12);			//<-- Raw format (1 = prime)
 
 
 	//debug function
@@ -78,6 +81,20 @@ void test_lcm(){
 
 	cout << "LCM of " << num1 << " and " << num2
 	<< " is: " << lcm(num1, num2) << endl;
+}
+
+void test_calcPrime(){
+	int num;
+
+	cout << "Check if this number is prime: ";
+	cin >> num;
+
+	if(calcPrime(num) == 1){
+		cout << num << " is a prime number." << endl;
+	}
+	else{
+		cout << num << " is not a prime number." << endl;
+	}
 }
 
 
