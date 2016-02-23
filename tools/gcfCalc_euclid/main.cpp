@@ -27,10 +27,10 @@ int main(){
 	//test_gcf();				//<-- Try it!
 	//gcf(52,12);				//<-- Raw format
 
-	//test_factorsOf();		//<-- Try it!
+	test_factorsOf();		//<-- Try it!
 	//factorsOf(300);			//<-- Raw format
 
-	test_lcm();				//<-- Try it!
+	//test_lcm();				//<-- Try it!
 	//lcm(6, 8);				//<-- Raw format
 
 
