@@ -8,7 +8,11 @@ using namespace std;
  */
 
 int main(){
-	Students glenn;
+	Students *glenn;
+	glenn = new Students;
+	delete glenn;
+
+	//Students anon;				//<-- uncomment this for non-pointer deconstructor
 
 	cout << "Main function executed." << endl;
 

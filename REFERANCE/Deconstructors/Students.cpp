@@ -11,7 +11,8 @@ Students::Students(){
 //destructor
 Students::~Students(){
 	/* Runs automatically when program exits IF a Students object
-	 * has been defined OR when
+	 * has been defined OR when a pointer class is alocated to heap
+	 * and a "delete" has been called to unalocate a class object pointer
 	 */
 	cout << "Deconstructor executed." << endl;
 }
