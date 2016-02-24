@@ -20,5 +20,8 @@ Students::~Students(){
 	 */
 	cout << "Deconstructor executed." << endl;
 
+	//NOTE: we also need to deconstruct the pointer data inside the object
 
+	delete ptrData;	//<-- frees memory used by pointers inside an object
+	return;
 }
