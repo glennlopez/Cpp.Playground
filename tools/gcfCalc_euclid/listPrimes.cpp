@@ -1,4 +1,3 @@
-//This will list x number of prime numbers as defined by user
 #include <iostream>
 #include <vector>
 //#include "calcPrime.cpp"					//<-- required for telling if a num is prime
@@ -14,7 +13,7 @@ void listPrimes(int num){
 	//store prime numbers in a vactor
 	while(num != storedPrimes){			//<-- loops until conditions are met
 		i++;
-		if(calcPrime(i) == 1){
+		if(calcPrime(i) == 1){				//<-- store the number in a vector if its a prime
 			primes.push_back(i);
 			storedPrimes++;
 		}
