@@ -4,10 +4,12 @@ using namespace std;
 
 //constructor
 Students::Students(){
-	//Runs automatically when a Students object is defined
+	//Runs automatically when a Students object is created
 	cout << "Constructor executed." << endl;
 
-	age = 0; 		//<-- sets the default age to 0 when an object is made
+	age = 0;					//stack memory	integer
+	ptrData = new int;	//heap memory	integer
+		*ptrData = 10;
 }
 
 //destructor
