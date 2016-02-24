@@ -12,6 +12,7 @@ public:
 protected:
 
 private:
+	int age;
 
 };
 
