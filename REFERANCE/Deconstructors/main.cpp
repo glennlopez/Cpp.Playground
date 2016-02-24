@@ -14,7 +14,7 @@ int main(){
 
 	Students *glenn;
 	glenn = new Students;
-	delete glenn;
+	delete glenn;					//<-- comment out and see what happens
 
 	//Students anon;				//<-- uncomment this for non-pointer deconstructor
 
