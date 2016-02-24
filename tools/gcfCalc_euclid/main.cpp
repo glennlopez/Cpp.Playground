@@ -1,12 +1,13 @@
 #include <iostream>
 #include <vector>
 
-#include "calcGCF.cpp"				//<-- For calculating GCF
+#include "calcGCF.cpp"				//<-- Used on all the libraries listed below
 #include "calcLCM.cpp"				//<-- For calculating LCM (uses GCF)
 #include "calcFactorsOf.cpp"		//<-- For calculating factors of a number (uses GCF)
 #include "calcPrime.cpp"			//<-- For testing if a number is prime (uses GCF)
 #include "listPrimes.cpp"			//<-- For listing x number of prime numbers
 
+//test vectors for built-in functions above
 void test_gcf();
 void test_lcm();
 void test_factorsOf();
@@ -16,11 +17,11 @@ void test_listPrimes();
 void common_multiples(int, int);	//for debug
 
 /*	How to use:
-		#include calcGCF.cpp into your main.cpp and call the function "gcf()"
-		to calculate the GCF between two numbers.
+		#include any of the above libraries in your main.cpp
+		Note: calcGCF.cpp is a common library file used in calcGCF,
+		calcFactorsOf, calcPrime, and listPrimes. Be sure to include
+		calcGCF.cpp in your main.cpp if you wish to use the other libraries
 
-		#include calcFactorsOf.cpp and calcGCF.cpp if you wish to use the function
-		for calculating the factors of a number using euclids theorm
 */
 
 int main(){
@@ -42,8 +43,7 @@ int main(){
 	test_listPrimes();		//Try it!
 
 
-	//debug function
-	//common_multiples(3,4);
+	//common_multiples(3,4);	//<-- debug function (list all common multiples)
 	cout << endl;
 	return 0;
 }
