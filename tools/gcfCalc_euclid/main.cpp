@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 
 #include "calcGCF.cpp"				//<-- Used on all the libraries listed below
 #include "calcLCM.cpp"				//<-- For calculating LCM (uses GCF)
