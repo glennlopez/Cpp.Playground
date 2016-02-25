@@ -28,8 +28,13 @@ void Character::setName(string a){
 void Character::setHealth(int x){
 	health = x;
 }
-void Character::setWeaponA(string z){
-	weapon[0] = z;
+void Character::setWeapon(char param, string z){
+	if(param == 'a'){
+		weapon[0] = z;
+	}
+	if(param == 'b'){
+		weapon[1] = z;
+	}
 }
 
 //Accessors
@@ -39,6 +44,14 @@ string Character::getName(){
 int Character::getHealth(){
 	return health;
 }
-string Character::getWeaponA(){
-	return weapon[0];
+string Character::getWeapon(char param){
+	if(param == 'a'){
+		return weapon[0];
+	}
+	if(param == 'b'){
+		return weapon[1];
+	}
+	else{
+		return "Error: Bag space does not exist!";
+	}
 }

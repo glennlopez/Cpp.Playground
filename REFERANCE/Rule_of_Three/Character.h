@@ -18,11 +18,11 @@ public:
 
 	void setName(string);
 	void setHealth(int);
-	void setWeaponA(string);
+	void setWeapon(char, string);
 
 	string getName();
 	int getHealth();
-	string getWeaponA();
+	string getWeapon(char);
 
 };
 

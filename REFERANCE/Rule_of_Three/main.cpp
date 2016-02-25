@@ -15,23 +15,23 @@ int main(){
 	Character player1;
 	player1.setName("Glenn");
 	player1.setHealth(100);
-	player1.setWeaponA("Axe");
+	player1.setWeapon('b',"Axe");
 
-	Character player2;
-	player2 = player1;
+	//Character player2;
+	//player2 = player1;
 
 	//Data output
 	cout <<
 		"Name: " <<
-		player2.getName() <<
+		player1.getName() <<
 	endl;
 	cout <<
 		"Health: " <<
-		player2.getHealth() <<
+		player1.getHealth() <<
 	endl;
 	cout <<
-		"Weapon Slot A: " <<
-		player1.getWeaponA() <<
+		"Weapon: " <<
+		player1.getWeapon('c') <<
 	endl;
 
 
