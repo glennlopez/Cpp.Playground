@@ -17,7 +17,7 @@ int main(){
 	Human Glenn("Glenn", 12);
 	Human Clone = Glenn;
 
-	//Clone = Glenn  		//<-- This doesnt work!
+	//Clone = Glenn  		//<-- This doesnt work for copy constructors!
 
 	Glenn.info();
 	Clone.info();
