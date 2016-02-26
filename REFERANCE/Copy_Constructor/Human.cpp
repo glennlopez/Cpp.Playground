@@ -17,7 +17,7 @@ Human::Human(string name, int age){
 //copy constructor
 Human::Human(const Human &origObj){
 	age = new int(*origObj.age);
-	name = origObj.name;
+	name = origObj.name + "Clone";
 	cout << "~Copy Constructor Executed!" << endl; //debug printout
 }
 
