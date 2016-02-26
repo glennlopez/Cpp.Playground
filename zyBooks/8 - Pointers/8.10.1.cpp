@@ -1,11 +1,6 @@
 #include <iostream>
 using namespace std;
 
-/*
-	Write a copy constructor for CarCounter that assigns origCarCounter.carCount to the constructed object's carCount. Sample output for the given program:
-	Cars counted: 5
-*/
-
 class CarCounter {
    public:
       CarCounter();
@@ -27,7 +22,13 @@ CarCounter::CarCounter() {
 
 // FIXME add copy constructor
 
+/*
+	Write a copy constructor for CarCounter that assigns origCarCounter.carCount to the constructed object's carCount. Sample output for the given program:
+		Cars counted: 5
+*/
+
 /* Your solution goes here  */
+
 
 void CountPrinter(CarCounter carCntr) {
    cout << "Cars counted: " << carCntr.GetCarCount();
