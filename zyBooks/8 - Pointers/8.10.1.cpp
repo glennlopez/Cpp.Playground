@@ -27,7 +27,14 @@ CarCounter::CarCounter() {
 		Cars counted: 5
 */
 
+
+
 /* Your solution goes here  */
+CarCounter::CarCounter(const CarCounter& origCarCounter){
+	carCount = new int; // Allocate sub-object
+   *carCount = *(origCarCounter.carCount);
+	return;
+}
 
 
 void CountPrinter(CarCounter carCntr) {
