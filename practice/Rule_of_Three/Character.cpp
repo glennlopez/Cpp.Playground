@@ -2,7 +2,7 @@
 #include "Character.h"
 //using namespace std;
 
-//Constructor
+//Default Constructor
 Character::Character(){
 	const int BAG_SIZE = 2;
 	name = "?";
