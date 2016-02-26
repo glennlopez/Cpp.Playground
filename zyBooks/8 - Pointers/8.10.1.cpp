@@ -1,6 +1,11 @@
 #include <iostream>
 using namespace std;
 
+/*
+	Write a copy constructor for CarCounter that assigns origCarCounter.carCount to the constructed object's carCount. Sample output for the given program:
+	Cars counted: 5
+*/
+
 class CarCounter {
    public:
       CarCounter();
