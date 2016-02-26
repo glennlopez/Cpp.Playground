@@ -7,7 +7,7 @@ using namespace std;
 
 class Human{
 private:
-	int age;
+	int *age;			//pointer for age to heap memory
 	string name;
 
 public:

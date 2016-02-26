@@ -10,9 +10,10 @@ using namespace std;
 int main(){
 
 	Human Glenn("Glenn", 12);
-	Human Clone("CloneGlenn", 1);
+	Human Clone = Glenn;
 
-	Clone = Glenn;
+	//Clone = Glenn  		//<-- This doesnt work!
+
 	Glenn.info();
 	Clone.info();
 
