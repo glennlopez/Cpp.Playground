@@ -28,12 +28,9 @@ CarCounter::CarCounter() {
 */
 
 
-
 /* Your solution goes here  */
-CarCounter::CarCounter(const CarCounter& origCarCounter){
-	carCount = new int; // Allocate sub-object
-   *carCount = *(origCarCounter.carCount);
-	return;
+CarCounter::CarCounter(const CarCounter &p){
+	carCount = p.carCount;
 }
 
 
