@@ -5,26 +5,34 @@ using namespace std;
 //default constructor
 Human::Human(){
 	name = "?";
+
+	//debug printout
+	cout << "~Default Constructor [" << name << "] Executed!" << endl;
 }
 
 //constructor overload
 Human::Human(string name, int age){
 	this->name = name;
 	this->age = new int(age);
-	cout << "~Default Overload " << name <<  " Executed!" << endl; //debug printout
+	//debug printout
+	cout << "~Overload Constructor (defaults) [" << name <<  "] Executed!" << endl;
 }
 
-//copy constructor
+//** COPY CONSTRUCTOR **//
 Human::Human(const Human &origObj){
 	age = new int(*origObj.age);
 	name = origObj.name + "Clone";
-	cout << "~Copy Constructor Executed!" << endl; //debug printout
+
+	//debug printout
+	cout << "~Copy Constructor [" << name << "] Executed!" << endl;
 }
 
 //deconstructor
 Human::~Human(){
 	delete age;
-	cout << "~Deconstructor " << name << " Executed!" << endl;	//debug printout
+
+	//debug printout
+	cout << "~Deconstructor [" << name << "] Executed!" << endl;
 }
 
 //mutators
