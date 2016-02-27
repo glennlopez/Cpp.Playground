@@ -17,7 +17,13 @@ int main(){
 	Human Glenn("Glenn", 12);
 	Human Clone = Glenn;
 
-	//Clone = Glenn  		//<-- This doesnt work for copy constructors!
+	/* Clone = Glenn will note work properly until you have defined
+	 * an operator overload for '='.
+	 * 											See "Copy_assignment_operator"			
+	 */
+
+	//Clone = Glenn
+
 
 	Glenn.info();
 	Clone.info();
