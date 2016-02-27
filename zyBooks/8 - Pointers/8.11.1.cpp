@@ -22,7 +22,7 @@ CarCounter::CarCounter() {
 
 /*
 	Write a copy assignment operator for CarCounter that assigns objToCopy.carCount to the new objects's carCount, then returns *this. Sample output for the given program:
-	
+
 		Cars counted: 12
 
 */
