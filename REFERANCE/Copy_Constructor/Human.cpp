@@ -56,5 +56,6 @@ void Human::info(){
 	cout << endl;
 	cout << "Name: " << name << endl;
 	cout << "Age: " << *age << endl;
+	//FIXME: cout << "ID: " << endl; 
 	cout << endl;
 }

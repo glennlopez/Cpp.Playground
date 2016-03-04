@@ -17,7 +17,7 @@ int main(){
 	Human Glenn("Glenn", 12);
 	Human Clone = Glenn;
 
-	//Clone = Glenn  		
+	//Clone = Glenn;
 
 	Glenn.info();
 	Clone.info();

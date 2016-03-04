@@ -20,6 +20,9 @@ public:
 	//copy constructor
 	Human(const Human &orgigName);
 
+	//** COPY ASSIGNMENT OPERATOR OVERLOAD **//
+	Human& operator = (const Human  &objToCopy);
+
 	//deconstructor
 	~Human();
 
