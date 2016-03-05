@@ -82,12 +82,23 @@ public:
 };
 
 int main(){
+	/*
+	The a->b is a shortcut for (*a).b and is primarly used for classes
+	that are constructed inside heap memory (a pointer).
+	*/
+
 	Character *Glenn;
 	Glenn = new Character;
 
+//SET
 	Glenn->setName("Glenn");
+	(*Glenn).setAge(12);
+	(*Glenn).setWeapon('a', "Axe");
 
+//GET
 	cout << Glenn->getName() << endl;
+	cout << Glenn->getAge() << endl;
+	cout << (*Glenn).getWeapon('a') << endl;
 
 
 
