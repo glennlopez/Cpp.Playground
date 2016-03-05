@@ -17,6 +17,7 @@ int main(){
 	cout << scientific << num1 << endl;
 	cout << scientific << setprecision(2) << num1 << endl;
 	cout << fixed << showpoint << num2 << endl;
+	cout << setprecision(2) << fixed << num1 << endl; 
 
 	//Spacing from <iomanip>
 	cout << setw(10) << num1 << endl;
