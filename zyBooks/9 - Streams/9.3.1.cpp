@@ -12,6 +12,7 @@ int main() {
    double outsideTemperature = 103.45632;
 
    /* Your solution goes here  */
+	cout << setprecision(4) << outsideTemperature << endl;
 
    return 0;
 }
