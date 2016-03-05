@@ -1,12 +1,10 @@
 
 bool isPrime(int param){
 	//check if a number is prime
-	long usrNum = param;			//<- use larger datatype if result is wrong
+	unsigned long long usrNum = param;			//<- use larger datatype if result is wrong
 	bool isPrime = 0;
 
-	//FIXME: all prime numbers are odd numbers. (make algo more efficient)
-
-	for(int i = 2; i < 10; i++){
+	for(unsigned long long i = 2; i < 10; i++){
 
 		if(usrNum > 9){
 			if(usrNum % i){
@@ -18,8 +16,6 @@ bool isPrime(int param){
 				break;
 			}
 		}
-
-		//FIXME: look for a better way to do this
 
 		else{
 			if(usrNum == 2){
