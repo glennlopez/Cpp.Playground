@@ -13,7 +13,7 @@ bool isPrime(unsigned int param){
 
 	for(unsigned long long i = 2; i < 900; i++){ // <9
 
-		if(usrNum > 11){ // >9 
+		if(usrNum > 11){ // >9
 			if(usrNum % i){
 				isPrime = 1;
 			}
