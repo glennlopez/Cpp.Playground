@@ -40,8 +40,9 @@ void calc_primeFactor(unsigned long long param){
 				 * Since the number 10 is the public-key 2 solutions exist:
 				 *		- 3 + 7 = 10
 				 *		- 5 + 5 = 10
-				 * The number of solutions you will get from the public-key will
-				 * increase the larger your prime numbers get.
+				 *
+				 * The larger your prime numbers the longer it will take to generate
+				 * a solution.
 				 */
 
 				cout << "SemiPrime (private-key): " << param << endl;
