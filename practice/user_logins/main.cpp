@@ -7,9 +7,11 @@ using namespace std;
 
 
 int main(){
-
 	vector<Credentials> netflix;
-	generateUser(netflix);
+
+	//generateUser(netflix);
+	//printUser(netflix, "glennlopez");
+	addUser(netflix, "glennlopez", "password");
 	printUser(netflix);
 
 	cout << endl;
