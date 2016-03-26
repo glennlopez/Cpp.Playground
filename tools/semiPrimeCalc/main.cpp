@@ -1,11 +1,12 @@
 #include <iostream>
-#include "listPrime.cpp"
+#include "FindFactors.cpp"
+//#include "listPrime.cpp"
 using namespace std;
 
 int main(){
 
-	listPrimes(50);
+	calc_primeFactor(3610144063);
+	//listPrimes(6000);
 
-	cout << endl;
 	return 0;
 }
