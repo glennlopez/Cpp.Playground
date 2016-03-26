@@ -5,8 +5,18 @@ using namespace std;
 
 int main(){
 
-	calc_primeFactor(3610144063);
-	//listPrimes(6000);
+	long long privateKey = 127157243331463;	//product of 2 prime numbers
+	long long publicKey = 22552856; 				//sum of 2 prime numbrs belonging to semiprime
+
+
+
+	calc_primeFactor(privateKey);
+
+
+
+	//listPrimes(900000);
+
+
 
 	return 0;
 }
