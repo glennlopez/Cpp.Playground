@@ -101,13 +101,22 @@ void printUser(vector<Credentials>& vectorRef){
 void printUser(vector<Credentials>& vectorRef, string uname){
 
 	unsigned int i, vector_size = vectorRef.size();
+	bool usr_found;
 
 	for(i = 0; i < vector_size; i++){
 		if(vectorRef[i].getUsername() == uname){
 			cout << "Username: " << vectorRef[i].getUsername() << endl;
 			cout << "Password: " << vectorRef[i].getPassword() << endl;
+
+			usr_found = true;
 		}
 	}
+
+	//user not found
+	if(usr_found == false){
+		cout << "User (" << uname << ") not found!" << endl;
+	}
+
 
 
 
