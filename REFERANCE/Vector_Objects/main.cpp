@@ -43,7 +43,9 @@ int main(){
 }
 
 
+
 //** FUNCTIONS **//
+
 void fillVector(vector<Student>& vectorName){
 	string sName;
 	char sGrade;
