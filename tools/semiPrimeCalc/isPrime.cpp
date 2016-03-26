@@ -11,9 +11,9 @@ bool isPrime(unsigned int param){
 	unsigned long long usrNum = param;
 	bool isPrime = 0;
 
-	for(unsigned long long i = 2; i < 9; i++){
+	for(unsigned long long i = 2; i < 900; i++){
 
-		if(usrNum > 9){
+		if(usrNum > 11){
 			if(usrNum % i){
 				isPrime = 1;
 			}
