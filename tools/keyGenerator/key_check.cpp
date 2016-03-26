@@ -1,3 +1,11 @@
+/*
+	This is a simple biprime product-key validation algorythm
+		- Subract a number incremently (i) from the public-key
+			- Find the product of [i * (publicKey - 1)] until..
+			- ... [i * (publicKey - 1)] == the private-key.
+
+			note: private-key is a product of two large prime numbers
+*/
 #include <iostream>
 using namespace std;
 
@@ -16,6 +24,9 @@ void key_check(long long publicKey){
 		if(solution * i == privateKey){
 			solved = 1;
 			cout << "Key is Valid!" << endl;
+
+			//debug print-out
+			cout << i << solution << endl;
 		}
 		else if(i == publicKey){
 			cout << "Invalid Key!" << endl;
