@@ -23,7 +23,30 @@ void calc_primeFactor(unsigned long long param){
 			int primeDiv = isPrime(result_div);
 			int primeI = isPrime(i);
 			if((primeDiv + primeI) == 2){
-				cout << result_div << " + " << i;
+				cout << endl;
+
+				/*
+				 *	Adding together the product of the semiprime number will provide
+				 *	a public-key (public solution) without giving out the two prime
+				 *	numbers used to generate the private key.
+				 *
+				 * Since the private-key is a product of two prime numbers a public-key
+				 * containing the sum of the two prime numbers that make up the semiprime
+				 * number can be given without revealing the solution (the two prime numbers).
+				 * 	ie: private-key solution = 3 x 7 (both are prime numbers)
+				 *			 private-key = 21
+				 *			 public-key = 10 (from 3 + 7)
+				 *
+				 * Since the number 10 is the public-key 2 solutions exist:
+				 *		- 3 + 7 = 10
+				 *		- 5 + 5 = 10
+				 * The number of solutions you will get from the public-key will
+				 * increase the larger your prime numbers get.
+				 */
+
+				cout << "SemiPrime (private-key): " << param << endl;
+				cout << "Factors (solution): " << result_div << " + " << i << endl;
+				cout << "Factor Sum (public-key): " << result_div + i << endl;
 				fac_found = 1;
 			}
 			else if(i == user_num){
