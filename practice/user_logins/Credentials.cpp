@@ -3,6 +3,7 @@
 #include "Credentials.h"
 using namespace std;
 
+
 //default constructor
 Credentials::Credentials(){
 	username = "undefined";
@@ -34,7 +35,7 @@ string Credentials::getPassword(){
 
 //** CLASS FUNCTIONS **//
 
-void generateUser(vector<Credentials>& vectorRef){
+void generateUser(vector<Credentials>& vectorName){
 
 	unsigned int i, num_users;
 	string uname, passwd;
@@ -77,20 +78,26 @@ void generateUser(vector<Credentials>& vectorRef){
 		Credentials newUser(uname, passwd);
 
 		//push_back the new class object to vector
-		vectorRef.push_back(newUser);
+		vectorName.push_back(newUser);
 
 		cout << endl;
 	}
 }
 
-//print all users on screen
-void printUser(vector<Credentials>& vectorRef){
+//add a single user
+void addUser(vector<Credentials>& vectorName, string uname, string password){
+	Credentials newUser(uname, password);
+	vectorName.push_back(newUser);
+}
 
-	unsigned int i, vector_size = vectorRef.size();
+//print all users on screen
+void printUser(vector<Credentials>& vectorName){
+
+	unsigned int i, vector_size = vectorName.size();
 
 	for(i = 0; i < vector_size; i++){
-		cout << "Username: " << vectorRef[i].getUsername() << endl;
-		cout << "Password: " << vectorRef[i].getPassword() << endl;
+		cout << "Username: " << vectorName[i].getUsername() << endl;
+		cout << "Password: " << vectorName[i].getPassword() << endl;
 
 		cout << endl;
 	}
@@ -98,15 +105,16 @@ void printUser(vector<Credentials>& vectorRef){
 }
 
 //print selected user on screen
-void printUser(vector<Credentials>& vectorRef, string uname){
+void printUser(vector<Credentials>& vectorName, string uname){
 
-	unsigned int i, vector_size = vectorRef.size();
+	unsigned int i, vector_size = vectorName.size();
 	bool usr_found;
 
+	//iterate through the vector
 	for(i = 0; i < vector_size; i++){
-		if(vectorRef[i].getUsername() == uname){
-			cout << "Username: " << vectorRef[i].getUsername() << endl;
-			cout << "Password: " << vectorRef[i].getPassword() << endl;
+		if(vectorName[i].getUsername() == uname){
+			cout << "Username: " << vectorName[i].getUsername() << endl;
+			cout << "Password: " << vectorName[i].getPassword() << endl;
 
 			usr_found = true;
 		}
@@ -116,8 +124,5 @@ void printUser(vector<Credentials>& vectorRef, string uname){
 	if(usr_found == false){
 		cout << "User (" << uname << ") not found!" << endl;
 	}
-
-
-
 
 }
