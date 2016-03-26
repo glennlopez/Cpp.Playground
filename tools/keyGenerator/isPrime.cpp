@@ -46,3 +46,44 @@ bool isPrime(unsigned int param){
 	}
 	return isPrime;
 }
+
+bool isPrime(unsigned int param, unsigned int range){
+
+	unsigned long long usrNum = param;
+	bool isPrime = 0;
+
+	for(unsigned long long i = 2; i < 900; i++){ // <9
+
+		if(usrNum > 11){ // >9
+			if(usrNum % i){
+				isPrime = 1;
+			}
+
+			else{
+				isPrime = 0;
+				break;
+			}
+		}
+
+		else{
+			if(usrNum == 2){
+				isPrime = 1;
+			}
+
+			if(usrNum == 3){
+				isPrime = 1;
+			}
+
+			if(usrNum == 5){
+				isPrime = 1;
+			}
+
+			if(usrNum == 7){
+				isPrime = 1;
+			}
+		}
+
+
+	}
+	return isPrime;
+}
