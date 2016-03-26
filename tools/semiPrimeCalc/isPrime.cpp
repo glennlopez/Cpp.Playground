@@ -1,10 +1,17 @@
+//FIXME: PRIME CALCULATOR NOT ACCURATE FOR LARGER PRIMES
 
-bool isPrime(int param){
-	//check if a number is prime
-	unsigned long long usrNum = param;			//<- use larger datatype if result is wrong
+/*
+	This algorythm will check whether a number is prime:
+		- Divide a given number from 2 to 12
+		- If the number is
+*/
+
+bool isPrime(unsigned int param){
+
+	unsigned long long usrNum = param;
 	bool isPrime = 0;
 
-	for(unsigned long long i = 2; i < 10; i++){
+	for(unsigned long long i = 2; i < 9; i++){
 
 		if(usrNum > 9){
 			if(usrNum % i){
