@@ -1,23 +1,17 @@
 //pre-processors
 #include <iostream>
+#include <vector>
 #include "Credentials.h"
 #include "Credentials.cpp"
 using namespace std;
 
-//prototypes
-void generateUser();
-
 
 int main(){
 
-
-	Credentials glenn("glopez", "Password123");
-	cout << glenn.getUsername() << ":" << glenn.getPassword() << endl;
+	vector<Credentials> netflix;
+	generateUser(netflix);
+	printUser(netflix);
 
 	cout << endl;
 	return 0;
-}
-
-void generateUser(){
-
 }
