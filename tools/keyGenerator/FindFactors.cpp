@@ -1,5 +1,5 @@
 /*
-	This algorythm will find the prime factors of a semi prime number
+	This algorythm finds the prime factors of a semi prime number
 */
 
 #include <iostream>
@@ -25,24 +25,23 @@ void calc_primeFactor(unsigned long long param){
 			if((primeDiv + primeI) == 2){
 				cout << endl;
 
-				/*
+				/* WHY THIS ALGORYTHM WORKS FOR MAKING SIMPLE PRODUCT-KEYS:
 				 *	Adding together the product of the semiprime number will provide
 				 *	a public-key (public solution) without giving out the two prime
 				 *	numbers used to generate the private key.
 				 *
 				 * Since the private-key is a product of two prime numbers a public-key
 				 * containing the sum of the two prime numbers that make up the semiprime
-				 * number can be given without revealing the solution (the two prime numbers).
+				 * number can be given without revealing the unique solution (product of 2 primes).
 				 * 	ie: private-key solution = 3 x 7 (both are prime numbers)
-				 *			 private-key = 21
+				 *			 private-key = 21 (from 3 x 7)
 				 *			 public-key = 10 (from 3 + 7)
 				 *
 				 * Since the number 10 is the public-key 2 solutions exist:
 				 *		- 3 + 7 = 10
 				 *		- 5 + 5 = 10
 				 *
-				 * The larger your prime numbers the longer it will take to generate
-				 * a solution.
+				 * Larger prime numbers will yeild an increasing ammount of possible solutions.
 				 */
 
 				cout << "SemiPrime (private-key): " << param << endl;
