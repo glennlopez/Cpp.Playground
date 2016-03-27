@@ -8,9 +8,9 @@
 using namespace std;
 
 
-void calc_primeFactor(unsigned long long param){
+void find_primeFactor(ull param){
 
-	unsigned long long 	user_num = param,
+	ull 	user_num = param,
 								result_div = 2, result_mod = 2,
 								i = 2;
 	unsigned short fac_found = 0;
