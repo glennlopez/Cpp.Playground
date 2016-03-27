@@ -1,3 +1,7 @@
+#include <iostream>
+//#include "isPrime.cpp"
+using namespace std;
+
 /*
 	This is a simple biprime product-key validation algorythm
 		- Subract a number incremently (i) from the public-key
@@ -6,23 +10,42 @@
 
 			note: private-key is a product of two large prime numbers
 */
-#include <iostream>
-#include "isPrime.cpp"
-using namespace std;
 
-void key_check(unsigned long long publicKey){
+void key_check(ull publicKey, ull privateKey){
 
-	unsigned long long const privateKey = 2910875234224437349;
 	unsigned long long solution, i = 1;
 	bool solved = 0;
-
-	int count_solutions = 0; //<-- DEBUG
 
 	do{
 		i++;
 		solution = publicKey - i;
 
-		//DEBUG: solution list printout
+		if(solution * i == privateKey){
+			solved = 1;
+			cout << "Public-Key valid!" << endl;
+
+		}
+		else if(i == publicKey){
+			cout << "Error: Public-Key invalid." << endl;
+			break;
+		}
+	} while(solved == 0);
+
+}
+
+
+void key_solve(ull publicKey, ull privateKey){
+
+	unsigned long long solution, i = 1;
+	bool solved = 0;
+
+	int count_solutions = 0;
+
+	do{
+		i++;
+		solution = publicKey - i;
+
+		//Solution list printout - slows down the check
 			int test_solution = isPrime(solution);
 			int test_i = isPrime(i);
 
@@ -30,14 +53,13 @@ void key_check(unsigned long long publicKey){
 				cout << i << " + " << solution << " = " << i + solution << " [" << solution * i << "]" << endl;
 				count_solutions++;
 			}
-		//END OF DEBUG: solution list printout
 
 		if(solution * i == privateKey){
 			solved = 1;
 			cout << "Valid key found!" << endl;
 
-			//DEBUG: print-out
-				cout << "Unique Solution: " << i << " + " << solution << endl;
+			//Print-out the solution
+			cout << "Unique Solution: " << i << " + " << solution << endl;
 		}
 		else if(i == publicKey){
 			cout << "Key is invalid." << endl;
