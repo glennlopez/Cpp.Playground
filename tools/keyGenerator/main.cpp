@@ -6,9 +6,11 @@
 	then E is the Key to n when (q * k) = 2910875234224437349
 */
 
-//dependencies
+//system libs
 #include <iostream>
 #include <vector>
+
+//dependencies
 #include "main.h"
 #include "isPrime.cpp"
 
@@ -24,7 +26,10 @@ int main(){
 	vector<ull> test_set(0);
 
 	//calc_primeFactor(2910875234224437349);
-	prime_gen(test_set, 1, 674353452323423);
+	//prime_gen(test_set, 1, 674353452323423);
+
+	prime_gen(test_set, 1, 1000);
+	prime_gen(test_set, 1, 6000);
 	prime_gen(test_set);
 	//key_check(3418108390,2910875234224437349);		//key_check(prublickey, privatekey);
 	//key_solutions(3418108390,2910875234224437349);		//key_check(prublickey, privatekey);
