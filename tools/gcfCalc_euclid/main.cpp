@@ -36,10 +36,10 @@ int main(){
 	//test_lcm();				//<-- Try it!
 	//lcm(6, 8);				//<-- Raw format
 
-	//test_calcPrime();		//<-- Try it!
+	test_calcPrime();		//<-- Try it!
 	//calcPrime(12);			//<-- Raw format (1 = prime)
 
-	test_listPrimes();		//Try it!
+	//test_listPrimes();		//Try it!
 
 
 	//common_multiples(3,4);	//<-- debug function (list all common multiples)

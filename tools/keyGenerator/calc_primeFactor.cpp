@@ -1,5 +1,5 @@
 /*
-	This algorythm finds the prime factors of a semi prime number
+	This algorythm finds the prime factors of a semiprime number
 */
 
 #include <iostream>
@@ -40,12 +40,13 @@ void calc_primeFactor(unsigned long long param){
 				 * Since the number 10 is the public-key 2 solutions exist:
 				 *		- 3 + 7 = 10
 				 *		- 5 + 5 = 10
+				 *		- Only 1 solution is correct (product of 2 primes)
 				 *
 				 * Larger prime numbers will yeild an increasing ammount of possible solutions.
 				 */
 
 				cout << "SemiPrime (private-key): " << param << endl;
-				cout << "Factors (solution): " << result_div << " + " << i << endl;
+				cout << "Unique Solution: " << result_div << " + " << i << endl;
 				cout << "Factor Sum (public-key): " << result_div + i << endl;
 				fac_found = 1;
 			}
