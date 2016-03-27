@@ -15,7 +15,7 @@
 #include "isPrime.cpp"
 
 //functional libs
-#include "solve_primes.cpp"
+#include "key_gen.cpp"
 #include "key_check.cpp"
 #include "prime_gen.cpp"
 #include "semiprime_gen.cpp"
@@ -23,7 +23,7 @@ using namespace std;
 
 int main(){
 
-	//store vectors here
+	//store primes here
 	vector<ull> test_set(0);
 
 	//calc_primeFactor(2910875234224437349);

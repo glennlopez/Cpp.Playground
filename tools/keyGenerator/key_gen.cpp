@@ -8,7 +8,7 @@
 using namespace std;
 
 
-void find_primeFactor(ull param){
+void find_primes(ull param){
 
 	ull 	user_num = param,
 								result_div = 2, result_mod = 2,
