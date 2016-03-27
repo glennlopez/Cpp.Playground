@@ -15,7 +15,7 @@
 #include "isPrime.cpp"
 
 //functional libs
-#include "find_primeFactor.cpp"
+#include "solve_primes.cpp"
 #include "key_check.cpp"
 #include "prime_gen.cpp"
 #include "semiprime_gen.cpp"
