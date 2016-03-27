@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "isPrime.cpp"
+//#include "isPrime.cpp"
 using namespace std;
 
 //generatePrimes(ammount, starting-at);
