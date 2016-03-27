@@ -11,12 +11,14 @@ using namespace std;
 			note: private-key is a product of two large prime numbers
 */
 
+//key validation
 void key_check(ull publicKey, ull privateKey){
 
-	unsigned long long solution, i = 1;
+	ull solution, i = 1;
 	bool solved = 0;
 
 	do{
+
 		i++;
 		solution = publicKey - i;
 
@@ -25,18 +27,20 @@ void key_check(ull publicKey, ull privateKey){
 			cout << "Public-Key valid!" << endl;
 
 		}
+
 		else if(i == publicKey){
 			cout << "Error: Public-Key invalid." << endl;
 			break;
 		}
+		
 	} while(solved == 0);
 
 }
 
+//finds all possible solutions for n=p*q
+void key_solutions(ull publicKey, ull privateKey){
 
-void key_solve(ull publicKey, ull privateKey){
-
-	unsigned long long solution, i = 1;
+	ull solution, i = 1;
 	bool solved = 0;
 
 	int count_solutions = 0;

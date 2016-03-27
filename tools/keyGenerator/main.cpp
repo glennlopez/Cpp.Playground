@@ -8,23 +8,26 @@
 
 //dependencies
 #include <iostream>
+#include <vector>
 #include "main.h"
 #include "isPrime.cpp"
 
 //functional libs
-#include "calc_primeFactor.cpp"
+#include "find_primeFactor.cpp"
 #include "key_check.cpp"
-#include "listPrime.cpp"
-#include "key_generator.cpp"
+#include "prime_gen.cpp"
 using namespace std;
 
 int main(){
-	cout << "calculating...";
-	cout << endl;
+
+	//store vectors here
+	vector<ull> test_set(0);
 
 	//calc_primeFactor(2910875234224437349);
-	//listPrimes(900000);
-	key_check(3418108390,2910875234224437349);		//key_check(prublickey, privatekey);
+	prime_gen(test_set, 1, 674353452323423);
+	prime_gen(test_set);
+	//key_check(3418108390,2910875234224437349);		//key_check(prublickey, privatekey);
+	//key_solutions(3418108390,2910875234224437349);		//key_check(prublickey, privatekey);
 
 
 	//..
