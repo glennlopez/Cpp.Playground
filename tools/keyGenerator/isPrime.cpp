@@ -1,17 +1,16 @@
-//FIXME: PRIME CALCULATOR NOT ACCURATE FOR LARGER PRIMES
-
 /*
 	This algorythm will check whether a number is prime:
 		- Divide a given number from 2 to 12
 		- If the number is
 */
 
-bool isPrime(unsigned int param){
+bool isPrime(ull param){
+	//FIXME: PRIME CALCULATOR NOT ACCURATE FOR LARGER PRIMES
 
-	unsigned long long usrNum = param;
+	ull usrNum = param;
 	bool isPrime = 0;
 
-	for(unsigned long long i = 2; i < 900; i++){ // <9
+	for(ull i = 2; i < 11; i++){ // <9
 
 		if(usrNum > 11){ // >9
 			if(usrNum % i){
@@ -48,13 +47,13 @@ bool isPrime(unsigned int param){
 }
 
 //Ranged Prime check (user-defined starting point)
-bool isPrime(unsigned int param, unsigned int prec){
+bool isPrime(ull param, ull prec){
 
-	unsigned long long usrNum = param;
+	ull usrNum = param;
 	bool isPrime = 0;
-	unsigned int start_at = prec;
+	ull start_at = prec;
 
-	for(unsigned long long i = 2; i < start_at; i++){ // <9
+	for(ull i = 2; i < start_at; i++){ // <9
 
 		if(usrNum > 11){ // >9
 			if(usrNum % i){
