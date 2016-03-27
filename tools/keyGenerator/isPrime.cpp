@@ -47,12 +47,14 @@ bool isPrime(unsigned int param){
 	return isPrime;
 }
 
-bool isPrime(unsigned int param, unsigned int range){
+//Ranged Prime check (user-defined starting point)
+bool isPrime(unsigned int param, unsigned int prec){
 
 	unsigned long long usrNum = param;
 	bool isPrime = 0;
+	unsigned int start_at = prec;
 
-	for(unsigned long long i = 2; i < 900; i++){ // <9
+	for(unsigned long long i = 2; i < start_at; i++){ // <9
 
 		if(usrNum > 11){ // >9
 			if(usrNum % i){

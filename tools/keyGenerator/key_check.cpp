@@ -7,15 +7,13 @@
 			note: private-key is a product of two large prime numbers
 */
 #include <iostream>
+#include "isPrime.cpp"
 using namespace std;
 
-void key_check(long long publicKey){
+void key_check(unsigned long long publicKey){
 
-	//publicKey checksum
-	//FIXME: THIS NEEDS A WAY OF PARSING PRIVATE-KEYS
-	// try: privateKey = fixed prime * incrementing prime number
-	long long const privateKey = 127157243331463;	//product of 2 prime numbers
-	long long solution, i;
+	unsigned long long const privateKey = 2910875234224437349;
+	unsigned long long solution, i = 1;
 	bool solved = 0;
 
 	int count_solutions = 0; //<-- DEBUG
@@ -29,24 +27,25 @@ void key_check(long long publicKey){
 			int test_i = isPrime(i);
 
 			if(test_i * test_solution){
-				cout << i << " x " << solution << " = " << publicKey << endl;
+				cout << i << " + " << solution << " = " << i + solution << " [" << solution * i << "]" << endl;
 				count_solutions++;
 			}
+		//END OF DEBUG: solution list printout
 
 		if(solution * i == privateKey){
 			solved = 1;
-			cout << "Key is Valid!" << endl;
+			cout << "Valid key found!" << endl;
 
 			//DEBUG: print-out
 				cout << "Unique Solution: " << i << " + " << solution << endl;
 		}
 		else if(i == publicKey){
-			cout << "Invalid Key!" << endl;
+			cout << "Key is invalid." << endl;
 			break;
 		}
 	} while(solved == 0);
 
 	//DEBUG: Counts the number of possible solution
-	cout << "FOUND " << count_solutions << " POSSIBLE SOLUTIONS" << endl;
+	cout << "TESTED " << count_solutions << " POSSIBLE SOLUTIONS" << endl;
 
 }
