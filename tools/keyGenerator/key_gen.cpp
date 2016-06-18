@@ -8,7 +8,7 @@
 using namespace std;
 
 
-void find_primes(ull param){
+void key_gen(ull param){
 
 	ull 	user_num = param,
 								result_div = 2, result_mod = 2,
