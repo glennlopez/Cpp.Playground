@@ -59,10 +59,10 @@ void FinalizeBid(){
 
 	if(prompt == 'y'){
 		curent_bid = user_bid;
+		cout << "Bid finalized at " << curent_bid << "." << endl;
 	}
 	else{
 		user_bid = -1;
-		cout << "Bid finalized at " << curent_bid << "." << endl;
 	}
 }
 
