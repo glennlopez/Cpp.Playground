@@ -61,8 +61,8 @@ void FinalizeBid(){
 		curent_bid = user_bid;
 	}
 	else{
-		user_bid = 0;
-		EnterBid();
+		user_bid = -1;
+		cout << "Bid finalized at " << curent_bid << "." << endl;
 	}
 }
 
