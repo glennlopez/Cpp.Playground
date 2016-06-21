@@ -14,6 +14,10 @@ int main() {
    numTacos  = 6;
 
    /* Your solution goes here  */
+	totalCost = (2 * numDrinks) + (3 * numTacos);
+
+
+
 
    cout << "Total cost: " << totalCost << endl;
 
