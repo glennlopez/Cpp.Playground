@@ -17,22 +17,22 @@ int main() {
 
    /* Your solution goes here  */
 	if(carYear <= 1969){
-		cout << "Probably has a few safety features";
+		cout << "Probably has few safety features.";
 		cout << endl;
 	}
 
 	if(carYear >= 1970){
-		cout << "Probably has seat belts";
+		cout << "Probably has seat belts.";
 		cout << endl;
 	}
 
 	if(carYear >= 1990){
-		cout << "Probobly has anti-lock breaks";
+		cout << "Prabobly has anti-lock brakes.";
 		cout << endl;
 	}
 
 	if(carYear >= 2000){
-		cout << "Probably has airbags";
+		cout << "Probably has airbags.";
 		cout << endl;
 	}
 
