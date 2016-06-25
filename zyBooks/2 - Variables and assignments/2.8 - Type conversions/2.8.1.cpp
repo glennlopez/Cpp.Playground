@@ -10,7 +10,7 @@ int main() {
    int numFamilies = 3;
    double avgKids = 0.0;
 
-   /* Your solution goes here  */
+   /* Your solution goes here */
 
 	avgKids = static_cast<double>(numKidsA + numKidsB + numKidsC) / static_cast<double>(numFamilies);
 
