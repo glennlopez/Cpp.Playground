@@ -34,8 +34,16 @@ int main() {
       taxRate = 0.20;
    }
    // FIXME: Add tier
+
+	//2. Modify the program to add a new tier: Annual income above 50000 but less than or equal to 100000 is taxed at the rate of 30%
+	else if(annualSalary <= 100000){
+		taxRate = 0.30;
+	}
+
+	// and annual income above 100000 is taxed at 40%.
+
    else {
-      taxRate = 0.30;
+      taxRate = 0.40;
    }
 
    taxToPay = static_cast<int>(annualSalary * taxRate);   // Truncate tax to an integer amount
