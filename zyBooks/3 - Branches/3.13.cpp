@@ -27,11 +27,15 @@ int main() {
    int overtimeHours = 0;
    const int WEEKLY_LIMIT = 40;
 
-   cout << "Enter hourly wage: " << endl;
+   cout << "Enter hourly wage: ";
    cin >> hourlyWage;
 
    // FIXME: Get user input value for weeklyHours
    weeklyHours = 40;
+
+	//fixed
+	cout << "Enter weekly hours (40hrs/week): ";
+	cin >> weeklyHours;
 
 
    if (weeklyHours <= WEEKLY_LIMIT) {
@@ -43,6 +47,9 @@ int main() {
                                       (hourlyWage * overtimeHours * 1.5));
    }
    cout << "Weekly salary is: " << weeklySalary << endl;
+	cout << "Bi-weekly salary is: " << weeklySalary * 2;
+
+	cout << endl;
 
    return 0;
 }
