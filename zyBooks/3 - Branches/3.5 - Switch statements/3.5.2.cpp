@@ -11,7 +11,22 @@ int main() {
    origLetter = 'a';
 
    /* Your solution goes here  */
+	switch (origLetter) {
+		case 'a':
+		case 'A':
+			cout << "Alpha";
+		break;
 
+		case 'b':
+		case 'B':
+			cout << "Beta";
+		break;
 
+		default:
+			cout << "Unknown";
+		break;
+	}
+
+	cout << endl;
    return 0;
 }
