@@ -10,6 +10,16 @@ int main() {
    bool isBalloon = false;
 
    /* Your solution goes here  */
+	if( (isBalloon) && !(isRed) ){
+		cout << "Balloon";
+	}
+	else if( (isRed) && (isBalloon) ){
+		cout << "Red balloon";
+	}
+	else{
+		cout << "Not a balloon";
+	}
 
+	cout << endl;
    return 0;
 }
