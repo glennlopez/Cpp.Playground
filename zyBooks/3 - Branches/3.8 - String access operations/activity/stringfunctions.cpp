@@ -10,6 +10,12 @@ int main(){
 	string myString_1 = "string cheese";
 	string myString_2 = "protractor";
 
+	int strLen1 = myString_1.length();
+	int strLen2 = myString_2.length();
+
+	cout << "STR1: " << strLen1 << endl;
+	cout << "STR2: " << strLen2 << endl;
+
 	cout << endl;
 	return 0;
 }
