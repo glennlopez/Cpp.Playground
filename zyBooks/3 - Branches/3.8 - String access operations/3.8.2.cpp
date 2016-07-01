@@ -3,7 +3,7 @@
 using namespace std;
 
 /*
-	Write an expression to detect that the first character of userInput matches firstLetter. 
+	Write an expression to detect that the first character of userInput matches firstLetter.
 */
 
 int main() {
@@ -13,7 +13,8 @@ int main() {
    userInput = "banana";
    firstLetter = 'b';
 
-   if (/* Your solution goes here  */) {
+/* Your solution goes here  */
+   if (userInput.at(0) == firstLetter) {
       cout << "Found match: " << firstLetter << endl;
    }
    else {
