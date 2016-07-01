@@ -17,6 +17,18 @@ int main() {
 
    /* Your solution goes here  */
 
+	string word = "darn";	//word to censor
+
+	int wordFound = -1;		//initiate to less than 0
+	wordFound = userInput.find(word);	//
+
+	//if wordFound is larger than -1 then it found the word you are looking for
+	if(wordFound >= 0){
+		cout << "Censored" << endl;
+	}
+	else{
+		cout << userInput << endl;
+	}
 
 
 
@@ -39,5 +51,6 @@ int main() {
 
 	*/
 
+	cout << endl;
    return 0;
 }
