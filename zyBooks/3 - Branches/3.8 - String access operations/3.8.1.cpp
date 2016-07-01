@@ -14,6 +14,7 @@ int main() {
    userInput = "Hello";
 
    /* Your solution goes here  */
+	stringSize = userInput.size();
 
    cout << "Size of userInput: " << stringSize << endl;
 
