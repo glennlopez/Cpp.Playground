@@ -17,5 +17,27 @@ int main() {
 
    /* Your solution goes here  */
 
+
+
+
+
+	//WRONG ANSWERS//---------------------------------
+	/*
+
+	string word = "darn";	//word to censor (used for comparison)
+	int wordLength = word.length();	//length of word to censor
+	int indexDarn = userInput.find('d');	//find the first letter on censored word
+	string find = userInput.substr(indexDarn, wordLength); //place the suspected bad-word in a var
+
+	//if the found word and cencored word matches censor the found word
+	if(word == find){
+		cout << "Censored" << endl;
+	}
+	else{
+		cout << userInput << endl;;
+	}
+
+	*/
+
    return 0;
 }
