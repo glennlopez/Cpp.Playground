@@ -12,9 +12,11 @@ int main(){
 
 	int strLen1 = myString_1.length();
 	int strLen2 = myString_2.length();
+	int strFind = myString_1.find('e');
 
-	cout << "STR1: " << strLen1 << endl;
-	cout << "STR2: " << strLen2 << endl;
+	cout << "STRLen1: " << strLen1 << endl;
+	cout << "STRLen2: " << strLen2 << endl;
+	cout << "STRFind: " << strFind << endl;
 
 	cout << endl;
 	return 0;
