@@ -6,8 +6,12 @@ using namespace std;
 //getline(input stream, string var, deliminator char);
 
 int main(){
+	string myString = "undefined";
 
 	cout << "What is your name: ";
+	getline(cin, myString);
+
+	cout << "Name: " << myString << endl;
 
 	cout << endl;
 	return 0;
