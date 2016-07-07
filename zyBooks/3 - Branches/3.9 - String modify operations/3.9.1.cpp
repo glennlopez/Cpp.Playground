@@ -14,6 +14,8 @@ int main() {
    char spaceChar = ' ';
 
    /* Your solution goes here  */
+	secretID.push_back(spaceChar);
+	secretID = secretID + lastName;
 
    cout << secretID << endl;
    return 0;
