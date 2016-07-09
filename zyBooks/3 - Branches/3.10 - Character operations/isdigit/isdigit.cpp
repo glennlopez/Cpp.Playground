@@ -25,7 +25,7 @@ int main(){
 	}
 
 	//display output
-	if(hasDigit){
+	if(hasDigit){ //FIXME - still giving hasDigit = 1 when it doesnt
 		cout << "Error: use only letters." << endl;
 	}
 	else{
