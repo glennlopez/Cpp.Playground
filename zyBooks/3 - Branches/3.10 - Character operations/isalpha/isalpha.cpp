@@ -17,23 +17,35 @@ using namespace std;
 int main(){
 
 	string myString = "?";
-	bool hasNum = 0;
+	string myString_1 = "?";
+	bool hasAlpha = 0;
+	bool isSame = 0;
 
 	//enter name
-	cout << "Enter name: ";
+	cout << "Enter passcode: ";
 	getline(cin, myString);
 
-	cout << myString << endl;
-
 	//check if name has numbers
-	for(int i = 0; i < myString.length(); i++){
-
+	for(unsigned int i = 0; i < myString.length(); i++){
+		hasAlpha = hasAlpha + isalpha(myString.at(i));
 	}
 
+	//next procedure
+	if(hasAlpha == 0){
+		cout << "Re-type passcode: ";
+		getline(cin, myString_1);
+	}
+	else{
+		cout << "Error: Passcode has letters!" << endl;
+	}
 
-	//password has numbers:
-
-	//password has no numbers:
+	//if passcode is intended passcode
+	if(myString != myString_1){
+		cout << "Error: Previous passcode did not match, try again!" << endl;
+	}
+	else{
+		cout << "Your password is set: " << myString << endl;
+	}
 
 
 	cout << endl;
