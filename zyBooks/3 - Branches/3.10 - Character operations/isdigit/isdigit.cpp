@@ -25,9 +25,13 @@ int main(){
 		hasDigit = hasDigit + isdigit(myString_1.at(i));
 	}
 
-	//display error
-
-	//display success
+	//display output
+	if(hasDigit){
+		cout << "Error: use only letters." << endl;
+	}
+	else{
+		cout << "Welcome, " << myString_1 << endl;
+	}
 
 	cout << endl;
 	return 0;
