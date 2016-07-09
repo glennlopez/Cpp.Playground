@@ -19,7 +19,6 @@ int main(){
 	string myString = "?";
 	string myString_1 = "?";
 	bool hasAlpha = 0;
-	bool isSame = 0;
 
 	//enter name
 	cout << "Enter passcode: ";
