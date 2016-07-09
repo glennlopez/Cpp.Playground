@@ -13,7 +13,6 @@ using namespace std;
 int main(){
 
 	string myString_1 = "?";
-	string myString_2 = "?";
 	bool hasDigit = 0;
 
 	//ask for username
