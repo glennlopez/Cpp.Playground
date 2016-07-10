@@ -20,12 +20,12 @@ int main(){
 	getline(cin, myString_1);
 
 	//check username for numbers
-	for(unsigned int i = 0; i < myString_1.length(); i++){
+	for(unsigned int i = 0; i < myString_1.length() - 1; i++){
 		hasDigit = hasDigit + isdigit(myString_1.at(i));
 	}
 
 	//display output
-	if(hasDigit){ //FIXME - still giving hasDigit = 1 when it doesnt
+	if(hasDigit){
 		cout << "Error: use only letters." << endl;
 	}
 	else{
