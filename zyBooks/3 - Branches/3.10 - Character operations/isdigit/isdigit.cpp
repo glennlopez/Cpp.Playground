@@ -20,7 +20,7 @@ int main(){
 	getline(cin, myString_1);
 
 	//check username for numbers
-	for(unsigned int i = 0; i < myString_1.length() - 1; i++){
+	for(unsigned int i = 0; i < myString_1.length(); i++){
 		hasDigit = hasDigit + isdigit(myString_1.at(i));
 	}
 
