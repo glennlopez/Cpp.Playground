@@ -15,6 +15,11 @@ int main() {
    passCode = "1 ";
 
    /* Your solution goes here  */
+	for(unsigned int i = 0; i < passCode.length(); i++){
+		if(isspace(passCode.at(i))){
+			passCode.at(i) = '_';
+		}
+	}
 
    cout << passCode << endl;
    return 0;
