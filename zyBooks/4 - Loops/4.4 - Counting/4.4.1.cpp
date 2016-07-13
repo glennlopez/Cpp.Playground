@@ -13,6 +13,10 @@ int main() {
    userNum = 4;    // Assume positive
 
    /* Your solution goes here  */
+	while(i < userNum){
+		i = i + 1;
+		cout << i << " ";
+	}
 
    cout << endl;
 
