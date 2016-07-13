@@ -16,7 +16,7 @@ int main() {
    int userNum = 0;
 
    userNum = 9;
-   while (/* Your solution goes here  */) {
+   while (userNum > -1) {	//<-- solution
       cout << "Body" << endl;
       cin >> userNum;
    }
