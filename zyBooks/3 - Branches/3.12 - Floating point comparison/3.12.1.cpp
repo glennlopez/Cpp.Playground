@@ -12,7 +12,7 @@ int main() {
 
    sensorReading = 1.0/3.0;
 
-   if (/* Your solution goes here  */) {
+   if ((sensorReading - targetValue) < 0.0001) {	//<-- solution
       cout << "Equal" << endl;
    }
    else {
