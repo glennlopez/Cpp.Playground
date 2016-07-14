@@ -1,5 +1,6 @@
 
 #include <iostream>
+#include <vector>
 using namespace std;
 
 
@@ -14,6 +15,45 @@ using namespace std;
 */
 
 int main(){
+
+	unsigned int a, b, n, i, sum;
+	unsigned int maxNum = 4000000;
+
+	vector<int> rawFib;		//stores raw Fibonacci
+	vector<int> evenFib;		//stores even Fibonacci
+
+	a = 1;
+	b = 1;
+	n = 1;
+	sum = 0;
+
+	//generate raw fib seq
+	for(i = 0; n < maxNum; i++){
+		a = b;
+		b = n;
+		rawFib.push_back(n);
+		n = a + b;
+	}
+
+	//collect even fib numbers
+	for(i = 0; i < rawFib.size(); i++){
+		if(!(rawFib.at(i) % 2)){
+			evenFib.push_back(rawFib.at(i));
+		}
+	}
+
+	//add up all even fib numbers
+	for(i = 0; i < evenFib.size(); i++){
+		sum = sum + evenFib.at(i);
+	}
+
+	//Answer
+	cout << endl;
+	cout << "Sum of Fibonacci sequence whose values do not exceed four million: " << sum;
+
+
+
+
 
 
 	cout << endl;
