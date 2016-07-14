@@ -20,32 +20,24 @@ int main(){
 	unsigned int a, b, n, i, sum;
 	unsigned int maxNum = 4000000;
 
-	vector<int> rawFib;		//stores raw Fibonacci
-	vector<int> evenFib;		//stores even Fibonacci
-
 	a = 1;
 	b = 1;
 	n = 1;
 	sum = 0;
 
-	//generate raw fib seq
+	//Fibonacci math
 	for(i = 0; n < maxNum; i++){
+		//shift previous n to b and previous b to a
 		a = b;
 		b = n;
-		rawFib.push_back(n); //<-- this part of the code can be golfed
-		n = a + b;
-	}
 
-	//collect even fib numbers from raw
-	for(i = 0; i < rawFib.size(); i++){
-		if(!(rawFib.at(i) % 2)){
-			evenFib.push_back(rawFib.at(i));
+		//add all even numbers into sum variable
+		if(!(n % 2)){
+			sum = sum + n;
 		}
-	}
 
-	//add up all even fib numbers
-	for(i = 0; i < evenFib.size(); i++){
-		sum = sum + evenFib.at(i);
+		//find new n
+		n = a + b;
 	}
 
 	//Answer
