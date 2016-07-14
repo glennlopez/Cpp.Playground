@@ -31,11 +31,11 @@ int main(){
 	for(i = 0; n < maxNum; i++){
 		a = b;
 		b = n;
-		rawFib.push_back(n);
+		rawFib.push_back(n); //<-- this part of the code can be golfed
 		n = a + b;
 	}
 
-	//collect even fib numbers
+	//collect even fib numbers from raw
 	for(i = 0; i < rawFib.size(); i++){
 		if(!(rawFib.at(i) % 2)){
 			evenFib.push_back(rawFib.at(i));
@@ -50,10 +50,6 @@ int main(){
 	//Answer
 	cout << endl;
 	cout << "Sum of Fibonacci sequence whose values do not exceed four million: " << sum;
-
-
-
-
 
 
 	cout << endl;
