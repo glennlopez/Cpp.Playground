@@ -13,6 +13,9 @@ int main() {
    userNum = 4;
 
    /* Your solution goes here  */
+	for(i = 1; i <= userNum; i++){
+		cout << i << " ";
+	}
 
    cout << endl;
 
