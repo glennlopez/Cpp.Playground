@@ -9,11 +9,7 @@ using namespace std;
 
 int main(){
 
-	//create a prime number algorythm
-
-	//push_back all prime numbers from 0 to 1000 into a vector
-
-	//add all elements inside vector and place the total in a variable
+	
 
 
 	cout << endl;
