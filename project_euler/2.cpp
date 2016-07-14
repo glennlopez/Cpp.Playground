@@ -25,18 +25,15 @@ int main(){
 	n = 1;
 	sum = 0;
 
-	//Fibonacci math
+	//Fibonacci math (for even numbers)
 	for(i = 0; n < maxNum; i++){
-		//shift previous n to b and previous b to a
 		a = b;
 		b = n;
 
-		//add all even numbers into sum variable
 		if(!(n % 2)){
 			sum = sum + n;
 		}
 
-		//find new n
 		n = a + b;
 	}
 
