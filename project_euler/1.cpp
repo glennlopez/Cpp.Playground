@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 
 /*		MULTIPLES OF 3 AND 5
@@ -11,27 +10,21 @@ using namespace std;
 int main(){
 
 	unsigned int i, sum, limit;
-	vector<int> uNums;
 
 	sum = 0;
 	limit = 1000;
 
+	//find multiples of 3 or 5, if found add to sum variable
 	for(i = 1; i < limit; i++){
 		if(!(i % 3)){
-			uNums.push_back(i);
 			sum = sum + i;
 		}
 		else if(!(i % 5)){
-			uNums.push_back(i);
 			sum = sum + i;
 		}
 	}
 
-	for(i = 1; i < uNums.size(); i++){
-		cout << uNums.at(i) << " ";
-	}
-
-	cout << "sum: " << sum;
+	cout << "The sum of all the multiples of 3 or 5 below 1000 is: " << sum;
 
 	cout << endl;
 	return 0;
