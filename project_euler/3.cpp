@@ -13,9 +13,9 @@ int main(){
 	vector<int> factors;
 	peek = 13195;
 
-	for(i = 1; i <= peek; i++){
+	for(i = 1; i <= (peek/2); i++){
 		if(!(peek % i)){ //FIX ME----------------
-			if( (!(i % 5)) || (!(i % 7)) || (!(i % 3)) || (!(i % 2)) || (!(i % 13)) || (!(i % 29)) || (!(i % 11)) || (!(i % 17)) ){
+			if(1){
 				factors.push_back(i);
 			}
 		}
