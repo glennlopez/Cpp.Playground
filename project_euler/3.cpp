@@ -42,10 +42,11 @@ int main(){
 
 	//test target number with list of primes to see which divides evenly
 	for(i = 0; i < primeNumbers.size(); i++){
+		//Prime test #1: Trial by division
 		if(!(targetNum % primeNumbers.at(i))){	//compare
-			//second prime number test
+			//Prime test #2:
 			if(1){
-
+				//FIX ME: NEED ANOTHER ALGO FOR TESTING PRIMES
 			}
 
 			primeFactors.push_back(primeNumbers.at(i));
