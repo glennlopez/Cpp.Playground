@@ -1,7 +1,10 @@
 #include <iostream>
 #include <vector>
-#include <math.h>
+#include <math.h>		//user for square root
 using namespace std;
+
+//Reference: http://www.wikihow.com/Check-if-a-Number-Is-Prime
+
 
 /*
 	Problem: https://projecteuler.net/problem=3
@@ -45,11 +48,9 @@ int main(){
 		//Prime test #1: Trial by division
 		if(!(targetNum % primeNumbers.at(i))){	//compare
 			//Prime test #2:
-			if(1){
-				//FIX ME: NEED ANOTHER ALGO FOR TESTING PRIMES
+			if(1){	//FIXME: needs a second prime test
+				primeFactors.push_back(primeNumbers.at(i));
 			}
-
-			primeFactors.push_back(primeNumbers.at(i));
 		}
 	}
 
