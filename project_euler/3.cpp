@@ -16,7 +16,7 @@ int main(){
 	vector<int> primeNumbers;
 	vector<int> primeFactors;
 
-	targetNum = 13195;					//target number to find prime factors of
+	targetNum = 600851475143;			//target number to find prime factors of
 	primeLimit = sqrt(targetNum);		//sets the maximum amount of prime numbers to generate
 
 	//push known prime numbers to prime number vector
@@ -27,19 +27,28 @@ int main(){
 	primeNumbers.push_back(11);
 	primeNumbers.push_back(13);
 	primeNumbers.push_back(17);
+	primeNumbers.push_back(19);
+	primeNumbers.push_back(23);
+	primeNumbers.push_back(29);
+	primeNumbers.push_back(31);
 
-	//generate prime numbers to test
+	//generate more prime numbers up to the square root of the target number
 	for(i = 2; i < primeLimit; i++){
-		//if divisable by these numbers, its not a prime
-		if( (i % 2) && (i % 3) && (i % 5) && (i % 7) && (i % 11) && (i % 13) && (i % 17)){
+		//remove anything divisible by these numbers to speed up the prime number generator
+		if( (i % 2) && (i % 3) && (i % 5) && (i % 7) && (i % 11) && (i % 13) && (i % 17) && (i % 19) && (i % 23) && (i % 29) && (i % 31) ){
 			primeNumbers.push_back(i);
 		}
 	}
 
-	//test target number with prime factors generated
+	//test target number with list of primes to see which divides evenly
 	for(i = 0; i < primeNumbers.size(); i++){
-		if( i % 2 ){	//compare
+		if(!(targetNum % primeNumbers.at(i))){	//compare
+			//second prime number test
+			if(1){
 
+			}
+
+			primeFactors.push_back(primeNumbers.at(i));
 		}
 	}
 
@@ -48,8 +57,8 @@ int main(){
 	cout << "Prime Limit: " << primeLimit;
 	cout << endl;
 
-	for(i = 0; i < primeNumbers.size(); i++){
-		cout << primeNumbers.at(i) << " ";
+	for(i = 0; i < primeFactors.size(); i++){
+		cout << primeFactors.at(i) << " ";
 	}
 
 	cout << endl;
