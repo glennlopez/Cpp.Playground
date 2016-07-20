@@ -11,8 +11,12 @@ using namespace std;
 */
 
 int main(){
+	long long targetNum, primeLimit;
 
+	targetNum = 13195;
+	primeLimit = sqrt(targetNum);
 
+	cout << primeLimit;
 
 	cout << endl;
 	return 0;
