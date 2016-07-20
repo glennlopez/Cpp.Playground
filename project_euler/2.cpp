@@ -17,7 +17,7 @@ using namespace std;
 int main(){
 
 	unsigned int a, b, n, i, sum;
-	unsigned int maxNum = 4000000;
+	unsigned int loopLimit = 4000000;
 
 	a = 1;
 	b = 1;
@@ -25,7 +25,7 @@ int main(){
 	sum = 0;
 
 	//Fibonacci math (for even numbers)
-	for(i = 0; n < maxNum; i++){
+	for(i = 0; n < loopLimit; i++){
 		a = b;
 		b = n;
 
