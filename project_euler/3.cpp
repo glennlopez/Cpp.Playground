@@ -3,7 +3,6 @@
 #include <math.h>		//user for square root
 using namespace std;
 
-//Reference: http://www.wikihow.com/Check-if-a-Number-Is-Prime
 
 
 /*
@@ -19,7 +18,7 @@ int main(){
 	vector<int> primeNumbers;
 	vector<int> primeFactors;
 
-	targetNum = 600851475143;			//target number to find prime factors of
+	targetNum = 23594186;			//target number to find prime factors of
 	primeLimit = sqrt(targetNum);		//sets the maximum amount of prime numbers to generate
 
 	//push known prime numbers to prime number vector
@@ -45,14 +44,15 @@ int main(){
 
 	//test target number with list of primes to see which divides evenly
 	for(i = 0; i < primeNumbers.size(); i++){
-		//Prime test #1: Trial by division
-		if(!(targetNum % primeNumbers.at(i))){	//compare
-			//Prime test #2:
-			if(1){	//FIXME: needs a second prime test
-				primeFactors.push_back(primeNumbers.at(i));
-			}
+
+
+	//Prime test #1: Trial by division
+	if(!(targetNum % primeNumbers.at(i))){
+		primeFactors.push_back(primeNumbers.at(i));
 		}
 	}
+
+	//Prime test #2: Fermats test
 
 	//debug output
 	cout << endl;
