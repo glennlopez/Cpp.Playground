@@ -11,11 +11,19 @@ using namespace std;
 */
 
 int main() {
-   int userNum  = 0;
+   int userNum  = 3;
    int i = 0;
    int j = 0;
 
    /* Your solution goes here  */
+	for(i = 0; i <= userNum; i++){
+		for(j = 0; j <= userNum; j++){
+			cout << " ";
+		}
+		cout << i << endl;
+	}
 
+
+	cout << endl;
    return 0;
 }
