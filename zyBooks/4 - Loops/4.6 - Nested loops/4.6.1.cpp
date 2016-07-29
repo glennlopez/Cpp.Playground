@@ -7,7 +7,6 @@ using namespace std;
 	 1
 	  2
 	   3
-
 */
 
 int main() {
@@ -16,14 +15,32 @@ int main() {
    int j = 0;
 
    /* Your solution goes here  */
-	for(;;){
-		for(;;){
-
+	for(i = 0; i <= userNum; i++){
+		for(j = 0; j < i; j++){
+			cout << " ";
 		}
+		cout << i << endl;
+	}
+
+	/* MISTAKES:
+
+	for(i = 0; i <= userNum; i++){
+		cout << i << endl;
+		for(j = 0; j <= i; j++){
+			cout << " ";
+		}
+	}
+
+	for(i = 0; i <= userNum; i++){
+		for(j = 0; j <= i; j++){
+			cout << " ";
+		}
+		cout << i << endl;
 	}
 
 
 
-	cout << endl;
+	*/
+
    return 0;
 }
