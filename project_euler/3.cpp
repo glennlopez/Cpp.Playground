@@ -1,9 +1,9 @@
 #include <iostream>
 #include <vector>
-#include <math.h>		//user for square root
+#include <math.h>
 using namespace std;
 
-
+//NOTE: I used this to solve problem 3 - unfortunately, the code still requires some work. It works for smaller numbers but not larger numbers (20% error for testing primes)
 
 /*
 	Problem: https://projecteuler.net/problem=3
