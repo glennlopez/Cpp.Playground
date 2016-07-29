@@ -18,7 +18,7 @@ int main(){
 	vector<int> primeNumbers;
 	vector<int> primeFactors;
 
-	targetNum = 23594186;			//target number to find prime factors of
+	targetNum = 600851475143;			//target number to find prime factors of
 	primeLimit = sqrt(targetNum);		//sets the maximum amount of prime numbers to generate
 
 	//push known prime numbers to prime number vector
