@@ -13,6 +13,14 @@ int main() {
    // Note: You'll need to define more variables
 
    /* Your solution goes here  */
+	int i,j;	//loop vars
+
+	char letter = 'A';
+
+	for(i =1; i <= numRows; i++){
+		cout << i;
+		cout << " ";
+	}
 
    cout << endl;
 
