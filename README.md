@@ -16,6 +16,7 @@ This is where I keep all my non project related C++ source codes. Its a simple r
 | ------------- |:--------------------:|
 | zyBooks     | my solution for zyBooks C++ online lesson |
 | project_euler     | my solutions for https://projecteuler.net/archives |
+| c++ tricks    | tips and tricks I learned along my c++ journey |
 | sandbox      | random trials for cpp lang |  
 | practice      | my ABC (always be coding) incentive |
 | concepts      | prototypes of concepts i plan on turning into fullscale |
