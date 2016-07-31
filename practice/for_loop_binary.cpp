@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+int pow(int num, int power);
+
 /*
 	Generate 4^2 binary combinations
 	ie:
@@ -14,5 +16,4 @@ using namespace std;
 
 int main(){
 
-	return 0;
 }
