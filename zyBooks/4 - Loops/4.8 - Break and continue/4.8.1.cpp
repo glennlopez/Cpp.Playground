@@ -21,6 +21,15 @@ int main() {
    userPattern  = "RRGBBRYBGY";
 
    /* Your solution goes here  */
+	for(i = 0; i <= simonPattern.size(); i++){
+		if(userPattern.at(i) != simonPattern.at(i)){
+			break;
+		}
+		else{
+			userScore++;
+		}
+	}
+
 
    cout << "userScore: " << userScore << endl;
 
