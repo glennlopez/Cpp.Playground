@@ -13,16 +13,20 @@ int main() {
    // Note: You'll need to define more variables
 
    /* Your solution goes here  */
-	int i,j;	//loop vars
 
-	char letter = 'A';
+	int rowNum = 1;	//needs to be outside numRows loop
 
-	for(i =1; i <= numRows; i++){
-		cout << i;
-		cout << " ";
+	for(int i = 0; i < numRows; i++){
+		char seat = 'A';	//needs to be outside numCols loop but inside numRows loop
+
+		for(int j = 0; j < numCols; j++){
+			cout << rowNum << seat << " ";
+			seat++;
+		}
+		rowNum ++;
 	}
 
-   cout << endl;
 
+	cout << endl;
    return 0;
 }
