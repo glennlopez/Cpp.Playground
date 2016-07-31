@@ -1,24 +1,8 @@
-#include <iostream>
-using namespace std;
-
-int pow(int num, int power);
-
-
-//MAIN
-int main(){
-
-cout << pow(2,3);
-
-}
-
-
-
-
-//POW FUNC DEBUG
 int pow(int num, int power){
+	int multiplyer = num;
 
-	for(int i = 0; i < power; i++){
-		cout << num << " ";
+	for(int i = 1; i < power; i++){
+		num = num * multiplyer;
 	}
 
 	return num;
