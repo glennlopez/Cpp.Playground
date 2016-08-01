@@ -23,7 +23,7 @@ int main(){
 	//generate 3-digit products;
 	for(i = minVal; i <= maxVal; i++){
 		for(j = maxVal; j >= minVal; j--){
-			//test each product for a Palindrome number
+			//test each product combination for a Palindrome number
 			paliNum = test_palindrome((i*j), paliNum);
 		}
 
