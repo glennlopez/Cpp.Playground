@@ -1,5 +1,5 @@
 #include <iostream>
-#include "power.cpp"
+#include "calc_power.cpp"
 using namespace std;
 
 int main(){
