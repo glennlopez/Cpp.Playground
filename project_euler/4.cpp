@@ -16,6 +16,7 @@ int main(){
 	unsigned int maxVal, minVal, paliNum;
 	unsigned int i, j;
 
+	//number generator variables
 	paliNum = 0;
 	maxVal = 1000;
 	minVal = 99;
@@ -36,19 +37,20 @@ int main(){
 }
 
 
-//PALINDROME TEST FUCNTIONS
+//PALINDROME TEST FUNCTION
 int test_palindrome(int Number, int paliNum){
 	string origNum;
 
-	//convert int to string to check each number
+	//int to string converter
 	ostringstream convert;
 	convert << Number;
 	origNum = convert.str();
 
+	//test variables
 	int numOfTest = origNum.size()/2;
 	int numOfPass = 0;
 
-	//palindromic omparitor
+	//palindromic tester
 	for(unsigned int i = 0; i < (origNum.size()/2); i++){
 		if( origNum.at(i) != origNum.at(origNum.size()-1 -i)){
 			break;
@@ -58,7 +60,7 @@ int test_palindrome(int Number, int paliNum){
 		}
 	}
 
-	//replace old paliNum if New number is larger
+	//replace smaller palindromic with laarger palindromic
 	if(numOfTest == numOfPass){
 		if(Number > paliNum){
 			paliNum = Number;
