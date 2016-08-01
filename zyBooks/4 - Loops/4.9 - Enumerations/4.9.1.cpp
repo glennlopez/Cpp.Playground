@@ -12,6 +12,16 @@ int main() {
    GroceryItem userItem = GR_APPLES;
 
    /* Your solution goes here  */
+	if((userItem == GR_APPLES) || (userItem == GR_BANANAS)){
+		cout << "Fruit";
+	}
+	else if((userItem == GR_JUICE) || (userItem == GR_WATER)){
+		cout << "Drink";
+	}
+	else{
+		cout << "Unknown";
+	}
 
+	cout << endl;
    return 0;
 }
