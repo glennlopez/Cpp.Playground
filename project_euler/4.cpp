@@ -16,6 +16,7 @@ int main(){
 	int maxVal, ceiling, paliNum;
 	unsigned int i, j;
 
+	paliNum = 0;
 	maxVal = 1000;
 	ceiling = (maxVal/2);
 
@@ -27,8 +28,7 @@ int main(){
 
 	}
 
-	paliNum = 909;
-	cout << test_palindrome(222, paliNum);
+	cout << test_palindrome(2212, paliNum);
 
 
 	cout << endl;
@@ -37,34 +37,33 @@ int main(){
 
 
 
-	int test_palindrome(int Number, int paliNum){
+int test_palindrome(int Number, int paliNum){
+	string origNum;
 
-		string origNum;
+	//convert int to string to check each number
+	ostringstream convert;
+	convert << Number;
+	origNum = convert.str();
 
-		//convert int to string to check each number
-		ostringstream convert;
-		convert << Number;
-		origNum = convert.str();
+	int numOfTest = origNum.size()/2;
+	int numOfPass = 0;
 
-		int numOfTest = origNum.size()/2;
-		int numOfPass = 0;
-
-		//palindromic omparitor
-		for(int i = 0; i < (origNum.size()/2); i++){
-			if( origNum.at(i) != origNum.at(origNum.size()-1 -i)){
-				break;
-			}
-			else{
-				numOfPass++;
-			}
+	//palindromic omparitor
+	for(int i = 0; i < (origNum.size()/2); i++){
+		if( origNum.at(i) != origNum.at(origNum.size()-1 -i)){
+			break;
 		}
-
-		//replace old paliNum if New number is larger
-		if(numOfTest == numOfPass){
-			if(Number > paliNum){
-				paliNum = Number;
-			}
+		else{
+			numOfPass++;
 		}
-
-		return paliNum;
 	}
+
+	//replace old paliNum if New number is larger
+	if(numOfTest == numOfPass){
+		if(Number > paliNum){
+			paliNum = Number;
+		}
+	}
+
+	return paliNum;
+}
