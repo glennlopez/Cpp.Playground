@@ -10,6 +10,22 @@ using namespace std;
 
 int main(){
 
+	int maxVal, ceiling;
+	int i, j;
+
+	maxVal = 1000;
+	ceiling = (maxVal/2);
+
+	//generate 3-digit products;
+	for(i = 99; i <= ceiling; i++){
+		for(j = maxVal; j >= ceiling; j--){
+			cout << i << " * " << j << " = " << i * j;
+			cout << endl;
+		}
+
+	}
+
+
 	cout << endl;
 	return 0;
 }
