@@ -13,31 +13,30 @@ int test_palindrome(int Number, int paliNum);
 
 int main(){
 
-	int maxVal, ceiling, paliNum;
+	unsigned int maxVal, minVal, paliNum;
 	unsigned int i, j;
 
 	paliNum = 0;
 	maxVal = 1000;
-	ceiling = (maxVal/2);
+	minVal = 99;
 
 	//generate 3-digit products;
-	for(i = 99; i <= 999; i++){
-		for(j = maxVal; j >= 99; j--){
-			//<--- do the comparisong here
-			cout << test_palindrome((i*j), paliNum);
+	for(i = minVal; i <= maxVal; i++){
+		for(j = maxVal; j >= minVal; j--){
+			//test each product for a Palindrome number
 			paliNum = test_palindrome((i*j), paliNum);
-			cout << endl;
 		}
 
 	}
 
+	cout << "Largest palindrome made from the product of two 3-digit numbers: " << paliNum;
 
 	cout << endl;
 	return 0;
 }
 
 
-
+//PALINDROME TEST FUCNTIONS
 int test_palindrome(int Number, int paliNum){
 	string origNum;
 
@@ -50,7 +49,7 @@ int test_palindrome(int Number, int paliNum){
 	int numOfPass = 0;
 
 	//palindromic omparitor
-	for(int i = 0; i < (origNum.size()/2); i++){
+	for(unsigned int i = 0; i < (origNum.size()/2); i++){
 		if( origNum.at(i) != origNum.at(origNum.size()-1 -i)){
 			break;
 		}
