@@ -21,14 +21,15 @@ int main(){
 	ceiling = (maxVal/2);
 
 	//generate 3-digit products;
-	for(i = 99; i <= ceiling; i++){
-		for(j = maxVal; j >= ceiling; j--){
+	for(i = 99; i <= 999; i++){
+		for(j = maxVal; j >= 99; j--){
 			//<--- do the comparisong here
+			cout << test_palindrome((i*j), paliNum);
+			paliNum = test_palindrome((i*j), paliNum);
+			cout << endl;
 		}
 
 	}
-
-	cout << test_palindrome(2212, paliNum);
 
 
 	cout << endl;
