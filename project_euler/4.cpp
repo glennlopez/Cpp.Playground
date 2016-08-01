@@ -1,5 +1,8 @@
 #include <iostream>
+#include <sstream>
 using namespace std;
+
+int test_palindrome(int Number, int paliNum);
 
 /*
 	https://projecteuler.net/problem=4
@@ -10,8 +13,8 @@ using namespace std;
 
 int main(){
 
-	int maxVal, ceiling;
-	int i, j;
+	int maxVal, ceiling, paliNum;
+	unsigned int i, j;
 
 	maxVal = 1000;
 	ceiling = (maxVal/2);
@@ -19,13 +22,49 @@ int main(){
 	//generate 3-digit products;
 	for(i = 99; i <= ceiling; i++){
 		for(j = maxVal; j >= ceiling; j--){
-			cout << i << " * " << j << " = " << i * j;
-			cout << endl;
+			//<--- do the comparisong here
 		}
 
 	}
+
+	paliNum = 909;
+	cout << test_palindrome(222, paliNum);
 
 
 	cout << endl;
 	return 0;
 }
+
+
+
+	int test_palindrome(int Number, int paliNum){
+
+		string origNum;
+
+		//convert int to string to check each number
+		ostringstream convert;
+		convert << Number;
+		origNum = convert.str();
+
+		int numOfTest = origNum.size()/2;
+		int numOfPass = 0;
+
+		//palindromic omparitor
+		for(int i = 0; i < (origNum.size()/2); i++){
+			if( origNum.at(i) != origNum.at(origNum.size()-1 -i)){
+				break;
+			}
+			else{
+				numOfPass++;
+			}
+		}
+
+		//replace old paliNum if New number is larger
+		if(numOfTest == numOfPass){
+			if(Number > paliNum){
+				paliNum = Number;
+			}
+		}
+
+		return paliNum;
+	}
