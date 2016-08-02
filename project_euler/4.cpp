@@ -46,12 +46,12 @@ int test_palindrome(int Number, int paliNum){
 	convert << Number;
 	origNum = convert.str();
 
-	//test variables
-	int numOfTest = origNum.size()/2;
-	int numOfPass = 0;
+	//tester variables
+	unsigned int numOfTest = origNum.size()/2;
+	unsigned int numOfPass = 0;
 
 	//palindromic tester
-	for(unsigned int i = 0; i < (origNum.size()/2); i++){
+	for(unsigned int i = 0; i < (numOfTest); i++){
 		if( origNum.at(i) != origNum.at(origNum.size()-1 -i)){
 			break;
 		}
