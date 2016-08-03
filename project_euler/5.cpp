@@ -10,6 +10,15 @@ using namespace std;
 
 int main(){
 
+	//iterate through numbers starting from 20
+		//test each iterations 1 - 20
+		//if 20 pass then:
+			//print the number that passed iterations of divisions without remainders
+		//if fail then:
+			//break; move on to the next iteration
+
+
+
 
 
 	cout << endl;
