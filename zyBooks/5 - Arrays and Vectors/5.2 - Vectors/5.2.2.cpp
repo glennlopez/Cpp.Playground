@@ -21,6 +21,15 @@ int main() {
    runTimes.at(4) = 808;
 
    /* Your solution goes here  */
+	unsigned int i, list;
+
+	i = 0;
+	list = 2; 	//0,1,2
+
+	do{
+		cout << runTimes.at(i) << endl;
+	}
+	while(i++ < list);
 
    return 0;
 }
