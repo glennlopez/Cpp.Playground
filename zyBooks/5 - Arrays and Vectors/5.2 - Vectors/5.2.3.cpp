@@ -26,6 +26,15 @@ int main() {
    courseGrades.at(3) = 10;
 
    /* Your solution goes here  */
+	for(i = 0; i < courseGrades.size(); i++){
+		cout << courseGrades.at(i) << " ";
+	}
+	cout << endl;
+
+	for(i = courseGrades.size(); i > 0; i--){
+		cout << courseGrades.at(i) << " ";
+	}
+	cout << endl;
 
    return 0;
 }
