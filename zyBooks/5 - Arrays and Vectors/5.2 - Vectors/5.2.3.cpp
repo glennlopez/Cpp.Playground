@@ -26,12 +26,14 @@ int main() {
    courseGrades.at(3) = 10;
 
    /* Your solution goes here  */
-	for(i = 0; i < courseGrades.size(); i++){
+
+	int loopLimiter = courseGrades.size() - 1;	//NOTE: size() starts at 1 NOT 0																																																				
+	for(i = 0; i <= loopLimiter; i++){
 		cout << courseGrades.at(i) << " ";
 	}
 	cout << endl;
 
-	for(i = courseGrades.size(); i > 0; i--){
+	for(i = loopLimiter; i >= 0; i--){
 		cout << courseGrades.at(i) << " ";
 	}
 	cout << endl;
