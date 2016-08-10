@@ -10,6 +10,7 @@ using namespace std;
 
 int main(){
 
+
 	//iterate through numbers starting from 20
 		//test each iterations 1 - 20
 		//if 20 pass then:
