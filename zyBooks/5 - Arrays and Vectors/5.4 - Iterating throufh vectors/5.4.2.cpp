@@ -23,6 +23,15 @@ int main() {
    matchValue = 2;
 
    /* Your solution goes here  */
+	numMatches = 0;
+	do{
+		if(userValues.at(i) == matchValue){
+			numMatches++;
+		}
+
+		i++;
+	}while(i <= userValues.size() - 1);
+
 
    cout << "matchValue: " << matchValue << ", numMatches: " << numMatches << endl;
 
