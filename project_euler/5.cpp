@@ -10,6 +10,23 @@ using namespace std;
 
 int main(){
 
+	unsigned int i;
+	unsigned int startNum, endLoop;
+
+	startNum = (20 * 20);
+	endLoop = 0;
+
+
+	//loop until n is divisible by numbers 1 through 10
+	while(!(endLoop)){
+		if(){
+
+		}
+
+	}
+
+
+
 
 	//iterate through numbers starting from 20
 		//test each iterations 1 - 20
