@@ -3,25 +3,26 @@
 using namespace std;
 
 /*
-	Add each element in origList with the corresponding value in offsetAmount. Print each sum followed by a space. Ex: If origList = {40, 50, 60, 70} and offsetAmount = {5, 7, 3, 0}, print:
-	45 57 63 70
+	For any element in keysList with a value greater than 100, print the corresponding value in itemsList, followed by a space. Ex: If keysList = {42, 105, 101, 100} and itemsList = {10, 20, 30, 40}, print:
+	20 30
+	Since keysList[1] and keysList[2] have values greater than 100, the value of itemsList[1] and itemsList[2] are printed.
 */
 
 int main() {
-   const int NUM_VALS = 4;
-   vector<int> origList(NUM_VALS);
-   vector<int> offsetAmount(NUM_VALS);
+   const int SIZE_LIST = 4;
+   vector<int> keysList(SIZE_LIST);
+   vector<int> itemsList(SIZE_LIST);
    int i = 0;
 
-   origList.at(0) = 40;
-   origList.at(1) = 50;
-   origList.at(2) = 60;
-   origList.at(3) = 70;
+   keysList.at(0) = 42;
+   keysList.at(1) = 105;
+   keysList.at(2) = 101;
+   keysList.at(3) = 100;
 
-   offsetAmount.at(0) = 5;
-   offsetAmount.at(1) = 7;
-   offsetAmount.at(2) = 3;
-   offsetAmount.at(3) = 0;
+   itemsList.at(0) = 10;
+   itemsList.at(1) = 20;
+   itemsList.at(2) = 30;
+   itemsList.at(3) = 40;
 
    /* Your solution goes here  */
 
