@@ -18,7 +18,16 @@ int main() {
    hourlyTemp.at(2) = 94;
    hourlyTemp.at(3) = 95;
 
-   /* Your solution goes here  */
+   /* Your solution goes here */
+
+	for(i = 0; i <= hourlyTemp.size() - 1; i++){
+		if(i < hourlyTemp.size() - 1){
+			cout << hourlyTemp.at(i) << ", ";
+		}
+		else{
+			cout << hourlyTemp.at(i);
+		}
+	}
 
    cout << endl;
 
