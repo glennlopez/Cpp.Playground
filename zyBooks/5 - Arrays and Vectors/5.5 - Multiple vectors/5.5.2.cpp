@@ -25,6 +25,11 @@ int main() {
    itemsList.at(3) = 40;
 
    /* Your solution goes here  */
+	for(i = 0; i <= itemsList.size() - 1; i++){
+		if(keysList.at(i) > 100){
+			cout << itemsList.at(i) << " ";
+		}
+	}
 
    cout << endl;
 
