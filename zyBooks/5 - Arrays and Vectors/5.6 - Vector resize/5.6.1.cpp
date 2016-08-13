@@ -3,7 +3,7 @@
 using namespace std;
 
 /*
-	Assign the size of vector sensorReadings to currentSize. 
+	Assign the size of vector sensorReadings to currentSize.
 */
 
 int main() {
@@ -13,6 +13,7 @@ int main() {
    sensorReadings.resize(10);
 
    /* Your solution goes here  */
+	currentSize = sensorReadings.size();
 
    cout << "Number of elements: " << currentSize << endl;
 
