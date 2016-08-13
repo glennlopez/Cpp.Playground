@@ -24,6 +24,15 @@ int main() {
    offsetAmount.at(3) = 0;
 
    /* Your solution goes here  */
+	for(i = 0; i <= origList.size() - 1; i++){
+		origList.at(i) += offsetAmount.at(i);
+	}
+
+	//print vectors
+	for(i = 0; i <= origList.size() - 1; i++){
+		cout << origList.at(i) << " ";
+	}
+
 
    cout << endl;
 
