@@ -19,6 +19,14 @@ int main() {
    lowerScores.at(3) = -3;
 
    /* Your solution goes here  */
+	for(i = 0; i <= lowerScores.size() - 1; i++){
+		if(lowerScores.at(i) <= 0){
+			lowerScores.at(i) = 0;
+		}
+		else{
+			lowerScores.at(i) -= 1;
+		}
+	}
 
    for (i = 0; i < SCORES_SIZE; ++i) {
       cout << lowerScores.at(i) << " ";
