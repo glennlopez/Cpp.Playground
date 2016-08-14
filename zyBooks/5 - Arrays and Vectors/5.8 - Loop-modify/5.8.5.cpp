@@ -3,7 +3,7 @@
 using namespace std;
 
 /*
-	If the vector oldData is the same as the vector newData, print "Data matches!" ended with a newline. Otherwise, assign oldData with newData. Ex: If oldData = {10, 12, 18} and newData = {25, 27, 29, 23}, then oldData becomes {25, 27, 29, 23}. 
+	If the vector oldData is the same as the vector newData, print "Data matches!" ended with a newline. Otherwise, assign oldData with newData. Ex: If oldData = {10, 12, 18} and newData = {25, 27, 29, 23}, then oldData becomes {25, 27, 29, 23}.
 */
 
 int main() {
@@ -21,6 +21,20 @@ int main() {
    newData.at(3) = 23;
 
    /* Your solution goes here  */
+	oldData.resize(newData.size());
+	int matches = 0;
+
+	for(i = 0; i <= newData.size() - 1; i++){
+		if(newData.at(i) == oldData.at(i)){
+			matches++;
+		}else{
+			oldData.at(i) = newData.at(i);
+		}
+	}
+
+	if(matches == newData.size()){
+		cout << "Data matches!" << endl;
+	}
 
   for (i = 0; i < oldData.size(); ++i) {
       cout << oldData.at(i) << " ";
