@@ -43,10 +43,9 @@ using namespace std;
 
 int main(){
 
-	//FIXME: convert this into a function lib after  --> long long isPrime(long long P);
-
-	long long
-
 	cout << endl;
 	return 0;
 }
+
+
+//** FUNCTIONS **//
