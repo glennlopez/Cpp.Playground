@@ -19,7 +19,10 @@ int main(){
 
 	//loop until n is divisible by numbers 1 through 10
 	while(!(endLoop)){
-		if(){
+		if(1/*temp*/){
+
+		}
+		else{
 
 		}
 
