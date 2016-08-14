@@ -18,6 +18,14 @@ int main() {
    oldScores.at(3) = 40;
 
    /* Your solution goes here  */
+	for(i = 0; i <= oldScores.size() - 1; i++){
+		if(i > 0){
+			newScores.at(i - 1) = oldScores.at(i);
+		}
+		else{
+			newScores.at(newScores.size() - 1) = oldScores.at(i);
+		}
+	}
 
    for (i = 0; i < SCORES_SIZE; ++i) {
       cout << newScores.at(i) << " ";
