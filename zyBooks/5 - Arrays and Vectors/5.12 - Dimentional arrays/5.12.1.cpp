@@ -8,6 +8,7 @@ using namespace std;
 */
 
 int main( ) {
+
    const int NUM_ROWS = 2;
    const int NUM_COLS = 2;
    int milesTracker[NUM_ROWS][NUM_COLS];
