@@ -20,8 +20,8 @@ int main(){
 	cout << "uName2[1]: " << uName2[1] << endl;
 	cout << "uName2[9]: " << uName2[9] << endl;
 	cout << "uName2[6]: " << uName2[6] << endl;
-	cout << "Size of uName2" << sizeof(uName2);
-	cout << "Size of uName1" << sizeof(uName1);
+	cout << "Size of uName2: " << sizeof(uName2) << endl;
+	cout << "Size of uName1: " << sizeof(uName1) << endl;
 
 	cout << endl;
 	return 0;
