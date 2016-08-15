@@ -34,7 +34,7 @@ int main(){
 	cout << "num2 size: " << sizeof(num2) << endl;
 	cout << "num2[1]: " << num2[1] << endl;
 	cout << endl;
-	cout << "num2[1] + num2[2]: " << num2[1] + num2[2] << endl;
+	cout << "num2[1] + num2[2]: " << (num2[1] - '0') + (num2[2] - '0') << endl;
 	cout << "num1[1] + num1[2]: " << num1[1] + num1[2] << endl;
 
 
