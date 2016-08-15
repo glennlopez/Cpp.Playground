@@ -22,6 +22,19 @@ int main( ) {
    milesTracker[1][1] = 40;
 
    /* Your solution goes here  */
+	maxMiles = milesTracker[0][0];
+	minMiles = milesTracker[0][0];
+
+	for(i = 0; i <= NUM_ROWS - 1; i++){
+		for(j = 0; j <= NUM_COLS - 1; j++){
+			if(milesTracker[i][j] < minMiles){
+				minMiles = milesTracker[i][j];
+			}
+			if(milesTracker[i][j] > maxMiles){
+				maxMiles = milesTracker[i][j];
+			}
+		}
+	}
 
     cout << "Min miles: " << minMiles << endl;
     cout << "Max miles: " << maxMiles << endl;
