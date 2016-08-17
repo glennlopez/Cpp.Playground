@@ -34,11 +34,13 @@ int main(){
 		}
 
 		n = a + b;
+		//debug output
+		//cout << n << endl;
 	}
 
 	//Answer
 	cout << endl;
-	cout << "Sum of Fibonacci sequence whose values do not exceed four million: " << sum;
+	cout << "Sum of EVEN Fibonacci sequence whose values do not exceed four million: " << sum;
 
 
 	cout << endl;
