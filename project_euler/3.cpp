@@ -45,10 +45,10 @@ int main(){
 	//test target number with list of primes to see which divides evenly
 	for(i = 0; i < primeNumbers.size(); i++){
 
+		//Prime test #1: Trial by division
+		if(!(targetNum % primeNumbers.at(i))){
+			primeFactors.push_back(primeNumbers.at(i));
 
-	//Prime test #1: Trial by division
-	if(!(targetNum % primeNumbers.at(i))){
-		primeFactors.push_back(primeNumbers.at(i));
 		}
 	}
 
