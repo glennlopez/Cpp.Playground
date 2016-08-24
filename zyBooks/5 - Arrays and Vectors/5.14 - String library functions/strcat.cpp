@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <cstring>
 using namespace std;
@@ -10,7 +11,7 @@ using namespace std;
 int main(){
 
 	char originalStr[] = "This is the original.";
-	char newStr[] = "This is the new.";
+	char newStr[30] = "This is the new.";	//<-- removing [30] will cause stack overflow
 
 	cout << "Original: " << originalStr << endl;
 	cout << "New: " << newStr << endl;
