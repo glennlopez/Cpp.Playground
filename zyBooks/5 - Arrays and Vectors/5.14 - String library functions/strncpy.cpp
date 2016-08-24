@@ -15,8 +15,9 @@ int main(){
 	cout << "originalString: " << originalString << endl;
 	cout << "newString: " << newString << endl;
 
-
+	strncpy(newString, originalString, 16);
 	cout << "...after copy..." << endl;
+	cout << "newString: " << newString << endl;
 
 	cout << endl;
 	return 0;
