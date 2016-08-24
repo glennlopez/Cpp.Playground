@@ -10,7 +10,7 @@ using namespace std;
 int main(){
 
 	char originalString[] = "This is a test.";
-	char copyString[20];	//<-- the size cannot be less than original string
+	char copyString[20] = "new str";	//<-- the size cannot be less than original string
 
 	cout << endl;
 	cout << "Length of original string: " << sizeof(originalString) << endl;
