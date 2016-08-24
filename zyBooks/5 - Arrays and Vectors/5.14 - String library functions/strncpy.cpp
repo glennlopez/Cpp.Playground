@@ -10,7 +10,7 @@ using namespace std;
 int main(){
 
 	char originalString[] = "This is a string for testing.";
-	char newString[sizeof(originalString) -1] = ""; //set newString to size of originalString
+	char newString[sizeof(originalString) -1] = "new str"; //set newString to size of originalString
 
 	cout << "originalString: " << originalString << endl;
 	cout << "newString: " << newString << endl;
