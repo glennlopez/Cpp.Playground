@@ -12,12 +12,18 @@ using namespace std;
 int main(){
 
 	char myString[30] = "?";
+	int count = 0;
 
 	cout << "Enter your first name: ";
 	cin >> myString;
 
 	if( (strchr(myString, 'n') != NULL) || (strchr(myString, 'N') != NULL ) ){
-		cout << "Your name contains an 'n'" << endl;
+		for(unsigned int i = 0; myString[i] != '\0'; i++){
+			if((myString[i] == 'n') || (myString[i] == 'N')){
+				count++;
+			}
+		}
+		cout << "Your name contains " << count << " n's" << endl;
 	}
 	else{
 		cout << "Your name does not contain an 'n'" << endl;
