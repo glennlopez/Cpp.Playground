@@ -10,7 +10,11 @@ using namespace std;
 
 int main(){
 
-	char myString[30] = "Name";
+	char myString[] = "Glenn";
+
+	cout << endl;
+	cout << "Contents of myString: " << myString << endl;
+	cout << "Number of characters in myString: " << strlen(myString) << endl;
 
 
 
