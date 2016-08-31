@@ -13,9 +13,10 @@ using namespace std;
 */
 
 void PrintTicTacToe(char horizChar, char vertChar) {
-	unsigned int horizNum;;
 
    /* Your solution goes here  */
+	unsigned int horizNum;
+
 	cout << "x" << vertChar << "x" << vertChar << "x" << endl;
 
 	horizNum = 5;
