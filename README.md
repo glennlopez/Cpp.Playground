@@ -19,10 +19,7 @@ This is where I keep all my non project related C++ source codes. Its a simple r
 | c++ tricks    | tips and tricks I learned along my c++ journey |
 | sandbox      | random trials for cpp lang |  
 | practice      | my ABC (always be coding) incentive |
-| concepts      | prototypes of concepts i plan on turning into fullscale |
 | tools      | programs or classes in C++ that i've made for myself |
-| games      | text based games i've made to play with what i've been learning |
-| archived      | old stuff stored in compression |
 | REFERANCE      | example codes for myself if I ever forget how to do them |
 
 ### Learning/Referance material
