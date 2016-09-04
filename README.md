@@ -17,10 +17,10 @@ This is where I keep all my non project related C++ source codes. Its a simple r
 | zyBooks     | my solution for zyBooks C++ online lesson |
 | project_euler     | solving https://projecteuler.net/archives using C++ |
 | c++ tricks    | tips and tricks I learned along my c++ journey |
+| c++ primer      | example codes/notes I made for myself for self teaching|
 | sandbox      | random trials for cpp lang |  
 | practice      | my ABC (always be coding) incentive |
 | tools      | programs or classes in C++ that i've made for myself |
-| REFERANCE      | example codes for myself if I ever forget how to do them |
 
 ### Learning/Referance material
 * http://www.cplusplus.com/doc/tutorial/
