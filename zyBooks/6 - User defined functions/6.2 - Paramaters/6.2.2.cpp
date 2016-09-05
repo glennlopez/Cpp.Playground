@@ -10,6 +10,10 @@ using namespace std;
 /*
 
 /* Your solution goes here  */
+int PrintFeetInchShort(int feet, int inch){
+	cout << feet << "' " << inch << "\"";
+}
+
 
 int main() {
    PrintFeetInchShort(5, 8);
