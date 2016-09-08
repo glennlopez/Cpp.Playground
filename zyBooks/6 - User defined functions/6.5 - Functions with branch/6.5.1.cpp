@@ -21,6 +21,7 @@ void PrintPopcornTime(int bagOunces) {
 	else{
 		cout << (6 * bagOunces) << " seconds" << endl;
 	}
+
 }
 
 int main() {
