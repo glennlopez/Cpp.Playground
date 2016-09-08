@@ -17,8 +17,8 @@ int main() {
    cout << "2, expecting 8, got: " << CubeNum(2) << endl;
 
    /* Your solution goes here  */
-	cout << "2, expecting 8, got: " << CubeNum(2) << endl;
-	cout << "2, expecting 8, got: " << CubeNum(2) << endl;
+	cout << "3, expecting 27, got: " << CubeNum(3) << endl;
+	cout << "-1, expecting -1, got: " << CubeNum(-1) << endl;
 	/* end solution */
 
    cout << "Testing completed" << endl;
