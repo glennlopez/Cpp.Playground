@@ -2,7 +2,7 @@
 using namespace std;
 
 /*
-	Using the CelsiusToKelvin function as a guide, create a new function, changing the name to KelvinToCelsius, and modifying the function accordingly. 
+	Using the CelsiusToKelvin function as a guide, create a new function, changing the name to KelvinToCelsius, and modifying the function accordingly.
 */
 
 double CelsiusToKelvin(double valueCelsius) {
@@ -14,6 +14,11 @@ double CelsiusToKelvin(double valueCelsius) {
 }
 
 /* Your solution goes here  */
+double KelvinToCelsius(double valueKelvin){
+	//T(°C) = T(K) - 273.15
+	double valueCelsius = valueKelvin - 273.15;
+	return valueCelsius;
+}
 
 int main() {
    double valueC = 0.0;
