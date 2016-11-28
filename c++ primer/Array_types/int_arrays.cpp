@@ -14,6 +14,14 @@ int main(){
 	cout << "sizeof(A1): " << sizeof(A1) << endl;
 	cout << "real size of A1: " << (sizeof(A1)/4) << endl;
 
+/*
+	cout << "display array contents: ";
+
+	for(int i = 0; i < ){
+
+	}
+*/
+
 	//adding int arrays
 	total = A1[0];
 	for(i = 1; i < sizeof(A1)/4; i++){
