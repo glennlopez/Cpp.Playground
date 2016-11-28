@@ -9,7 +9,7 @@ int main(){
 	cout << endl;
 
 	//NOTE THE SIZE OF ARRAY: notice how A1[1] is size 4, and A1 is size 40: 4 * 10 = 40
-	cout << "cout << A1: " << A1 << endl;	//gives the memory ID if array is type int
+	cout << "cout << A1 (memory ID): " << A1 << endl;	//gives the memory ID if array is type int
 	cout << "sizeof(A1[1]): " << sizeof(A1[1]) << endl;
 	cout << "sizeof(A1): " << sizeof(A1) << endl;
 	cout << "real size of A1: " << (sizeof(A1)/4) << endl;
