@@ -6,7 +6,8 @@ using namespace std;
 */
 
 /* Your solution goes here  */
-void CoordTransform(int xVal, int yVal, int &xValNew, int &yValNew){
+//void CoordTransform(int xVal, int yVal, int &xValNew, int &yValNew){ 	//<-- wrong!
+void CoordTransform(int xVal, int yVal, int &xValNew, int &yValNew){		//<-- right!
 	/* Forgetful error: Line above
 	 * Forgetting to use &xValNew instead of *xValNew
 	 * *xValNew is the
