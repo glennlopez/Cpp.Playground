@@ -21,6 +21,8 @@ This is where I keep all my non project related C++ source codes. Its a simple r
 | sandbox      | random trials for cpp lang |  
 | practice      | my ABC (always be coding) incentive |
 | tools      | programs or classes in C++ that i've made for myself |
+| common_errors      | logs of common errors I run into with C++ |
+| embedded_systems     | embedded systems programming using C++ |
 
 ### Learning/Referance material
 * http://www.cplusplus.com/doc/tutorial/
