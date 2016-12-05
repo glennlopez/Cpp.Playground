@@ -10,13 +10,28 @@ using namespace std;
 
 int main(){
 
- 	long n = (1*2*3*4*5*6*7*8*9*10)/2;
+	int usrQR = 0;
+
+	//user input prompt (for debugging)
+	cout << "Smallest Multiple of 1 - n: ";
+	cin >> usrQR;
+
+	int usrParam = usrQR; //user adjustable parameters (1 - usrParam)
+
+	long result = 0;
 	int nCount = 0;
-	int nTarget = 10;
+	int nTarget = usrParam;
+
+	long n = 1;
+	for(int i = 1; i < usrParam; i++){
+		n = n * i;
+	}
+
+	n = (n/4);
 
 	while(n > 0){
 		int d = 1;
-		while(d < 11){
+		while(d < nTarget + 1){
 			if((n % d) == 0){
 				nCount++;
 			}
@@ -24,16 +39,14 @@ int main(){
 		}
 
 		if(nCount == nTarget){
-			cout << n << endl;
+			result = n;
 		}
 
 		nCount = 0;
 		n--;
-
-
 	}
 
-
+	cout << result << endl;
 	cout << endl;
 	return 0;
 }
