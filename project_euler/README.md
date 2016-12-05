@@ -7,9 +7,9 @@ I use project euler primarily to help me discover my weaknesses in math. Its a t
 help me understand math in a fun and engaging way but also to sharpen up my problem solving, and
 independent research skills.
 
-<!--
+
 ![alt text](https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwih3p3n8t3QAhVJ1WMKHWU-AHYQjRwIBw&url=http%3A%2F%2Fwww.cprdnewberg.org%2Fgeneral%2Fpage%2Fmath-gamers-active-summer-camp&psig=AFQjCNGt0cA1fEC65yHYwYb5x3z0WKM6lw&ust=1481056295162619 "C++ Logo")
--->
+
 
 ### Problem Index
 
