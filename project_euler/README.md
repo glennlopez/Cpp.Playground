@@ -8,8 +8,10 @@ help me understand math in a fun and engaging way but also to sharpen up my prob
 independent research skills.
 
 
-![alt text](https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwih3p3n8t3QAhVJ1WMKHWU-AHYQjRwIBw&url=http%3A%2F%2Fwww.cprdnewberg.org%2Fgeneral%2Fpage%2Fmath-gamers-active-summer-camp&psig=AFQjCNGt0cA1fEC65yHYwYb5x3z0WKM6lw&ust=1481056295162619 "C++ Logo")
+![alt text](https://raw.githubusercontent.com/glennlopez/Cpp.Playground/master/project_euler/assets/index.png "Logo Title Text 1")
 
+Reference-style:
+![alt text][logo]
 
 ### Problem Index
 
