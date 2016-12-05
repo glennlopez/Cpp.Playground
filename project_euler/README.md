@@ -1,17 +1,13 @@
 <!-- https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet -->
 
-Project Euler
+![alt text](https://raw.githubusercontent.com/glennlopez/Cpp.Playground/master/project_euler/assets/index.png "Logo Title Text 1")
 =================
-This is where I store all my solutions for projecteuler.net (programmed in C++).
+This is where I store all my solutions for <b>projecteuler.net</b> (programmed in C++).
 I use project euler primarily to help me discover my weaknesses in math. Its a tool I use to
 help me understand math in a fun and engaging way but also to sharpen up my problem solving, and
 independent research skills.
 
 
-![alt text](https://raw.githubusercontent.com/glennlopez/Cpp.Playground/master/project_euler/assets/index.png "Logo Title Text 1")
-
-Reference-style:
-![alt text][logo]
 
 ### Problem Index
 
