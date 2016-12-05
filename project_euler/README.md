@@ -3,9 +3,8 @@
 ![alt text](https://raw.githubusercontent.com/glennlopez/Cpp.Playground/master/project_euler/assets/index.png "Logo Title Text 1")
 =================
 This is where I store all my solutions for <b>projecteuler.net</b> (programmed in C++).
-I use project euler primarily to help me discover my weaknesses in math. Its a tool I use to
-help me understand math in a fun and engaging way but also to sharpen up my problem solving, and
-independent research skills.
+ProjectEuler is my excuse for doing recreational-math which allows me
+to understand math in a fun and engaging way.
 
 
 
