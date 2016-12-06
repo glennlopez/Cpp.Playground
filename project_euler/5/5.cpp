@@ -27,11 +27,15 @@ int main(){
 		n = n * i;
 	}
 
-	n = (n/4);
-
 	while(n > 0){
+
+		
+
 		int d = 1;
 		while(d < nTarget + 1){
+
+
+
 			if((n % d) == 0){
 				nCount++;
 			}
