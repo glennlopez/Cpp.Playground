@@ -16,7 +16,7 @@ int main(){
 	cout << "Smallest Multiple of 1 - n: ";
 	cin >> usrQR;
 
-	int usrParam = usrQR; //user adjustable parameters (1 - usrParam)
+	int usrParam = usrQR; //user  parameters (1 - usrParam)
 
 	long result = 0;
 	int nCount = 0;
@@ -27,14 +27,11 @@ int main(){
 		n = n * i;
 	}
 
+	n = (n/2);
 	while(n > 0){
-
-		
 
 		int d = 1;
 		while(d < nTarget + 1){
-
-
 
 			if((n % d) == 0){
 				nCount++;
