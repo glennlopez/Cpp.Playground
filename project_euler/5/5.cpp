@@ -18,10 +18,11 @@ int main(){
 
 	int usrParam = usrQR; //user  parameters (1 - usrParam)
 
-	long result = 0;
+	long result = 1;
 	int nCount = 0;
 	int nTarget = usrParam;
 
+	//sets the loop cieling as per usrParam
 	long n = 1;
 	for(int i = 1; i < usrParam; i++){
 		n = n * i;
@@ -39,6 +40,7 @@ int main(){
 			d++;
 		}
 
+		//buffer the result in a var till n==0
 		if(nCount == nTarget){
 			result = n;
 		}
@@ -47,7 +49,7 @@ int main(){
 		n--;
 	}
 
-	cout << result << endl;
+	cout << result << " is divisible by 1 - " << usrQR << endl;
 	cout << endl;
 	return 0;
 }
