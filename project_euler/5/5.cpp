@@ -28,7 +28,7 @@ int main(){
 		n = n * i;
 	}
 
-	n = (n/2);
+	n = (n/2); //temp cieling reducer FIXME: remove this when above is fixed
 	while(n > 0){ //test every possible num in usrParam
 
 		int d = 1;
