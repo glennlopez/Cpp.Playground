@@ -28,7 +28,7 @@ int main(){
 	}
 
 	n = (n/2);
-	while(n > 0){
+	while(n > 0){ //test every possible num in usrParam
 
 		int d = 1;
 		while(d < nTarget + 1){
