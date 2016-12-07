@@ -22,7 +22,7 @@ int main(){
 	int nCount = 0;
 	int nTarget = usrParam;
 
-	//sets the loop cieling as per usrParam
+	//sets the loop cieling as per usrParam FIXME: make this more efficient
 	long n = 1;
 	for(int i = 1; i < usrParam; i++){
 		n = n * i;
