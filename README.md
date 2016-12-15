@@ -2,7 +2,7 @@
 
 C++ Playground
 =================
-This is where I keep all my non project related C++ source codes. Its a simple repo for documenting my progress, all my trials and tribulations with C++. Explore it, review it, and comment if you have suggestions for improvements. Criticism is welcomed.
+This is where I keep all my non project related C++ source codes. Its a simple repo for documenting my progress, all my trials and tribulations with C++. Explore it, review it, and comment. If you're interested in how I've used C++ to solve simple math problems, you may visit https://github.com/glennlopez/Archive.ProjectEuler
 
 <!--
 ![alt text](https://s-media-cache-ak0.pinimg.com/736x/a6/64/bf/a664bfae939ac4da62d6783442e560ee.jpg "C++ Logo")
