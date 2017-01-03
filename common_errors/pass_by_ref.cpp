@@ -10,7 +10,6 @@ using namespace std;
 void CoordTransform(int xVal, int yVal, int &xValNew, int &yValNew){		//<-- right!
 	/* Forgetful error: Line above
 	 * Forgetting to use &xValNew instead of *xValNew
-	 * *xValNew is the
 	 */
 	xValNew = (xVal + 1) * 2;
 	yValNew = (yVal + 1) * 2;
