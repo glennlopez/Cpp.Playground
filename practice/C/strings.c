@@ -4,11 +4,22 @@
 
 int main(){
 
-	int i, count;
-	char myArray[12] = {'H','e','l','l','o',' ','W','o','r','l','d','\0'};
+	int i, count, size;
+	char myArray[] = {'H','e','l','l','o',' ','W','o','r','l','d','\0'};
+
+	//count how many letters are in an array of strings
+	size = 0;
+	while(1){
+		if(myArray[size] == '\0'){
+			break;
+		}
+		size++;
+	}
+
+	printf("There are %i letters in the array that holds: ", (size+1));
 
 	count = 0;
-	for(i = 0; i < 12; i++){
+	for(i = 0; i < (size+1); i++){
 		printf("%c", myArray[i]);
 		if(myArray[i] == 'l'){
 			count++;
@@ -17,7 +28,7 @@ int main(){
 
 
 
-	printf("The letter L shows up this many times: %i\n", count);
+	printf("The letter 'l' shows up %i many times.\n", count);
 
 
 	printf("\n");
