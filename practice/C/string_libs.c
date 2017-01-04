@@ -24,6 +24,7 @@ int main(){
 		i++;
 	}
 
+	OutString(Hello);
 
 
 	printf("\n");
