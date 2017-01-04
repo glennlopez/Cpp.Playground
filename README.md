@@ -2,13 +2,9 @@
 
 C++ Playground
 =================
-This is where I keep all my non project related C++ source codes. Its a simple repo for documenting my progress, all my trials and tribulations with C++. Explore it, review it, and comment. If you're interested in how I've used C++ to solve simple math problems, you may visit https://github.com/glennlopez/Archive.ProjectEuler
+This is where I keep all my non project related C and C++ source codes. Its an educational repo for documenting my progress; all my trials and tribulations with one of the "hardest" languages to master. If you're interested, I have used project euler to  https://github.com/glennlopez/Archive.ProjectEuler solve fun math puzzles. Archive.ProjectEuler is a proving ground I have used to challenge myself with new languages I've learned.
 
-<!--
 ![alt text](https://s-media-cache-ak0.pinimg.com/736x/a6/64/bf/a664bfae939ac4da62d6783442e560ee.jpg "C++ Logo")
--->
-
->C++ is a general-purpose programming language. It has imperative, object-oriented and generic programming features, while also providing facilities for low-level memory manipulation. It was designed with a bias toward system programming and embedded, resource-constrained and large systems, with performance, efficiency and flexibility of use as its design highlights..
 
 ### Folder Structure
 
