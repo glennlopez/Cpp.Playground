@@ -4,9 +4,7 @@
 
 /*
 	I keep forgetting how to do passbyreference/adderess function arguments.
-	I think part of the reason is that I do not use this as often as I do with
-	Pass by value. It is most likely the result of me not yet understanding
-	how to properly manage memeory in C/CPP
+	I clearly do not understand how and why passing by address works yet
 */
 
 //pritotype
@@ -14,7 +12,13 @@ void passByValue(int);
 void passByAddress(int*);
 
 int main(){
+	int tuna = 20;
 
+	passByValue(tuna);
+	printf("Passing by value, tuna is now: %d\n", tuna);
+
+	passByAddress(&tuna);
+	printf("Passing by address, tuna is now: %d\n", tuna);
 
 	printf("\n");	//new line
 	return 0;
