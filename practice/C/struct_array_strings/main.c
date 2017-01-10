@@ -32,7 +32,6 @@ Functions
 void askUsrNum(int *usrNum){
 	printf("How many books are you cataloging: ");
 	scanf("%i", usrNum);
-
 	return;
 }
 
