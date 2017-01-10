@@ -5,7 +5,8 @@
 int main(){
 
 	int i, count, size;
-	char myArray[] = {'H','e','l','l','o',' ','W','o','r','l','d','\0'};
+	//char myArray[] = {'H','e','l','l','o',' ','W','o','r','l','d','\0'};
+	char myArray[] = {"Hello World!"}; 		//<-- is the same as above
 
 	//count how many letters are in an array of strings
 	size = 0;
