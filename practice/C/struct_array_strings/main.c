@@ -4,14 +4,14 @@
 
 //prototypes
 void askUsrNum(int*);
-void indexBooks(int);
+void indexBooks(int, struct book);
 
 int main(){
 	int usrNum;
 	struct book science[usrNum];
 
 	askUsrNum(&usrNum);	//ask user how many books to catalog
-	indexBooks(usrNum);	//record the books using struct
+	indexBooks(usrNum, *science);	//record the books using struct
 
 	//output the book data
 
@@ -34,7 +34,7 @@ void askUsrNum(int *usrNum){
 	scanf("%i", usrNum);
 }
 
-void indexBooks(int usrNum){
+void indexBooks(int usrNum, struct book science[]){
 
 	int i = 0;
 	int limit = (usrNum -1);
