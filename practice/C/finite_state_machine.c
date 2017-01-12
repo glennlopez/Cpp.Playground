@@ -33,7 +33,7 @@ int main(){
 
 			//output based on current state;
 			GPIO_DATA = FSM[cState].out;
-			printf("Input: %i\n", GPIO_DATA);
+			printf("Output: %i\n", GPIO_DATA);
 
 			//get input
 			scanf("%i", &input);
