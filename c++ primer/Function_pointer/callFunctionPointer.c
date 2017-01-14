@@ -6,9 +6,10 @@ void name(void);		//define regular pointer
 
 void(*pFunc)(void);		//define pointer function
 
+
+
+
 int main(){
-
-
 
 	pFunc = &hello;			//assign pFunc to address of hello()
 	(*pFunc)();					//call function pointer pFunc
@@ -19,6 +20,9 @@ int main(){
 	printf("\n");
 	return 0;
 }
+
+
+
 
 
 /*************
