@@ -38,9 +38,13 @@ computer Calculator[2] = {
 /*************
 	MAIN
 **************/
-int main(){
+int main(){ int result;
 
-
+	//(Option[0].dataFunc)();
+	//(Option[1].dataFunc)();
+	//result = (Calculator[0].calcFunc)(Calculator[0].input[1], Calculator[1].input[0]);
+	result = (Calculator[1].calcFunc)(Calculator[1].input[1], Calculator[0].input[1]);
+	printf("Result: %i\n", result);
 
 	printf("\n");
 	return 0;
