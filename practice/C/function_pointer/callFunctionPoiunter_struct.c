@@ -1,30 +1,43 @@
 #include <stdio.h>
 
-//struct printing data
+//struct datatype definition for printing data
 struct printData{
 	void (*dataFunc)(void);
 	int output;
 }; typedef const struct printData output;
 
-//struct calculating data
+//struct dataype definition for calculating data
 struct calcData{
 	int (*calcFunc)(int, int);
 	int input[2];
 }; typedef const struct calcData computer;
 
-//prototypes
+
+
+//struct datatypes that take no argument
 void hWorld(void);
 void name(void);
-
-int add(int, int);
-int multiply(int, int);
-
 output Option[2] = {
 	{&hWorld, 0},
 	{&name, 1}
 };
 
+//struct datatypes that takes arguments
+int add(int, int);
+int multiply(int, int);
+computer Calculator[2] = {
+	{&add, {1,2}},
+	{&multiply, {3,4}}
+};
 
+
+
+
+
+
+/*************
+	MAIN
+**************/
 int main(){
 
 
@@ -32,6 +45,8 @@ int main(){
 	printf("\n");
 	return 0;
 }
+
+
 
 
 
