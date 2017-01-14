@@ -7,7 +7,17 @@ struct dataBank{
 
 }; typedef const struct dataBank machine;
 
+void Center(void);
+void Left(void);
+void Right(void);
 
+
+
+machine FSM[3] = {
+	{},
+	{},
+	{}
+};
 
 
 /**************
@@ -26,3 +36,12 @@ int main(){
 /**************
 	FUNCTION
 **************/
+void Center(void){
+
+}
+void Left(void){
+
+}
+void Right(void){
+	
+}
