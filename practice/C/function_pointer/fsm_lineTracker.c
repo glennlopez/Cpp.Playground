@@ -1,4 +1,8 @@
 #include <stdio.h>
+/*
+	This is a simple prototype for a line tracker
+	finite state machine to be implemented on a microcontroller
+*/
 
 struct dataBank{
 	void (*out)(void);		//output a function
@@ -32,13 +36,19 @@ machine FSM[3] = {	//change state based on current state and input
 **************/
 int main(){
 	cState = CEN;	//set initial state to CENTER
+	int input = 0;
 
-	(FSM[0].out)();
 	while(1){
 		//output
+		(FSM[cState].out)();
 
 		//get input
+		printf("L-Sensor | R-Sensor\n");
+		printf("[0]-00 [1]-01 [2]-10 [3]-11: ");
+		scanf("%i", &input);
 
+		//change cState to next state based on input and current state
+		cState = FSM[cState].next[input];
 	}
 
 	printf("\n");	//newline
@@ -53,11 +63,11 @@ int main(){
 	FUNCTION
 **************/
 void Center(void){
-	printf("Running: Forward\n");
+	printf("Running: Both wheels (go fwd)\n");
 }
 void Left(void){
-	printf("Turning: Left\n");
+	printf("Running: Left wheel only (turn right)\n");
 }
 void Right(void){
-	printf("Turning: Right\n");
+	printf("Running: Right wheel only (turn left)\n");
 }
