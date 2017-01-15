@@ -8,7 +8,7 @@ struct dataBank{
 	void (*out)(void);		//output a function
 	unsigned int delay;		//delay param
 	unsigned int next[4];	//4 possible next states
-}; typedef const struct dataBank machine;
+}; typedef const struct dataBank FSM;
 
 //state definitions
 unsigned int cState;	//current state
@@ -21,7 +21,7 @@ void Center(void);
 void Left(void);
 void Right(void);
 
-machine FSM[3] = {	//change state based on current state and input
+FSM lineTracker[3] = {	//change state based on current state and input
 //(*output)		delay		{next states}
 	{&Center,	1,			{RIG,	LEF,	RIG,	CEN}},
 	{&Left,		1,			{LEF,	CEN,	RIG,	CEN}},
@@ -40,7 +40,7 @@ int main(){
 
 	while(1){
 		//output
-		(FSM[cState].out)();
+		(lineTracker[cState].out)();
 
 		//get input
 		printf("L-Sensor | R-Sensor\n");
@@ -48,7 +48,7 @@ int main(){
 		scanf("%i", &input);
 
 		//change cState to next state based on input and current state
-		cState = FSM[cState].next[input];
+		cState = lineTracker[cState].next[input];
 	}
 
 	printf("\n");	//newline
