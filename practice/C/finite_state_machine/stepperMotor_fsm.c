@@ -18,22 +18,24 @@ struct fsmData{
 	*/
 machine MotorFSM[10] = {
 	//				[0,1,2,3] <-- 	Possible Input
-	{0x55,	2,	{1,4,7,3}},		//S0: initial state
+	{0,		2,	{1,4,7,3}},		//S0: initial state
 
-	{0x66,	2,	{2,2,2,0}},		//S1: straight
-	{0xAA,	2,	{3,3,3,1}},		//S2: straight
-	{0x99,	2,	{0,0,0,2}},		//S3: straight
+	{1,		2,	{2,2,2,0}},		//S1: straight
+	{2,		2,	{3,3,3,1}},		//S2: straight
+	{3,		2,	{0,0,0,2}},		//S3: straight
 
-	{0x69,	5,	{5,5,5,5}},		//S4: turn left
-	{0xAA,	5,	{6,6,6,6}},		//S5: turn left
-	{0x96,	5,	{0,0,0,0}},		//S6: turn left
+	{4,		5,	{5,5,5,5}},		//S4: turn left
+	{5,		5,	{6,6,6,6}},		//S5: turn left
+	{6,		5,	{0,0,0,0}},		//S6: turn left
 
-	{0x96,	5,	{8,8,8,8}},		//S7: turn right
-	{0xAA,	5,	{9,9,9,9}},		//S8: turn right
-	{0x69,	5,	{0,0,0,0}},		//S9: turn right
+	{7,		5,	{8,8,8,8}},		//S7: turn right
+	{8,		5,	{9,9,9,9}},		//S8: turn right
+	{9,		5,	{0,0,0,0}},		//S9: turn right
 };
 
 unsigned int cState;
+unsigned int output;
+unsigned int input;
 
 
 /***************
@@ -46,8 +48,13 @@ int main(){
 	//main loop
 	while(1){
 		//output
+		output = MotorFSM[cState].out;
+		printf("Output: %i\n", output);
 
 		//input
+		//printf("Input: ");
+		scanf("%i\n", &input);
+		cState = MotorFSM[cState].next[input];
 
 	}
 
