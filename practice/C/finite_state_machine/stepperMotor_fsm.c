@@ -33,15 +33,23 @@ machine MotorFSM[10] = {
 	{0x69,	5,	{0,0,0,0}},		//S9: turn right
 };
 
-
+unsigned int cState;
 
 
 /***************
 	MAIN
 ****************/
 int main(){
+	//setup
+	cState = 0;
 
+	//main loop
+	while(1){
+		//output
 
+		//input
+
+	}
 
 	printf("\n");	//newline
 	return 0;
