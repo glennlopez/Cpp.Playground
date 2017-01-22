@@ -52,7 +52,7 @@ int main(){
 		printf("Output: %i\n", output);
 
 		//input
-		//printf("Input: ");
+		printf("Input: ");
 		scanf("%i\n", &input);
 		cState = MotorFSM[cState].next[input];
 
