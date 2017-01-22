@@ -21,7 +21,7 @@
 
 
 	~ uC INPUTS ~
-	pedestrian Detector:		PE2
+	Pedestrian Detector:		PE2
 	South/North Detector:	PE1
 	West/East Detector:		PE0
 
@@ -30,15 +30,29 @@
 */
 #include <stdio.h>
 
-struct PiDataSet{
+struct DataSet{
 	void (*out)(void);
 	unsigned int delay;
-	unsigned int next[4];
-}; typedef const struct PiDataSet FSM;
+	unsigned int next[8];
+}; typedef const struct DataSet FSM;
 
-FSM PiTraffic[7] = {
+//function prototypes
+void delay(int num);
+
+//function pointer prototypes
+void goW(); void waitW(); void goS(); void waitS();
+
+#define GoW 	0
+#define WaitW 	1
+#define GoS 	2
+#define WaitS	3
+#define GoP		4
+
+FSM PiTraffic[8] = {
+	{&goW, 1, {GoW, GoW, WaitW, WaitW}}
 
 };
+
 
 /************
 	MAIN
@@ -59,3 +73,6 @@ int main(){
 /*******************
 	PI FUNCTIONS
 ********************/
+void delay(int num){
+
+}
