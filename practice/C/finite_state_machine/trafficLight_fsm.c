@@ -34,25 +34,36 @@ struct DataSet{
 	unsigned int next[8];
 }; typedef const struct DataSet FSM;
 
-//function prototypes
+//function prototype
 void delay(int num);
 
-//function pointer prototypes
+//function (*pointer) prototype
 void goW(); void waitW(); void goS(); void waitS();
+void goP(); void fN1(); void fF1(); void fN2(); void fF2();
 
-#define GoW 	0
-#define WaitW 	1
-#define GoS 	2
-#define WaitS	3
+#define GoW 0
+#define WaW 1
+#define GoS 2
+#define WaS	3
+#define GoP	4
+#define FN1	5
+#define FF1	6
+#define FN2	7
+#define FF2	8
 
-#define GoP		4
+FSM TrafficLight[9] = {
+//	state	 delay	000	001	010	011	100	101	110	111
+	{&goW, 	1, 	{GoW,	GoW, 	WaW, 	WaW, 	WaW, 	WaW, 	WaW, 	WaW	}},
+	{&waitW, 1, 	{GoS, GoS, 	GoS, 	GoS, 	GoP, 	GoP, 	GoP, 	GoS	}},
+	{&goS, 	1, 	{GoS, WaS, 	GoS, 	WaS, 	WaS, 	WaS, 	WaS, 	WaS	}},
+	{&waitS, 1, 	{GoW,	GoW, 	GoW, 	GoW, 	GoP, 	GoP, 	GoP, 	GoP	}},
+	{&goP, 	1, 	{GoP, FN1, 	FN1, 	FN1, 	GoP, 	FN1, 	FN1, 	FN1	}},
+	{&fN1, 	1, 	{FF1,	FF1, 	FF1, 	FF1, 	FF1, 	FF1, 	FF1, 	FF1	}},
+	{&fF1, 	1, 	{FN2, FN2, 	FN2, 	FN2, 	FN2, 	FN2, 	FN2, 	FN2	}},
+	{&fN2, 	1, 	{FF2, FF2, 	FF2, 	FF2, 	FF2, 	FF2, 	FF2,	FF2	}},
+	{&fF2, 	1, 	{GoP,	GoW, 	GoS, 	GoW, 	GoP, 	GoW, 	GoS, 	GoW	}}
 
-FSM TrafficLight[8] = {
-//	output	delay 		next states
-	{&goW, 	1, 	{GoW,		GoW, 		WaitW, 	WaitW	}},
-	{&waitW, 1, 	{GoS,		GoS, 		GoS, 		GoS	}},
-	{&goS, 	1, 	{GoS,		WaitS, 	GoS, 		WaitS	}},
-	{&waitS, 1, 	{GoW,		GoW, 		GoW, 		GoW	}}
+
 
 };
 
@@ -116,5 +127,22 @@ void goS(){
 void waitS(){
 	//PortB: 0x22 | PortF:0x01
 	printf("waitS\n");		//newline
+
+}
+
+
+void goP(){
+
+}
+void fN1(){
+
+}
+void fF1(){
+
+}
+void fN2(){
+
+}
+void fF2(){
 
 }
