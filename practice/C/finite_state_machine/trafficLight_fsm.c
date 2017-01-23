@@ -1,4 +1,6 @@
 /*
+	gcc -o test trafficLight_fsm.c -lpigpio -lrt -lpthread
+
 	3 inputs: 	2 car sensors, 1 pedestrian
 	8 outputs:	3 west, 3 south, 2 pedestrian
 
@@ -33,6 +35,7 @@ struct DataSet{
 	void (*out)(void);			//function pointer used to reduce integration friction
 	unsigned int delay;			//delay filler (change as per uC)
 	unsigned int next[8];		//calculated by 2^(num of input bits)
+
 }; typedef const struct DataSet FSM;
 
 #define GoW 0
@@ -74,7 +77,12 @@ FSM Lights[9] = {
 int main(){ unsigned int cState, input;
 
 	//raspi setup
-
+/*	if (gpioInitialise() < 0){
+		fprintf(stderr, "pigpio initialisation failed\n");
+		return 1;
+	}
+	initPortRaspi();
+*/
 	//fsm setup
 	cState = 0;
 
@@ -93,7 +101,10 @@ int main(){ unsigned int cState, input;
 
 	}
 
-	printf("\n");		//newline
+	//raspi cleanup routine
+   gpioTerminate();
+
+	printf("\n");
 	return 0;
 }
 
@@ -109,6 +120,21 @@ void delay(int num){
 
 //Raspbery pi port initialization
 void initPortRaspi(void){
+
+	gpioSetMode(16, PI_INPUT);		// 0 - West Sensor
+	gpioSetMode(20, PI_INPUT);		// 1 - South Sensor
+	gpioSetMode(21, PI_INPUT);		// 2 - Pedestrian Sensor
+
+	gpioSetMode(9, PI_OUTPUT);		// 0 - South GREEN
+	gpioSetMode(11, PI_OUTPUT);	// 1 - South YELLOW
+	gpioSetMode(0, PI_OUTPUT);		// 2 - South RED
+
+	gpioSetMode(5, PI_OUTPUT);		// 3 - West GREEN
+	gpioSetMode(6, PI_OUTPUT);		// 4 - West YELLOW
+	gpioSetMode(13, PI_OUTPUT);	// 5 - West RED
+
+	gpioSetMode(19, PI_OUTPUT);	// 6 - Pedestrian RED
+	gpioSetMode(26, PI_OUTPUT);	// 7 - Pedestrian GREEN
 
 }
 
