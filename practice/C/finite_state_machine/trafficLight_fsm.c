@@ -83,6 +83,7 @@ int main(){ unsigned int cState, input;
 	}
 	initPortRaspi();
 
+/*
 	//fsm SETUP
 	cState = 0;
 
@@ -98,12 +99,18 @@ int main(){ unsigned int cState, input;
 
 		//change state based on input and current state
 		cState = Lights[cState].next[input];
-
 	}
+*/
+
+	//delay debug
+	gpioWrite(9, 	0);		// 0 - South GREEN
+	delay(1);
+	gpioWrite(9, 	1);		// 0 - South GREEN
+	delay(1);
+
 
 	//raspi cleanup routine
    gpioTerminate();
-
 	printf("\n");
 	return 0;
 }
@@ -115,7 +122,6 @@ int main(){ unsigned int cState, input;
 	FUNCTIONS
 ********************/
 void delay(int num){
-
 }
 
 //Raspbery pi port initialization
@@ -155,7 +161,6 @@ void goW(){	//PortB: 0x0C PortF:0x01
 
 	gpioWrite(19, 	1);		// 6 - Pedestrian RED
 	gpioWrite(26, 	0);		// 7 - Pedestrian GREEN
-
 }
 void waitW(){	//PortB: 0x14 PortF:0x01
 	printf("waitW\n");
@@ -171,7 +176,6 @@ void waitW(){	//PortB: 0x14 PortF:0x01
 
 	gpioWrite(19, 	1);		// 6 - Pedestrian RED
 	gpioWrite(26, 	0);		// 7 - Pedestrian GREEN
-
 }
 void goS(){	//PortB: 0x21 PortF:0x01
 	printf("goS\n");
@@ -187,7 +191,6 @@ void goS(){	//PortB: 0x21 PortF:0x01
 
 	gpioWrite(19, 	1);		// 6 - Pedestrian RED
 	gpioWrite(26, 	0);		// 7 - Pedestrian GREEN
-
 }
 void waitS(){	//PortB: 0x22 PortF:0x01
 	printf("waitS\n");
@@ -203,7 +206,6 @@ void waitS(){	//PortB: 0x22 PortF:0x01
 
 	gpioWrite(19, 	1);		// 6 - Pedestrian RED
 	gpioWrite(26, 	0);		// 7 - Pedestrian GREEN
-
 }
 void goP(){	//PortB: 0x24	PortF:0x08
 	printf("goP\n");
@@ -219,7 +221,6 @@ void goP(){	//PortB: 0x24	PortF:0x08
 
 	gpioWrite(19, 	0);		// 6 - Pedestrian RED
 	gpioWrite(26, 	1);		// 7 - Pedestrian GREEN
-
 }
 void fN1(){	//PortB: 0x24	PortF:0x02
 	printf("fN1\n");
@@ -235,7 +236,6 @@ void fN1(){	//PortB: 0x24	PortF:0x02
 
 	gpioWrite(19, 	1);		// 6 - Pedestrian RED
 	gpioWrite(26, 	0);		// 7 - Pedestrian GREEN
-
 }
 void fF1(){	//PortB: 0x24	PortF:0x00
 	printf("fF1\n");
