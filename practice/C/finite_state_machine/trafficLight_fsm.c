@@ -25,8 +25,6 @@
 	South/North Detector:	PE1
 	West/East Detector:		PE0
 
-
-
 */
 #include <stdio.h>
 
@@ -58,18 +56,27 @@ FSM TrafficLight[8] = {
 
 };
 
-unsigned int cState;
 
 /************
 	MAIN
 ************/
-int main(){
+int main(){ unsigned int cState, input;
 
 	//setup
 	cState = 0;
 
 	//fsm loop
 	while(1){
+
+		//output
+		TrafficLight[cState].out();
+
+		//input
+		printf("Input: ");
+		scanf("%i", &input);
+
+		//change state based on input and current state
+		cState = TrafficLight[cState].next[input];
 
 	}
 
