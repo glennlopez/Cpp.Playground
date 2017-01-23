@@ -35,9 +35,9 @@ struct DataSet{
 	void (*out)(void);			//function pointer used to reduce integration friction
 	unsigned int delay;			//delay filler (change as per uC)
 	unsigned int next[8];		//calculated by 2^(num of input bits)
-
 }; typedef const struct DataSet FSM;
 
+//state definitions
 #define GoW 0
 #define WaW 1
 #define GoS 2
@@ -142,39 +142,30 @@ void initPortRaspi(void){
 /*******************
 	FSM FUNCTIONS
 ********************/
-void goW(){
-	//PortB: 0x0C PortF:0x01
+void goW(){	//PortB: 0x0C PortF:0x01
 	printf("goW\n");
 }
-void waitW(){
-	//PortB: 0x14 PortF:0x01
+void waitW(){	//PortB: 0x14 PortF:0x01
 	printf("waitW\n");
 }
-void goS(){
-	//PortB: 0x21 PortF:0x01
+void goS(){	//PortB: 0x21 PortF:0x01
 	printf("goS\n");
 }
-void waitS(){
-	//PortB: 0x22 PortF:0x01
+void waitS(){	//PortB: 0x22 PortF:0x01
 	printf("waitS\n");
 }
-void goP(){
-	//PortB: 0x24	PortF:0x08
+void goP(){	//PortB: 0x24	PortF:0x08
 	printf("goP\n");
 }
-void fN1(){
-	//PortB: 0x24	PortF:0x02
+void fN1(){	//PortB: 0x24	PortF:0x02
 	printf("fN1\n");
 }
-void fF1(){
-	//PortB: 0x24	PortF:0x00
+void fF1(){	//PortB: 0x24	PortF:0x00
 	printf("fF1\n");
 }
-void fN2(){
-	//PortB: 0x24	PortF:0x02
+void fN2(){	//PortB: 0x24	PortF:0x02
 	printf("fN2\n");
 }
-void fF2(){
-	//PortB: 0x24	PortF:0x00
+void fF2(){	//PortB: 0x24	PortF:0x00
 	printf("fF2\n");
 }
