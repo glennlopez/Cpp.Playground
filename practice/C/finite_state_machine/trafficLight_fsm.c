@@ -26,7 +26,8 @@
 	West/East Detector:		PE0
 
 */
-#include <stdio.h>
+#include <stdio.h>		//standard libs
+#include <pigpio.h>		//raspi gpio libs
 
 struct DataSet{
 	void (*out)(void);			//function pointer used to reduce integration friction
@@ -46,6 +47,7 @@ struct DataSet{
 
 //function prototype
 void delay(int num);
+void initPortRaspi(void);
 
 //function (*pointer) prototype
 void goW(); void waitW(); void goS(); void waitS();
@@ -71,7 +73,9 @@ FSM Lights[9] = {
 ************/
 int main(){ unsigned int cState, input;
 
-	//setup
+	//raspi setup
+
+	//fsm setup
 	cState = 0;
 
 	//fsm loop
@@ -100,6 +104,11 @@ int main(){ unsigned int cState, input;
 	FUNCTIONS
 ********************/
 void delay(int num){
+
+}
+
+//Raspbery pi port initialization
+void initPortRaspi(void){
 
 }
 
