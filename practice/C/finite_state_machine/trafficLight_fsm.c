@@ -37,7 +37,7 @@ struct DataSet{
 	unsigned int next[8];		//calculated by 2^(num of input bits)
 }; typedef const struct DataSet FSM;
 
-//state definitions
+//state machine data definitions
 #define GoW 0
 #define WaW 1
 #define GoS 2
@@ -56,7 +56,7 @@ void initPortRaspi(void);
 void goW(); void waitW(); void goS(); void waitS();
 void goP(); void fN1(); void fF1(); void fN2(); void fF2();
 
-//state machine data aray
+//state machine lookup table
 FSM Lights[9] = {
 //	output 	 delay	000	001	010	011	100	101	110	111
 	{&goW, 		1, 	{GoW,	GoW, 	WaW, 	WaW, 	WaW, 	WaW, 	WaW, 	WaW	}},
@@ -76,14 +76,14 @@ FSM Lights[9] = {
 ************/
 int main(){ unsigned int cState, input;
 
-	//raspi setup
-/*	if (gpioInitialise() < 0){
+	//raspi SETUP
+	if (gpioInitialise() < 0){
 		fprintf(stderr, "pigpio initialisation failed\n");
 		return 1;
 	}
 	initPortRaspi();
-*/
-	//fsm setup
+
+	//fsm SETUP
 	cState = 0;
 
 	//fsm loop
@@ -135,7 +135,6 @@ void initPortRaspi(void){
 
 	gpioSetMode(19, PI_OUTPUT);	// 6 - Pedestrian RED
 	gpioSetMode(26, PI_OUTPUT);	// 7 - Pedestrian GREEN
-
 }
 
 
@@ -144,28 +143,142 @@ void initPortRaspi(void){
 ********************/
 void goW(){	//PortB: 0x0C PortF:0x01
 	printf("goW\n");
+
+	//raspi gpio 001 100
+	gpioWrite(9, 	0);		// 0 - South GREEN
+	gpioWrite(11, 	0);		// 1 - South YELLOW
+	gpioWrite(0, 	1);		// 2 - South RED
+
+	gpioWrite(5, 	1);		// 3 - West GREEN
+	gpioWrite(6, 	0);		// 4 - West YELLOW
+	gpioWrite(13, 	0);		// 5 - West RED
+
+	gpioWrite(19, 	1);		// 6 - Pedestrian RED
+	gpioWrite(26, 	0);		// 7 - Pedestrian GREEN
+
 }
 void waitW(){	//PortB: 0x14 PortF:0x01
 	printf("waitW\n");
+
+	//raspi gpio 010 100
+	gpioWrite(9, 	0);		// 0 - South GREEN
+	gpioWrite(11, 	0);		// 1 - South YELLOW
+	gpioWrite(0, 	1);		// 2 - South RED
+
+	gpioWrite(5, 	0);		// 3 - West GREEN
+	gpioWrite(6, 	1);		// 4 - West YELLOW
+	gpioWrite(13, 	0);		// 5 - West RED
+
+	gpioWrite(19, 	1);		// 6 - Pedestrian RED
+	gpioWrite(26, 	0);		// 7 - Pedestrian GREEN
+
 }
 void goS(){	//PortB: 0x21 PortF:0x01
 	printf("goS\n");
+
+	//raspi gpio 100 001
+	gpioWrite(9, 	1);		// 0 - South GREEN
+	gpioWrite(11, 	0);		// 1 - South YELLOW
+	gpioWrite(0, 	0);		// 2 - South RED
+
+	gpioWrite(5, 	0);		// 3 - West GREEN
+	gpioWrite(6, 	0);		// 4 - West YELLOW
+	gpioWrite(13, 	1);		// 5 - West RED
+
+	gpioWrite(19, 	1);		// 6 - Pedestrian RED
+	gpioWrite(26, 	0);		// 7 - Pedestrian GREEN
+
 }
 void waitS(){	//PortB: 0x22 PortF:0x01
 	printf("waitS\n");
+
+	//raspi gpio 100 010
+	gpioWrite(9, 	0);		// 0 - South GREEN
+	gpioWrite(11, 	1);		// 1 - South YELLOW
+	gpioWrite(0, 	0);		// 2 - South RED
+
+	gpioWrite(5, 	0);		// 3 - West GREEN
+	gpioWrite(6, 	0);		// 4 - West YELLOW
+	gpioWrite(13, 	1);		// 5 - West RED
+
+	gpioWrite(19, 	1);		// 6 - Pedestrian RED
+	gpioWrite(26, 	0);		// 7 - Pedestrian GREEN
+
 }
 void goP(){	//PortB: 0x24	PortF:0x08
 	printf("goP\n");
+
+	//raspi gpio 100 100
+	gpioWrite(9, 	0);		// 0 - South GREEN
+	gpioWrite(11, 	0);		// 1 - South YELLOW
+	gpioWrite(0, 	1);		// 2 - South RED
+
+	gpioWrite(5, 	0);		// 3 - West GREEN
+	gpioWrite(6, 	0);		// 4 - West YELLOW
+	gpioWrite(13, 	1);		// 5 - West RED
+
+	gpioWrite(19, 	0);		// 6 - Pedestrian RED
+	gpioWrite(26, 	1);		// 7 - Pedestrian GREEN
+
 }
 void fN1(){	//PortB: 0x24	PortF:0x02
 	printf("fN1\n");
+
+	//raspi gpio 100 100
+	gpioWrite(9, 	0);		// 0 - South GREEN
+	gpioWrite(11, 	0);		// 1 - South YELLOW
+	gpioWrite(0, 	1);		// 2 - South RED
+
+	gpioWrite(5, 	0);		// 3 - West GREEN
+	gpioWrite(6, 	0);		// 4 - West YELLOW
+	gpioWrite(13, 	1);		// 5 - West RED
+
+	gpioWrite(19, 	1);		// 6 - Pedestrian RED
+	gpioWrite(26, 	0);		// 7 - Pedestrian GREEN
+
 }
 void fF1(){	//PortB: 0x24	PortF:0x00
 	printf("fF1\n");
+
+	//raspi gpio 100 100
+	gpioWrite(9, 	0);		// 0 - South GREEN
+	gpioWrite(11, 	0);		// 1 - South YELLOW
+	gpioWrite(0, 	1);		// 2 - South RED
+
+	gpioWrite(5, 	0);		// 3 - West GREEN
+	gpioWrite(6, 	0);		// 4 - West YELLOW
+	gpioWrite(13, 	1);		// 5 - West RED
+
+	gpioWrite(19, 	0);		// 6 - Pedestrian RED
+	gpioWrite(26, 	0);		// 7 - Pedestrian GREEN
 }
 void fN2(){	//PortB: 0x24	PortF:0x02
 	printf("fN2\n");
+
+	//raspi gpio 100 100
+	gpioWrite(9, 	0);		// 0 - South GREEN
+	gpioWrite(11, 	0);		// 1 - South YELLOW
+	gpioWrite(0, 	1);		// 2 - South RED
+
+	gpioWrite(5, 	0);		// 3 - West GREEN
+	gpioWrite(6, 	0);		// 4 - West YELLOW
+	gpioWrite(13, 	1);		// 5 - West RED
+
+	gpioWrite(19, 	1);		// 6 - Pedestrian RED
+	gpioWrite(26, 	0);		// 7 - Pedestrian GREEN
 }
 void fF2(){	//PortB: 0x24	PortF:0x00
 	printf("fF2\n");
+
+	//raspi gpio 100 100
+	gpioWrite(9, 	0);		// 0 - South GREEN
+	gpioWrite(11, 	0);		// 1 - South YELLOW
+	gpioWrite(0, 	1);		// 2 - South RED
+
+	gpioWrite(5, 	0);		// 3 - West GREEN
+	gpioWrite(6, 	0);		// 4 - West YELLOW
+	gpioWrite(13, 	1);		// 5 - West RED
+
+	gpioWrite(19, 	0);		// 6 - Pedestrian RED
+	gpioWrite(26, 	0);		// 7 - Pedestrian GREEN
 }
