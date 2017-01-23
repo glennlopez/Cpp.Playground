@@ -46,20 +46,30 @@ void goW(); void waitW(); void goS(); void waitS();
 #define WaitW 	1
 #define GoS 	2
 #define WaitS	3
+
 #define GoP		4
 
-FSM PiTraffic[8] = {
-	{&goW, 1, {GoW, GoW, WaitW, WaitW}}
+FSM TrafficLight[8] = {
+//	output	delay 		next states
+	{&goW, 	1, 	{GoW,		GoW, 		WaitW, 	WaitW	}},
+	{&waitW, 1, 	{GoS,		GoS, 		GoS, 		GoS	}},
+	{&goS, 	1, 	{GoS,		WaitS, 	GoS, 		WaitS	}},
+	{&waitS, 1, 	{GoW,		GoW, 		GoW, 		GoW	}}
 
 };
 
+unsigned int cState;
 
 /************
 	MAIN
 ************/
 int main(){
 
-	while(1){			//inf loop
+	//setup
+	cState = 0;
+
+	//fsm loop
+	while(1){
 
 	}
 
@@ -71,8 +81,33 @@ int main(){
 
 
 /*******************
-	PI FUNCTIONS
+	FUNCTIONS
 ********************/
 void delay(int num){
+
+}
+
+
+/*******************
+	FSM FUNCTIONS
+********************/
+void goW(){
+	//PortB: 0x0C | PortF:0x01
+	printf("goW\n");		//newline
+
+}
+void waitW(){
+	//PortB: 0x14 | PortF:0x01
+	printf("waitW\n");		//newline
+
+}
+void goS(){
+	//PortB: 0x21 | PortF:0x01
+	printf("goS\n");		//newline
+
+}
+void waitS(){
+	//PortB: 0x22 | PortF:0x01
+	printf("waitS\n");		//newline
 
 }
