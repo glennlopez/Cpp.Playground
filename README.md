@@ -10,13 +10,13 @@ This is where I keep all my non project related C and C++ source codes. Its an e
 
 | Folder Name        | Description           |
 | ------------- |:--------------------:|
-| zyBooks     | my solution for zyBooks C++ online lesson |
-| c++ tricks    | tips and tricks I learned along my c++ journey |
-| c++ primer      | example codes/notes I made for myself for self teaching|
-| sandbox      | random trials for cpp lang |  
-| practice      | my ABC (always be coding) incentive |
-| tools      | programs or classes in C++ that i've made for myself |
-| common_errors      | logs of my common errors and forgetfulness with C and C++|
+| [zyBooks](https://github.com/glennlopez/Cpp.Playground/tree/master/zyBooks)     | my solution for zyBooks C++ online lesson |
+|  [c++ tricks](https://github.com/glennlopez/Cpp.Playground/tree/master/c%2B%2B%20tricks)    | tips and tricks I learned along my c++ journey |
+| [c++ primer](https://github.com/glennlopez/Cpp.Playground/tree/master/c%2B%2B%20primer)      | example codes/notes I made for myself for self teaching|
+| [sandbox](https://github.com/glennlopez/Cpp.Playground/tree/master/sandbox)      | random trials for cpp lang |  
+|  [practice](https://github.com/glennlopez/Cpp.Playground/tree/master/practice)      | my ABC (always be coding) incentive |
+|  [tools](https://github.com/glennlopez/Cpp.Playground/tree/master/tools)      | programs or classes in C++ that i've made for myself |
+|  [common_errors](https://github.com/glennlopez/Cpp.Playground/tree/master/common_errors)      | logs of my common errors and forgetfulness with C and C++|
 
 ### Learning/Referance material
 * http://www.cplusplus.com/doc/tutorial/
