@@ -4,8 +4,6 @@ C++ Playground
 =================
 This is where I keep all my non project related C and C++ source codes. Its an educational repo for documenting my progress; all my trials and tribulations with one of the "hardest" languages to master. If you're interested, I have used project-euler (https://github.com/glennlopez/Archive.ProjectEuler) to benchmark my understanding with using C and C++ to solve math puzzles.
 
-![alt text](https://s-media-cache-ak0.pinimg.com/736x/a6/64/bf/a664bfae939ac4da62d6783442e560ee.jpg "C++ Logo")
-
 ### Folder Structure
 
 | Folder Name        | Description           |
@@ -17,6 +15,7 @@ This is where I keep all my non project related C and C++ source codes. Its an e
 |  [practice](https://github.com/glennlopez/Cpp.Playground/tree/master/practice)      | my ABC (always be coding) incentive |
 |  [tools](https://github.com/glennlopez/Cpp.Playground/tree/master/tools)      | programs or classes in C++ that i've made for myself |
 |  [common_errors](https://github.com/glennlopez/Cpp.Playground/tree/master/common_errors)      | logs of my common errors and forgetfulness with C and C++|
+
 
 ### Learning/Referance material
 * http://www.cplusplus.com/doc/tutorial/
