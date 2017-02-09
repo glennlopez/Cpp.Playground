@@ -1,15 +1,11 @@
 #include <stdio.h>
 unsigned long factorial(unsigned long n);
 
-int main(){ unsigned long result, usrNum;
+int main(){ unsigned long usrNum;
 
-	//get input from user
 	printf("Get factorial of: ");
 	scanf("%lu", &usrNum);
-
-	//calculate factorial
-	result = factorial(usrNum);
-	printf("%lu\n", result);
+	printf("%lu\n", factorial(usrNum));
 
 	printf("\n");	//newline
 	return 0;
