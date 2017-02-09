@@ -6,24 +6,30 @@
 */
 
 int main(){
-	unsigned int usrNum, buffer, count;
-
+	unsigned int usrNum, limit, i;
 
 	printf("Number: ");
 	scanf("%i", &usrNum);
 
-	//count number numbers
-	while(usrNum != '\0'){
+	//count number of digits
+	unsigned int count = 0;
+	limit = usrNum;
+	while(limit != 0){
+		limit = limit / 10;
 		count++;
 	}
 
-	buffer = usrNum % 10;
-	usrNum = usrNum / 10;
+	//convert digits to ascii
+	unsigned int buffer[count];
+	unsigned int convert[count];
+	for(i = 0; i < count; i++){
+		buffer[i] = usrNum % 10;
+		convert[i] = (usrNum % 10) + 30;
+		usrNum = usrNum / 10;
+		printf("%i = 0x%i \n", buffer[i], convert[i]);
+	}
 
-	//debug output
-	printf("usrNum: %i \n", usrNum);
-	printf("Buffer: %i \n", buffer);
-	printf("Count: %i \n", count);
+
 
 	printf("\n");	//newline
 	return 0;
