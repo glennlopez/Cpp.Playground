@@ -29,8 +29,6 @@ int main(){
 		printf("%i = 0x%i \n", buffer[i], convert[i]);
 	}
 
-
-
 	printf("\n");	//newline
 	return 0;
 }
