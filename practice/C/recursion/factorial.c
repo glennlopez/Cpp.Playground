@@ -14,7 +14,7 @@ int main(){ unsigned long usrNum;
 
 unsigned long factorial(unsigned long n){
 	//base case
-	if(n == 1){
+	if(n <= 1){
 		printf("1 = ");
 		return 1;
 	}
