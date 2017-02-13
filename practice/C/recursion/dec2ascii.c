@@ -1,29 +1,27 @@
 #include <stdio.h>
+//debug func
+void display_char(void);
+void find_null(void);
+
+//code under test
 void UART_ConvertUDec(unsigned long n);
 unsigned char String[10];
 
+
+/****************
+	MAIN
+*****************/
 int main(){
+	//code under test
 	unsigned long param = 12345;
 	UART_ConvertUDec(param);
 
-	//debug: display each char
-	printf("0: %c\n", String[0]);
-	printf("1: %c\n", String[1]);
-	printf("2: %c\n", String[2]);
-	printf("3: %c\n", String[3]);
-	printf("4: %c\n", String[4]);
-	printf("5: %c\n", String[5]);
-	printf("6: %c\n", String[6]);
-	printf("7: %c\n", String[7]);
 
-	//debug: count where '\0' is
-	//FIXME: Finish this
-
-	//debug: print input
-	printf("Input(lu): %lu\n", param);
-	//debug: print string
-	printf("Output(s): %s\n", String);
-
+	//debug functions
+	printf("Input(lu): %lu\n", param);	//debug: print input
+	printf("Output(s): %s\n", String);	//debug: print string
+	display_char(); 							//debug: display each char
+	find_null();								//debug: find where null is
 
 
 	printf("\n");		//newline
@@ -53,4 +51,30 @@ void UART_ConvertUDec(unsigned long n){
 
 	//debug: print count
 	printf("Number of digits: %lu\n", count);
+}
+
+
+/****************
+DEBUG FUNCTIONS
+*****************/
+void display_char(void){
+	printf("0: %c\n", String[0]);
+	printf("1: %c\n", String[1]);
+	printf("2: %c\n", String[2]);
+	printf("3: %c\n", String[3]);
+	printf("4: %c\n", String[4]);
+	printf("5: %c\n", String[5]);
+	printf("6: %c\n", String[6]);
+	printf("7: %c\n", String[7]);
+	printf("8: %c\n", String[8]);
+	printf("9: %c\n", String[9]);
+}
+
+void find_null(void){
+	unsigned long j;
+	for(j = 0; j <= 10; j++){
+		if(String[j] == '\0'){
+			printf("Found null at: %lu \n", j);
+		}
+	}
 }
