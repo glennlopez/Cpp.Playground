@@ -3,10 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/*
-	I keep forgetting how to do passbyreference/adderess function arguments.
-	I clearly do not understand how and why passing by address works yet
-*/
 
 //pritotype
 void passByValue(int);
