@@ -18,6 +18,7 @@ int main(){
 
 
 	//debug functions
+	String[7] = 'x';							//debug:string injection
 	printf("Input(lu): %lu\n", param);	//debug: print input
 	printf("Output(s): %s\n", String);	//debug: print string
 	display_char(); 							//debug: display each char
@@ -28,7 +29,9 @@ int main(){
 	return 0;
 }
 
-
+/****************
+TEST FUNCTION
+*****************/
 void UART_ConvertUDec(unsigned long n){
 	unsigned long tempN = n;
 
@@ -36,11 +39,8 @@ void UART_ConvertUDec(unsigned long n){
 	unsigned long count = 0;
 	while(tempN > 0){
 		count++;
-		tempN = tempN / 10;
+		tempN /= 10;
 	}
-
-	//debug: place null char at the end
-	String[5] = '\0';
 
 	//convert dec to ascii
 	unsigned long i;
@@ -72,7 +72,7 @@ void display_char(void){
 
 void find_null(void){
 	unsigned long j;
-	for(j = 0; j <= 10; j++){
+	for(j = 0; j < 10; j++){
 		if(String[j] == '\0'){
 			printf("Found null at: %lu \n", j);
 		}
