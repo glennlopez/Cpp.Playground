@@ -2,16 +2,20 @@
 
 C++ Playground
 =================
-This is where I keep all my non project related C and C++ source codes. Its an educational repo for documenting my progress; all my trials and tribulations with one of the "hardest" languages to master. If you're interested, I have used project-euler (https://github.com/glennlopez/Archive.ProjectEuler) to benchmark my understanding with using C and C++ to solve math puzzles.
+This is where I keep all my non project related C and C++ source codes. Its an educational repo for documenting my progress; all my trials and tribulations with one of the "hardest" languages to master. Beyond this repository, the links below are other ways I keep myself sharp with C++.
+
+ * [HackerRank](https://www.hackerrank.com/glennlopez?hr_r=1)
+ * [CodinGame](https://www.codingame.com/profile/f521b07f225156a74ce6fbd85a614e696228981)
+ * [ProjectEuler](https://github.com/glennlopez/Archive.ProjectEuler)
 
 ### Folder Structure
 
 | Folder Name        | Description           |
 | ------------- |:--------------------:|
 | [zyBooks](https://github.com/glennlopez/Cpp.Playground/tree/master/zyBooks)     | my solution for zyBooks C++ online lesson |
+| [HackerRank](#)     | my solution for HackerRank tutorials and challenges in C++ |
 |  [c++ tricks](https://github.com/glennlopez/Cpp.Playground/tree/master/c%2B%2B%20tricks)    | tips and tricks I learned along my c++ journey |
 | [c++ primer](https://github.com/glennlopez/Cpp.Playground/tree/master/c%2B%2B%20primer)      | example codes/notes I made for myself for self teaching|
-| [sandbox](https://github.com/glennlopez/Cpp.Playground/tree/master/sandbox)      | random trials for cpp lang |  
 |  [practice](https://github.com/glennlopez/Cpp.Playground/tree/master/practice)      | my ABC (always be coding) incentive |
 |  [tools](https://github.com/glennlopez/Cpp.Playground/tree/master/tools)      | programs or classes in C++ that i've made for myself |
 |  [common_errors](https://github.com/glennlopez/Cpp.Playground/tree/master/common_errors)      | logs of my common errors and forgetfulness with C and C++|
