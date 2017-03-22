@@ -14,7 +14,6 @@ This is where I keep all my non project related C and C++ source codes. Its an e
 | ------------- |:--------------------:|
 | [zyBooks](https://github.com/glennlopez/Cpp.Playground/tree/master/zyBooks)     | my solution for zyBooks C++ online lesson |
 | [HackerRank](#)     | my solution for HackerRank tutorials and challenges in C++ |
-|  [c++ tricks](https://github.com/glennlopez/Cpp.Playground/tree/master/c%2B%2B%20tricks)    |
 | [CodinGame](#)     | my solution for CodinGame challenges in C++ |
 |  [SpacedRepetition](#)    | most powerful way to [remember](https://www.youtube.com/watch?v=eVajQPuRmk8&t=386s) concepts I forget |
 |  [c++ tricks](https://github.com/glennlopez/Cpp.Playground/tree/master/c%2B%2B%20tricks)    | tips and tricks I learned along my c++ journey |
