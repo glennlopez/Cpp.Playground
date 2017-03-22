@@ -16,12 +16,11 @@ This is where I keep all my non project related C and C++ source codes. Its an e
 | [HackerRank](#)     | my solution for HackerRank tutorials and challenges in C++ |
 |  [c++ tricks](https://github.com/glennlopez/Cpp.Playground/tree/master/c%2B%2B%20tricks)    |
 | [CodinGame](#)     | my solution for CodinGame challenges in C++ |
-|  [SpacedRepetition](#)    | most powerful way to [remember](https://www.youtube.com/watch?v=eVajQPuRmk8&t=386s) what I study |
+|  [SpacedRepetition](#)    | most powerful way to [remember](https://www.youtube.com/watch?v=eVajQPuRmk8&t=386s) concepts I forget |
 |  [c++ tricks](https://github.com/glennlopez/Cpp.Playground/tree/master/c%2B%2B%20tricks)    | tips and tricks I learned along my c++ journey |
 | [c++ primer](https://github.com/glennlopez/Cpp.Playground/tree/master/c%2B%2B%20primer)      | example codes/notes I made for myself for self teaching|
 |  [practice](https://github.com/glennlopez/Cpp.Playground/tree/master/practice)      | my ABC (always be coding) incentive |
 |  [tools](https://github.com/glennlopez/Cpp.Playground/tree/master/tools)      | programs or classes in C++ that i've made for myself |
-|  [common_errors](https://github.com/glennlopez/Cpp.Playground/tree/master/common_errors)      | logs of my common errors and forgetfulness with C and C++|
 
 
 ### Learning/Referance material
