@@ -25,7 +25,6 @@ sType FSM[2] = {	//finite state machine with 2 states
 	{1,{ODD,EVEN}}		//odd
 };
 
-
 int main(){
 	unsigned int input;
 
