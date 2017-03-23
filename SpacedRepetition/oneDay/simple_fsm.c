@@ -10,8 +10,8 @@ unsigned int GPIO_DATA = 0; //simulated Data Out
 
 // (1) create a struct datatype for the state machine
 struct state{
-  bool out;           // state output
-  unsigned next[2];   // possible state transition triggers
+  bool out;         // state output
+  bool next[2];     // possible state transition triggers
 };
 
 // (2) type define the struct datatype as "FSM"
@@ -32,12 +32,16 @@ unsigned int cState = TOGGLE_OFF;
 int main(){
 
   // FSM Routine
-  while(1){
+  while(1){ unsigned int input;
     // (a) output based on current state;
+    GPIO_DATA = toggle[cState].out;
+    printf("Output: %i\n", GPIO_DATA);
 
     // (b) get input
+    scanf("%d", &input);
 
     // (c) change state based on input and current state
+    cState = toggle[cState].next[input];
 
   }
 
