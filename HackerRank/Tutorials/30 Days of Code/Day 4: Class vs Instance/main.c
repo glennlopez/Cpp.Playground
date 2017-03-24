@@ -26,11 +26,21 @@ class Person{
 
     void Person::amIOld(){
         // Do some computations in here and print out the correct statement to the console
+        if(age < 13){
+          cout << "You are young." << endl;
 
+        }
+        else if( (age >= 13) && (age < 18) ){
+          cout << "You are a teenager." << endl;
+        }
+        else{
+          cout << "You are old." << endl;
+        }
     }
 
     void Person::yearPasses(){
         // Increment the age of the person in here
+        age++;
 
     }
 /*** END OF SOLUTION **/
@@ -42,8 +52,9 @@ class Person{
 
 //debug main loop
 int main(){
-  Person personObject(12);
-  cout << "Age: " << personObject.age;
+  Person personObject(16);
+  cout << "Age: " << personObject.age << endl;
+  personObject.amIOld();
 
   cout << endl;
   return 0;
