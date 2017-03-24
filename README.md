@@ -2,11 +2,7 @@
 
 C++ Playground
 =================
-This is where I keep all my non project related C and C++ source codes. Its an educational repo for documenting my progress; all my trials and tribulations with one of the "hardest" languages to master. Beyond this repository, the links below are other ways I keep myself sharp with C++.
-
- * [HackerRank](https://www.hackerrank.com/glennlopez?hr_r=1)
- * [CodinGame](https://www.codingame.com/profile/f521b07f225156a74ce6fbd85a614e696228981)
- * [ProjectEuler](https://github.com/glennlopez/Archive.ProjectEuler)
+This is where I keep all my non project related C and C++ source codes. Its an educational repo for documenting my progress; all my trials and tribulations with one of the "hardest" languages to master. Visit my [HackerRank](https://www.hackerrank.com/glennlopez?hr_r=1) and [CodinGame](https://www.codingame.com/profile/f521b07f225156a74ce6fbd85a614e696228981) profiles to see how I keep myself sharp.
 
 ### Folder Structure
 
