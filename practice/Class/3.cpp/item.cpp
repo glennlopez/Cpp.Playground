@@ -27,7 +27,7 @@ CubeClass::CubeClass(void){
 
 //setter
 void CubeClass::setEdge(double param){
-
+  edge = param;
 }
 
 //getter
@@ -35,5 +35,6 @@ double CubeClass::getEdge(void){
   return edge;
 }
 double CubeClass::getVolume(void){
+  volume = edge * edge * edge;
   return volume;
 }

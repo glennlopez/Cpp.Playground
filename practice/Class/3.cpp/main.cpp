@@ -2,7 +2,6 @@
 
 #include <iostream>
 using namespace std;
-
 #include "item.h"
 
 int main(){
@@ -10,6 +9,8 @@ int main(){
 
   //SphereClass sphereObject;
   CubeClass cubeObject;
+  cubeObject.setEdge(12.5);
+
   cout << "Cube Edge: " << cubeObject.getEdge() << endl;
   cout << "Cube Volume: " << cubeObject.getVolume() << endl;
 
