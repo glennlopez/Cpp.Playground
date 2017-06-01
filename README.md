@@ -9,12 +9,10 @@ This is where I keep all my non project related C and C++ source codes. Its an e
 | Folder Name        | Description           |
 | ------------- |:--------------------:|
 | [zyBooks](https://github.com/glennlopez/Cpp.Playground/tree/master/zyBooks)     | my solution for zyBooks C++ online lesson |
+|  [cpp_practice](https://github.com/glennlopez/Cpp.Playground/tree/master/cpp_practice)    | my ABC (always be coding) incentive for C++ |
+| [c_practice](https://github.com/glennlopez/Cpp.Playground/tree/master/c_practice)      | my ABC (always be coding) incentive for C |
 | [HackerRank](#)     | my solution for HackerRank tutorials and challenges in C++ |
 | [CodinGame](#)     | my solution for CodinGame challenges in C++ |
-|  [SpacedRepetition](#)    | most powerful way to [remember](https://www.youtube.com/watch?v=eVajQPuRmk8&t=386s) concepts I forget |
-|  [c++ tricks](https://github.com/glennlopez/Cpp.Playground/tree/master/c%2B%2B%20tricks)    | tips and tricks I learned along my c++ journey |
-| [c++ primer](https://github.com/glennlopez/Cpp.Playground/tree/master/c%2B%2B%20primer)      | example codes/notes I made for myself for self teaching|
-|  [practice](https://github.com/glennlopez/Cpp.Playground/tree/master/practice)      | my ABC (always be coding) incentive |
 |  [tools](https://github.com/glennlopez/Cpp.Playground/tree/master/tools)      | programs or classes in C++ that i've made for myself |
 
 
