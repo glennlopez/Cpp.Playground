@@ -7,41 +7,36 @@ using namespace std;
 
 
 int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
 
-    // read input
-    int x;
-    string a, aa, b, bb;
-    cin >> x >> a >> b;
+    //get number of words
+    int num;
+    cin >> num;
 
-    for(int i = 0; i < a.size(); i++){
-        if(!(i%2)){
-            cout << a[i];
+    //store words
+    string arr[num];
+    for(int i = 0; i < num; i++){
+        cin >> arr[i];
+
+        for(int j = 0; j < arr[i].length(); j++){
+            if(!(j%2)){    //cout even
+                cout << arr[i].at(j);
+            }
         }
+
+        cout << " ";
+
+        for(int j = 0; j < arr[i].length(); j++){
+            if(j%2){    //cout odd
+                cout << arr[i].at(j);
+            }
+        }
+
+        cout << endl;
+
     }
 
-    cout << " ";
 
-    for(int i = 0; i < a.size(); i++){
-        if(i%2){
-            cout << a[i];
-        }
-    }
-
-    cout << endl;
-
-    for(int i = 0; i < b.size(); i++){
-        if(!(i%2)){
-            cout << b[i];
-        }
-    }
-
-    cout << " ";
-
-    for(int i = 0; i < b.size(); i++){
-        if(i%2){
-            cout << b[i];
-        }
-    }
 
     return 0;
 }
