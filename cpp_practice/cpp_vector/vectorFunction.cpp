@@ -35,20 +35,26 @@ void printVector(vector<int> param){
 
 //vector return function
 vector<int> solve(int a0, int a1, int a2, int b0, int b1, int b2){
+
   vector<int> temp(2);
-
-  if(a0 > b0){
-    temp[0]++;
-  }
-  if(a1 > b1){
-    temp[0]++;
-  }
-  if(a2 > b2){
-    temp[0]++;
-  }
-
   //temp[0] is score for alice
   //temp[1] is score for bob
+
+  int alice[] = {a0, a1, a2};
+  int bob[] = {b0, b1, b2};
+
+  for(unsigned int i = 0; i < 3; i++){
+    // alice point
+    if(alice[i] > bob[i]){
+      temp[0]++;
+    }
+
+    // bob point
+    if(alice[i] < bob[i]){
+      temp[1]++;
+    }
+
+  }
 
 
   return temp;
