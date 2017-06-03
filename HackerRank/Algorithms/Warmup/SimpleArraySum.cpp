@@ -10,9 +10,6 @@ using namespace std;
   1 2 3 4 10 11
 */
 
-/* SAMPLE OUTPUT
-  31
-*/
 
 
 int main(){
@@ -22,5 +19,21 @@ int main(){
     for(int arr_i = 0;arr_i < n;arr_i++){
        cin >> arr[arr_i];
     }
+
+    /* SOLUTION */
+    int sum = 0;
+    for(int i = 0; i < n; i++){
+      sum += arr[i];
+    }
+
+    cout << sum << endl;
+
     return 0;
 }
+
+
+
+
+/* SAMPLE OUTPUT
+  31
+*/
