@@ -28,25 +28,30 @@ harry=12299933
 int main() {
   /* Enter your code here. Read input from STDIN. Print output to STDOUT */
 
-  map<int, string> phoneBook;
-
-  int entrySize, phoneNumber;
+  map<string, long> phoneBook;
+  long entrySize, phoneNumber;
   string name;
 
+  //populate phonebook
   cin >> entrySize;
-  for(int i = 0; i < entrySize; i++){
+  for(long i = 0; i < entrySize; i++){
     cin >> name >> phoneNumber;
-    phoneBook[phoneNumber] = name;
+    phoneBook[name] = phoneNumber;
 
   }
 
-  //map iterator (print out all the items in the map)
-  map<int, string>::iterator it;
-    //name_map.begin() is the first value on the map
-    //name_map.end() is the last item on the map
-  for(it = phoneBook.begin(); it != phoneBook.end(); it++){
-    cout << it->second << "=" << (*it).first << endl;
+  //iterate through searchh till cin stops
+  while(cin >> name){
+    if(phoneBook.find(name) != phoneBook.end())
+    {
+      cout << name << "=" << phoneBook.find(name)->second << endl;
+    }
+    else{
+      cout << "Not found" << endl;
+    }
   }
+
+
 
   return 0;
 }
