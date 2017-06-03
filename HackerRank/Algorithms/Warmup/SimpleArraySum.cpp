@@ -1,3 +1,4 @@
+//https://www.hackerrank.com/challenges/simple-array-sum
 #include <cmath>
 #include <cstdio>
 #include <vector>
