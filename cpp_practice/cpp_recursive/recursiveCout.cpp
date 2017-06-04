@@ -2,7 +2,7 @@
 using namespace std;
 
 void sayHi(int param){
-  int n = param;
+  int n = param;  //<-- counter for recursion
   //base case
   if (n == 0){
     return;
@@ -18,7 +18,7 @@ void sayHi(int param){
 int main(){
 
   //this will say Hi 'N' times
-  sayHi(10);
+  sayHi(3);
 
   return 0;
 }
