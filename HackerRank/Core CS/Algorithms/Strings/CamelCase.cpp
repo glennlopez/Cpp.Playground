@@ -32,6 +32,19 @@ using namespace std;
 int main(){
     string s;
     cin >> s;
+
+    //SOLUTION
+    //  Count the number of capital letters
+    int count = 1;
+    for(unsigned int i = 0; i < s.size(); i++){
+      if( (s[i] > 64) && (s[i] < 91) ){
+        count++;
+      }
+    }
+
+    cout << count;
+
+
     return 0;
 }
 
@@ -39,3 +52,6 @@ int main(){
 /* SAMPLE OUTPUT
   5
 */
+
+//references
+//   http://www.cplusplus.com/reference/string/string/size/
