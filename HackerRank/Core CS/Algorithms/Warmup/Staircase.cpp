@@ -16,14 +16,21 @@ using namespace std;
 int main(){
 
   //SOLUTION
-    int n, steps;
+    int n, steps, spaces;
     cin >> n;
     steps = n;
+    spaces = 1;
 
     for(int i = 0; i < n; i++){
+
+      for(int f = n; f > spaces; f--){
+            cout << " ";
+      }
+
       for(int j = n; j >= steps; j--){
         cout << "#";
       }
+      spaces++;
       steps--;
       cout << endl;
     }
