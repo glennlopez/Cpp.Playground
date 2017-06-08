@@ -12,12 +12,33 @@ using namespace std;
 
 
 int main(){
-    int n;
+    int n, i;
+    double neg, zer, pos;
     cin >> n;
     vector<int> arr(n);
-    for(int arr_i = 0;arr_i < n;arr_i++){
-       cin >> arr[arr_i];
+
+    for(i = 0;i < n; i++){
+       cin >> arr[i];
     }
+
+    for(i = 0; i < arr.size(); i++){
+      if(arr[i] == 0){
+        zer++;
+      }
+      if(arr[i] < 0){
+        neg++;
+      }
+      if(arr[i] > 0){
+        pos++;
+      }
+
+    }
+
+    cout << pos/n << endl;
+    cout << neg/n << endl;
+    cout << zer/n << endl;
+
+
     return 0;
 }
 
