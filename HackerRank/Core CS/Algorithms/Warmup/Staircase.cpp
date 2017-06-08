@@ -14,8 +14,21 @@ using namespace std;
 
 
 int main(){
-    int n;
+
+  //SOLUTION
+    int n, steps;
     cin >> n;
+    steps = n;
+
+    for(int i = 0; i < n; i++){
+      for(int j = n; j >= steps; j--){
+        cout << "#";
+      }
+      steps--;
+      cout << endl;
+    }
+  //END OF SOLUTION
+
     return 0;
 }
 
