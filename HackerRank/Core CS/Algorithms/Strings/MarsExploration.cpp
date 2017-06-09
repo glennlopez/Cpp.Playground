@@ -1,31 +1,29 @@
-#include <map>
-#include <set>
-#include <list>
-#include <cmath>
-#include <ctime>
-#include <deque>
-#include <queue>
-#include <stack>
-#include <string>
-#include <bitset>
-#include <cstdio>
-#include <limits>
-#include <vector>
-#include <climits>
-#include <cstring>
-#include <cstdlib>
-#include <fstream>
-#include <numeric>
-#include <sstream>
 #include <iostream>
-#include <algorithm>
-#include <unordered_map>
+#include <vector>
+#include <iostream>
+#include <string>
 
 using namespace std;
 
 
 int main(){
-    string S;
-    cin >> S;
+    string msg, SOS;
+    SOS = "SOS";
+    int alter, next;
+
+    cin >> msg;
+
+    alter = 0; next = 0;
+    for(int i = 0; i < msg.size(); i++){
+      if(msg[i] != SOS[next]){
+        alter++;
+      }
+      next++;
+      if(next > 2){
+        next = 0;
+      }
+    }
+
+    cout << alter << endl;
     return 0;
 }
