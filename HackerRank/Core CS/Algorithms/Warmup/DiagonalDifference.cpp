@@ -1,9 +1,14 @@
+//https://www.hackerrank.com/challenges/diagonal-difference
 #include <cmath>
 #include <cstdio>
 #include <vector>
 #include <iostream>
 #include <algorithm>
 using namespace std;
+/*
+    Given a square matrix of size , calculate the absolute difference between the sums of its diagonals.
+    
+*/
 
 
 int main(){
