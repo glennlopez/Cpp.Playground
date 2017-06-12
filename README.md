@@ -4,7 +4,7 @@ C++ Playground
 =================
 This is where I keep all my non project related C and C++ source codes. Its an educational repo for documenting my progress; all my trials and tribulations with one of the "hardest" languages to master. Visit my [HackerRank](https://www.hackerrank.com/glennlopez?hr_r=1) and [CodinGame](https://www.codingame.com/profile/f521b07f225156a74ce6fbd85a614e696228981) profiles to see the other ways I keep my C++ sharp.
 
-### Folder Structure
+### Noteworthy folders
 
 | Folder Name        | Description           |
 | ------------- |:--------------------:|
