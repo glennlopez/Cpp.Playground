@@ -1,18 +1,13 @@
 //http://docs.cs50.net/problems/vigenere/vigenere.html
+//https://www.guballa.de/vigenere-solver
 #include<stdio.h>
 #include<cs50.h>
 #include<string.h>
 #include<ctype.h>
 #include<stdlib.h>
 
-//PROTOTYPES
 char cypher(char, string);
-
-//GLOBAL VARS
 int keyCounter = 0;
-
-
-
 
 
 //MAIN ROUTINE
@@ -29,9 +24,7 @@ int main(int argc, string argv[]){
             printf("Usage: %s k\n", argv[0]);
             return 1;
             }
-        
         }
-        
     }
     
     //get user-key
@@ -49,13 +42,8 @@ int main(int argc, string argv[]){
     //print ciphered string using key
     printf("ciphertext: %s\n", s);
 
-
     return 0; 
 } 
-
-
-
-
 
 
 //VIGENERE CIPHER SUBROUTINE
@@ -69,33 +57,13 @@ char cypher(char cin, string key){ int vKey = '?';
         vKey = key[keyCounter % strlen(key)] - 65;
     }
     
-    
     //index the user input
-    if(isupper(cin)){   //ascii upercase starts at 65
-        
-        //zero the character (index it)
-        cin -= 65;
-        
-        //cypher the zeroed character using key
-        cin = (cin + vKey) % 26;
-        
-        //un-zero the cyphered character into cin
-        cin += 65;
-        
+    if(isupper(cin)){  
+        cin -= 65; cin = (cin + vKey) % 26; cin += 65;
         keyCounter++;
     }
-    
-    if(islower(cin)){   //ascii lowercase starts at 97
-        
-        //zero the character (index it)
-        cin -= 97;
-        
-        //cypher the zeroed character using key
-        cin = (cin + vKey) % 26;
-        
-        //un-zero the cyphered character into cin
-        cin += 97;
-        
+    if(islower(cin)){ 
+        cin -= 97; cin = (cin + vKey) % 26; cin += 97;
         keyCounter++;
     }
     
