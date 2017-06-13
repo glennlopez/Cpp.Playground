@@ -1,5 +1,4 @@
 #include<stdio.h>
-//#include<cs50.h>
 #include<string.h>
 
 //int usrArr[6] = {5,2,1,3,6,4};
