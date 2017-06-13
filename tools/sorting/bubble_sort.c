@@ -1,9 +1,11 @@
 #include<stdio.h>
+//#include<cs50.h>
 #include<string.h>
 
-int usrArr[6] = {5,2,1,3,6,4};
+//int usrArr[6] = {5,2,1,3,6,4};
+//int usrArr[6] = {1,2,3,4,5,6};
 //int usrArr[6] = {5,2,1,3,4,6};
-//int usrArr[6] = {6,2,5,3,4,1};
+int usrArr[6] = {6,2,5,3,4,1};
 int totalSteps = 0;
 
 #define ARRLEN(arr) ( sizeof(arr) / sizeof(arr[0]))
@@ -35,10 +37,11 @@ int main(){
                 usrArr[i] = buffer;         totalSteps++;
                 swapCounter++;
             }
-                                            totalSteps++;
+                                            totalSteps++;   //min arraylen(arr) steps
         }
         
     }while(swapCounter != 0);
+    //END BUBBLE SORT ALGORYTHM
     
     
     
