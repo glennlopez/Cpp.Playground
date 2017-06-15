@@ -35,18 +35,14 @@ int main(){
     int sortedIndex = 0;
     int n = ARRLEN(usrArr);
 
+    //Repeat until no unsorted elements remain
     while(sortedIndex < n){
         
-        //find smallest number in the unsorted portion of array
+        //Search unsorted part of the data to find smallest value
         for(int i = sortedIndex; i < n ; i++){
+            //Swap the smallest value found with the first element of the unsorted part
             if(usrArr[i] < smallestNum){
                 smallestNum = usrArr[i];
-            }
-        }
-        
-        //locate the smallest number and swap
-        for(int i = sortedIndex; i < n ; i++){
-            if(usrArr[i] == smallestNum){
                 usrArr[i] = usrArr[sortedIndex];
                 usrArr[sortedIndex] = smallestNum;
             }
