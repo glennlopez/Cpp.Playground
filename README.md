@@ -17,6 +17,7 @@ This is where I keep all my non project related C and C++ source codes. Its an e
 
 
 ### Learning/Referance material
+* https://www.atlassian.com/git/tutorials/rewriting-history
 * http://www.cplusplus.com/doc/tutorial/
 * http://stackoverflow.com/questions/tagged/c%2B%2B
 * https://www.reddit.com/r/cpp/
