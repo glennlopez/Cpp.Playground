@@ -8,7 +8,7 @@ struct player{
 
 typedef struct player PlayerType;
 
-int main(){
+int main(){ 
 	//boundery x = 100 y = 100 health = 100
 	PlayerType player1 = {50,1,100};
 	PlayerType npc[4];
