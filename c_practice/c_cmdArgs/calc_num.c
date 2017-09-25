@@ -8,7 +8,7 @@ int main(int argc, char *argv[]){
     if(argc == 3){
 
         //convert argument string to int
-        f_Num = (int)argv[1][0] - 48;
+        f_Num = (int)argv[1][1] - 48;
         s_Num = (int)argv[2][0] - 48;
 
         printf("First Num: %i\n", f_Num);
