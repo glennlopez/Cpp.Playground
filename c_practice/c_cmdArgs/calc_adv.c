@@ -26,6 +26,9 @@ int powerFunc(int param){   int result = 1;
 
 //MAIN FUNCTION
 int main(int argc, char *argv[]){
+    int numTotal1 = 0;
+    //int numTotal1 = 0;
+
     int numCount1 = 0;
     //int numCount2 = 0;
 
@@ -34,13 +37,15 @@ int main(int argc, char *argv[]){
         //count how many digits in first argument
         for(int i = 0; argv[1][i] != '\0'; i++){
             numCount1++;
+            numTotal1 += powerFunc(numCount1 - 1) * (argv[1][i] - 48);
 
             //FIXME: Output the result below into an integer
             printf("Power Function: %i\n", powerFunc(numCount1 - 1) * (argv[1][i] - 48));
         }
 
         printf("Digit count: %i\n", numCount1);
-        printf("debug: %i\n", (int)argv[1][0] - 48);
+        printf("Debug: %i\n", (int)argv[1][0] - 48);
+        printf("NumTotal: %i\n", numTotal1);
     }
 
     //incorrect argument count
