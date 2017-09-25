@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <cs50.h>
 /*
-
+HOW THE FUNCTIONS WORK:
     If 167 is the input digit then:
         1 = 10^2 * 1    = powerFunc(numCount1 - 1) * (argv[1][i] - 48)
         6 = 10^1 * 6    = powerFunc(numCount1 - 1) * (argv[1][i] - 48)
@@ -12,11 +12,10 @@
 */
 
 //POWER FUNCTION
-int powerFunc(int param){ 
-    int result = 1;
+int powerFunc(int param){   int result = 1;
 
     for(int i = 0; i < param; i++){
-        result = result * 10;
+        result *= 10;
     }
 
     return result;
