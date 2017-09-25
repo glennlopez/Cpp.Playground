@@ -4,6 +4,7 @@
 # But not these files...
 !.gitignore
 !.c
+!.h
 
 # ...even if they are in subdirectories
 !*/
