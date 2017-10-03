@@ -19,7 +19,13 @@ int main() {
 
    minVal = 10;
 
-   /* Your solution goes here  */
+   for (i = 0; i < NUM_POINTS; ++i)
+   {
+      if (dataPoints[i] < minVal) 
+      {
+         dataPoints[i] = dataPoints[i] * 2;
+      }
+   }
 
 
    for (i = 0; i < NUM_POINTS; ++i) {
