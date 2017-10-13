@@ -6,16 +6,17 @@ This is where I keep all my non project related C and C++ source codes. Its an e
 
 Computer Science e-Book Repository
 ==================
-Due to popular demand and numerous DMCA notices, I've created a private encrypted git repository specifically for hosting compsci ebooks. You'll need to have a Keybase account and have Keybase on your machine before you can continue with the steps below.
+Due to popular demand and numerous DMCA notices, I've created a private encrypted git repository specifically for hosting compsci ebooks. You'll need to have a **Keybase account** and have Keybase on your machine before you can continue with the steps below.
 
-Ask to join the Keybase team:
+**Ask to join our Keybase team:**
 ```
-keybase team request-access hackup
+$ keybase team request-access hackup
 ```
+> Note: You'll need to wait for me to accept your request before you can excecute the next command.
 
-Do a git clone of the private encrypted git repository:
+**Do a git clone of the private encrypted git repository:**
 ```
-git clone keybase://team/hackup/cs-books
+$ git clone keybase://team/hackup/cs-books
 ```
 
 ### Noteworthy folders
