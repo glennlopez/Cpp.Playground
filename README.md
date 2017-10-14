@@ -6,7 +6,7 @@ This is where I keep all my non project related C and C++ source codes. Its an e
 
 Computer Science e-Book Repository
 ==================
-Due to popular demand and numerous DMCA notices, I've created a private encrypted git repository specifically for hosting compsci ebooks. You'll need to have a **Keybase account** and have Keybase on your machine before you can continue with the steps below.
+Due to popular demand and numerous DMCA notices, I've created a private encrypted git repository specifically for hosting compsci ebooks. You'll need to have a **[Keybase account](https://keybase.io)** and have Keybase on your machine before you can continue with the steps below.
 
 **Ask to join our Keybase team:**
 ```
