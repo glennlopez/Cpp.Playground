@@ -8,7 +8,7 @@ Computer Science e-Book Repository
 ==================
 Due to popular demand and numerous DMCA notices, I've created a private encrypted git repository specifically for hosting compsci ebooks. You'll need to have a **[Keybase account](https://keybase.io)** and have Keybase on your machine before you can continue with the steps below.
 
->- [PDF] C++ For Dummies
+- [PDF] C++ For Dummies
 - [PDF] C++ Primer: 5th Edition
 - [PDF] Discrete Mathematics with Applications
 - [PDF] Effective Modern C++
