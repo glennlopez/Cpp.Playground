@@ -4,9 +4,9 @@ C++ Playground
 =================
 This is where I keep all my non project related C and C++ source codes. Its an educational repo for documenting my progress; all my trials and tribulations with one of the "hardest" languages to master. Visit my [HackerRank](https://www.hackerrank.com/glennlopez?hr_r=1) and [CodinGame](https://www.codingame.com/profile/f521b07f225156a74ce6fbd85a614e696228981) profiles to see the other ways I keep my C++ sharp. 
 
-Computer Science e-Book Repository
-==================
-Due to popular demand and numerous DMCA notices, I've created a private encrypted git repository specifically for hosting compsci ebooks. You'll need to have a **[Keybase account](https://keybase.io)** and have Keybase on your machine before you can continue with the steps below.
+Recommended Computer Science Books:
+---
+Below is a link to a private-encrypted git repository for all the CS books I highly recommend (they are periodically updated). If you wish to clone the cs ebook repo, you'll need to have a **[Keybase account](https://keybase.io)** and have Keybase on your machine before you can continue with git clone.
 
 - [PDF] C++ For Dummies
 - [PDF] C++ Primer: 5th Edition
