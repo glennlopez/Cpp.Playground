@@ -1,21 +1,54 @@
 #include <stdio.h>
+void convert(int);
 
-/*
-Algorythm: Divide the Decimal by 2 until the number being divided is less than 2,
-keeping track of any remainders
-
-    12/2 = 6    (0)
-    6/2 = 3     (0)
-    3/2 = 1     (1) <-- 3/2 = 1 w/ 1 remainder
-    1/2 = 1     (1) <-- 1/2 = 1 w/ 1 remainder + 1 is less than 2 so stop looping
-
- Now, we simply need to write out the remainder in the reverse order — 1100. So, 12 in decimal system is represented as 1100 in binary.
-*/
-
+//MAIN ROUTINE
 int main(){
 
-    //FIXME: Program the decimal to binary algorythm above
+    convert(192);
+    convert(168);
+    convert(1);
+    convert(2);
 
     printf("\n");
     return 0;
+}
+
+
+//DECIMAL TO BINARY SUBROUTINE
+void convert(int param){
+    int uNum = param;      //user decimal input
+    int uBin[32];       //binary conversion storage
+    int count = 0;      //used for indexing array
+
+    //FIXME: re-code to use recursive
+    //          add leading zeroes for AND/OR function
+
+    if(uNum == 1){
+        uBin[0] = 1;
+    }
+
+    while(uNum != 1){
+        if(uNum % 2){
+            uBin[count] = 1;
+        }
+        else{
+            uBin[count] = 0;
+        }
+
+        uNum /= 2;
+
+        if(uNum == 1){
+            uBin[count + 1] = 1;
+        }
+
+        count++;
+    }
+
+    for(int i = count; i >= 0; i--){
+        printf("%i", uBin[i]);
+
+    }
+
+    //DEBUG - dot delimiter
+    printf(".");
 }
