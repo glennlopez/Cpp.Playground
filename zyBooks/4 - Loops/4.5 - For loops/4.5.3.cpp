@@ -19,7 +19,7 @@ int main() {
    userNum = 3;
 
    /* Your solution goes here  */
-	for(i = userNum; userNum > 0; i--){
+	for(i = userNum; i > 0; i--){
 		cout << i << endl;
 	}
 
