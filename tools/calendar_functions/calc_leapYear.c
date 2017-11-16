@@ -1,34 +1,59 @@
+/*  TEST THIS ALGORYTHM:
+    The following are known leap years:
+        1600, 2000, 2400, 1992, 2052, 2072, 2016, 2008
+*/
+
 #include <stdio.h>
 
-//creating a new datatype (c doesnt have boolean datatypes for some reson)
+//c doesnt have boolean datatypes so i need to enumerate one
 typedef int bool;
-enum { false, true };
+enum {false, true};
 
 //prototypes
 bool isLeapYear(unsigned int); 
 
 
 int main(){
-    int userInput = 2010;
 
-    printf("%i\n", isLeapYear(userInput));
+    //testing isLeapYear() function
+    int userInput = 0;
+    printf("Enter Year: ");
+    scanf("%i", &userInput);
+    printf("Result: %i\n", isLeapYear(userInput));
 
     return 0;
 }
 
-/*  FIXME:
 
-    function isLeapYear (year):
-    if ((year modulo 4 is 0) and (year modulo 100 is not 0))
-    or (year modulo 400 is 0)
-        then true
-    else false
 
+
+/* 
+    Description: Determines leap years
+    Dependencies: required bool datatype
 */
 bool isLeapYear(unsigned int param){
-    if( !(param % 4) ){
-        return true;
+    //if divisible by 4
+    if( !(param % 4)){  
+        //if divisible by 100
+        if( !(param % 100) ){
+
+            //if divisible by 400
+            if( !(param % 400) ){   
+                return true;
+            }
+            //not divisible by 100
+            else{   
+                return false;
+            }
+
+        }
+        else{   //not divisible by 100
+            return true;
+        }
+
+        //return true;   
     }
+    //not divisible by 4
     else{
         return false;
     }
