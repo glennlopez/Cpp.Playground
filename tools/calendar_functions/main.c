@@ -4,9 +4,12 @@
 typedef int bool;
 enum {false, true};
 
-//timeline container {hours, minutes, seconds, miliseconds}
-int timeLine[4] = {0,0,0,0};
-const char *MONTH[12] = {
+//global variables
+int startYear, startMonth, startDay, startHour, startMin, startSec, startMiliSec, defaultMilisecond, finalYear, finalMonth, finalDay;
+
+int timeLine[4] = {0,0,0,0}; //timeline container {hours, minutes, seconds, miliseconds}
+
+const char *CALENDAR[12] = {
     "January",
     "Febuary",
     "March",
@@ -21,15 +24,15 @@ const char *MONTH[12] = {
     "December"
 };
 
-//initial parameters
-int defaultMilisecond = 183; //<--- CHANGE THIS IF REQUIRED
-int startYear, startMonth, startDay, startHour, startMin, startSec, startMiliSec;
-
 //prototypes
 double convertSec(double, char);
 void calc_timeLine(int[], double);
 void calc_dateLine(double);
 bool isLeapYear(unsigned int);
+void printResults(void);
+
+
+
 
 
 int main(){
@@ -39,26 +42,44 @@ int main(){
         - Keep it simple
         - main() should only have subroutines for code readability
 */
-    //Initial parameters
+    //PARAMETRIC SETTINGS
+    defaultMilisecond = 183; //<-- CHANGE THIS IF REQUIRED
     startYear = 2000;
+    startMonth = 1;
     double seconds = 247142594; 
+
+    //Debug output - to show in terminal what is bieng converted
+    printf("Input: %f\n", seconds);
     
 
-    printf("INPUT: %f\n", seconds); //debug output
-
+    //SUBROUTINES
     calc_timeLine(timeLine, seconds);
     calc_dateLine(seconds);
-
-    //FIXME: put this in a subroutine
-    //printf("\n");
-    //printf("Hours: %i\n", timeLine[0]);
-    //printf("Minutes: %i\n", timeLine[1]);
-    //printf("Seconds: %i\n", timeLine[2]);
-    //printf("Miliseconds: %i\n", timeLine[3]);
+    printResults();
 
     return 0;
 }
 
+
+
+
+
+/* 
+    OUTPUT
+    Description: Outputs the results after conversion and calculations
+    Dependencies: stdio.h
+*/
+void printResults(void){
+    printf("%s", CALENDAR[finalMonth]);
+    printf(" %i", finalDay);
+    printf(" %i", finalYear);
+    printf(",");
+    printf(" %i", timeLine[0]);
+    printf(":%i", timeLine[1]);
+    printf(":%i", timeLine[2]);
+    printf(":%i", timeLine[3]);
+    printf("\n");   //new line
+}
 
 
 
@@ -69,15 +90,13 @@ int main(){
 */
 void calc_dateLine(double seconds){
 
-    //initial values
     unsigned int year = startYear;
+    unsigned int month = startMonth;
+
     double totalDays = convertSec(seconds, 'd');
 
-
-    printf("Initial Days: %f\n", totalDays);
-
-    //Year Counter
-    while(totalDays > 365){
+    //YEAR COUNTER
+    while(totalDays >= 365){
         if( isLeapYear(year) ){
             totalDays -= 366;
             year++;
@@ -88,8 +107,37 @@ void calc_dateLine(double seconds){
         }
     }
 
-    printf("Year: %i\n", year);
-    printf("Remainder days: %f\n", totalDays);
+    //MONTH COUNTER
+    while(totalDays > 31){
+        
+        //31 days
+        if( (month == 1) || (month == 3) || (month == 5) || (month == 7) || (month == 8) || (month == 10) || (month == 12)){
+            totalDays -= 31;
+            month++;
+        }
+        //30 days
+        else if( (month == 4) || (month == 6) || (month == 9) || (month == 11) ){
+            totalDays -= 30;
+            month++;
+        }
+        //febuary
+        else if(month == 2){
+            if(isLeapYear(year)){
+                totalDays -= 29;
+                month++;
+            }
+            else{
+                totalDays -= 28;
+                month++;
+            }
+        }
+
+    }
+
+    //FINAL MODIFYERS
+    finalDay = totalDays +1;    //+1 becuase there is no 0 day
+    finalMonth = month -1;      // -1 is for complying with how arrays work
+    finalYear = year; 
 
 }
 
