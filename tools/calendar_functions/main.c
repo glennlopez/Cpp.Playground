@@ -30,6 +30,10 @@ void calc_timeLine(int[], double);
 void calc_dateLine(double);
 bool isLeapYear(unsigned int);
 void printResults(void);
+void printInitVals(void);
+
+
+
 
 
 
@@ -48,8 +52,14 @@ int main(){
     startMonth = 1;
     double seconds = 247142594; 
 
+    //For taking in user input on the terminal
+    printInitVals();
+    printf("Enter elapse seconds: ");
+    scanf("%lf", &seconds);
+    printf("\n\n");
+
     //Debug output - to show in terminal what is bieng converted
-    printf("Input: %f\n", seconds);
+    printf("Input: %f seconds\n", seconds);
     
 
     //SUBROUTINES
@@ -64,12 +74,16 @@ int main(){
 
 
 
+
+
+
 /* 
     OUTPUT
     Description: Outputs the results after conversion and calculations
     Dependencies: stdio.h
 */
 void printResults(void){
+    printf("Output: ");
     printf("%s", CALENDAR[finalMonth]);
     printf(" %i", finalDay);
     printf(" %i", finalYear);
@@ -79,6 +93,10 @@ void printResults(void){
     printf(":%i", timeLine[2]);
     printf(":%i", timeLine[3]);
     printf("\n");   //new line
+}
+
+void printInitVals(void){
+    printf("[!] Note: You can set the initial date & time in the main function. By default, this starts at January 1 2000, 00:00:00:00\n\n");
 }
 
 
