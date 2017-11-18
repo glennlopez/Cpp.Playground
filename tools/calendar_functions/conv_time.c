@@ -10,9 +10,10 @@ int main(){
 
     //testing toDays();
     //double seconds = 247142594;
-    double seconds = 60;
+    double seconds = 38594;
+    //double seconds = 60;
     printf("Input: %f seconds \n", seconds);
-    printf("Results: %f\n", convertSec(seconds, 'x'));
+    printf("Hours: %f\n", convertSec(seconds, 'h'));
 
     return 0;
 }

@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "algorithm": "c",
+        "random": "c",
+        "chrono": "c"
+    }
+}
