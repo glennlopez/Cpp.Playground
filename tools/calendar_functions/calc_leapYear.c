@@ -1,8 +1,3 @@
-/*  TEST THIS ALGORYTHM:
-    The following are known leap years:
-        1600, 2000, 2400, 1992, 2052, 2072, 2016, 2008
-*/
-
 #include <stdio.h>
 
 //c doesnt have boolean datatypes so i need to enumerate one
@@ -13,6 +8,12 @@ enum {false, true};
 bool isLeapYear(unsigned int); 
 
 
+
+
+/*  TEST THIS ALGORYTHM:
+    The following are known leap years:
+        1600, 2000, 2400, 1992, 2052, 2072, 2016, 2008
+*/
 int main(){
 
     //testing isLeapYear() function
@@ -29,7 +30,7 @@ int main(){
 
 /* 
     Description: Determines leap years
-    Dependencies: required bool datatype
+    Dependencies: required bool datatype for c-lang
 */
 bool isLeapYear(unsigned int param){
     //if divisible by 4
@@ -50,8 +51,7 @@ bool isLeapYear(unsigned int param){
         else{   //not divisible by 100
             return true;
         }
-
-        //return true;   
+ 
     }
     //not divisible by 4
     else{
