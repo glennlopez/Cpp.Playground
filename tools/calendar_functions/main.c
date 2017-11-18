@@ -50,7 +50,7 @@ int main(){
     defaultMilisecond = 183; //<-- CHANGE THIS IF REQUIRED
     startYear = 2000;
     startMonth = 1;
-    double seconds = 247142594; 
+    double seconds = 247142594; //<-- CHANGE THIS TO TEST
 
     //For taking in user input on the terminal
     printInitVals();
