@@ -41,6 +41,14 @@ void printInitVals(void);
 
 int main(){
 /*  
+    SYNOPSYS:
+        This program will take an elapse time (input: seconds), and covert it to
+        a "time-frame" in the calendar (output: date + time).  The program takes
+        leap-year into consideration. 
+
+        Program uses data-type: double, so be careful not to overflow the input.
+        Maximum (not recomended) elapse time in seconds should not excede 10 years.
+
     DESIGN CONSTRAINTS:
         - Restricted to using stdio.h library for portability to other langs
         - Keep it simple
