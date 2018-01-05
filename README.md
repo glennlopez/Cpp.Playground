@@ -12,14 +12,14 @@ Below is a link to a private-encrypted git repository for all the CS books I hig
 - [PDF] C++ Primer: 5th Edition
 - [PDF] Discrete Mathematics with Applications
 - [PDF] Effective Modern C++
+- [EPUB] Think Like a Programmer
 
-**Ask to join our Keybase team:**
+**Request access to private repo:**
 ```
 $ keybase team request-access hackup
 ```
-> Note: You'll need to wait for me to accept your request before you can excecute the next command.
 
-**Do a git clone of the private encrypted git repository:**
+**Clone the private repository:**
 ```
 $ git clone keybase://team/hackup/cs-books
 ```
