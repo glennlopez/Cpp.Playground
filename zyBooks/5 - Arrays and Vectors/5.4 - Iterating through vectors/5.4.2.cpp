@@ -11,7 +11,7 @@ using namespace std;
 int main() {
    const int NUM_VALS = 4;
    vector<int> userValues(NUM_VALS);
-   int i = 0;
+   int i;
    int matchValue = 0;
    int numMatches = -99; // Assign numMatches with 0 before your for loop
 
@@ -23,6 +23,7 @@ int main() {
    matchValue = 2;
 
    /* Your solution goes here  */
+	i=0;
 	numMatches = 0;
 	do{
 		if(userValues.at(i) == matchValue){
