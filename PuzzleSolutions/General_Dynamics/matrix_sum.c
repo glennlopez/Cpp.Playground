@@ -1,9 +1,9 @@
 #include <stdio.h>
+
 void printArr(int []);
 void insertion_sort(int [], int);
 void swap(int *param1, int *param2);
 
-//globals
 int sums[730] = {};    //9^3 possible combinations
 
 
@@ -28,28 +28,46 @@ int main(){
                     sums[arrCount] = givens[k] + givens[j] + givens[i];
                     arrCount++; 
 
-                    //output to stdout
-                    printf("%i + %i + %i = %i \n", 
-                    givens[k], givens[j], givens[i], 
-                    givens[k] + givens[j] + givens[i]);
-
+                      //output to stdout
+                        printf("%i + %i + %i = %i \n", 
+                        givens[k], givens[j], givens[i], 
+                        givens[k] + givens[j] + givens[i]);
+                    
                 }
 
             }
         }
     }
 
+    printArr(sums);
+
     //sort array
     insertion_sort(sums, arrCount);
-
-    for(int i = 0; sums[arrCount]; i++){
-
-    }
-
-    //debug print
     printArr(sums);
-    printf("\n");
 
+    //find the most frequent repeating sum
+    int a = sums[0];
+    int b = sums[1];
+    int sum_counter = 1;
+    int mostFrequent = 0; //<-- return this
+    for(int i = 0; i <= arrCount; i++){
+
+        if(sums[i] != sums[i+1]){
+            int a = sums[i + 0];
+            int b = sums[i + 1];
+            printf("%i: %i\n", a, sum_counter);
+
+            // keep track of most frequent sum
+
+            sum_counter = 1; //reset sum_counter
+        }
+        else{
+            sum_counter++;
+        }
+    }
+    printf("Most frequent sum: %i", mostFrequent);
+
+    printf("\n");
     return 0;
 }
 
