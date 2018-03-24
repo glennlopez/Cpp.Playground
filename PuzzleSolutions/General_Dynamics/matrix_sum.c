@@ -5,9 +5,14 @@
         Solution by: github.com/glennlopez
 */
 
-void printArr(int []);
+//solver routines
 void popWithSum(int [], int [], int *);
 int findFrqSum(int [], int);
+
+//debug routines
+void printArr(int []);
+
+//sorting algorythms
 void insertion_sort(int [], int);
 void swap(int *, int *);
 
@@ -19,16 +24,38 @@ int main(){
 
     int arrCount = 0;   // counts the number of arr stored
     int frqSum = 0;
-    int sums[730] = {};    //9^3 possible combinations
+    int sums[730] = {};    // 9^3 possible combinations
     int givens[] = {
         35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'
     };
     
-    popWithSum(givens, sums, &arrCount);
-    insertion_sort(sums, arrCount);     // sort array
-    frqSum = findFrqSum(sums, arrCount);      // find most frequent sum
+    popWithSum(givens, sums, &arrCount);    // populate sum array
+    insertion_sort(sums, arrCount);         // sort array
+    frqSum = findFrqSum(sums, arrCount);    // find most frq
 
-    //DEBUG OUTPUT
+
+    //TODO: calculate solution
+    
+    //store solution in n x 3 array
+    for(int k = 0; givens[k] != '\0'; k++){
+        for(int j = 0; givens[j] != '\0'; j++){
+            for(int i = 0; givens[i] != '\0'; i++){
+                
+                if(givens[k] + givens[j] + givens[i] == frqSum){
+                    //output to stdout
+                    printf("%i + %i + %i = %i \n", 
+                    givens[k], givens[j], givens[i], 
+                    givens[k] + givens[j] + givens[i]);
+                }
+            }
+        }
+    }
+
+
+
+
+
+    // DEBUG OUTPUT
     printf("Most frequent sum: %i\n", frqSum);
     printf("arrCount: %i\n", arrCount);
     printf("\n");
@@ -48,15 +75,20 @@ void popWithSum(int givenArr[], int storeArr[], int *counter){
         for(int j = 0; givenArr[j] != '\0'; j++){
             for(int i = 0; givenArr[i] != '\0'; i++){
                 
+                /*  FIXME: 
+                 *  a number can show up in a solution
+                 *  more than once.
+                 */
+                
                 if( (i != j) && (i != k) && (j != k)){
-                    //store to sums array
                     storeArr[*counter] = givenArr[k] + givenArr[j] + givenArr[i];
                     (*counter)++; 
 
                     //output to stdout
-                    printf("%i + %i + %i = %i \n", 
+                    /*printf("%i + %i + %i = %i \n", 
                     givenArr[k], givenArr[j], givenArr[i], 
                     givenArr[k] + givenArr[j] + givenArr[i]);
+                    */
                 }
             }
         }
