@@ -28,7 +28,8 @@ int main(){
     int arrCount = 0;               // track number of arr stored
     int frqSum = 0;                 // store most freq sum
     int sums[730] = {};             // 9^3 = 730 combinations
-    int mtrxSolArr[MAX_Y][MAX_X] = {};  // solution matrix
+    int mtrxSolArr[MAX_Y][MAX_X] = {};
+    int solution[3][3] = {};
     int givens[] = {
         35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'
     };
@@ -37,7 +38,7 @@ int main(){
     insertion_sort(sums, arrCount);         // sort array
     frqSum = findFrqSum(sums, arrCount);    // find most frq sum
 
-    //store frqSum solution in multidimentional array
+    // store frqSum solution in multidimentional array
     int mtrxArrCount = 0;
     for(int k = 0; givens[k] != '\0'; k++){
         for(int j = 0; givens[j] != '\0'; j++){
@@ -53,6 +54,23 @@ int main(){
             }
         }
     }
+    
+
+
+
+
+
+
+    // Populate solution array with defaults
+    for(int k = 0; k < 3; k++){
+        for(int j = 0; j < 3; j++){
+            solution[j][0] = mtrxSolArr[j][0];
+            solution[j][1] = mtrxSolArr[j][1];
+            solution[j][2] = mtrxSolArr[j][2];
+        }
+    }
+
+
 
 
 
@@ -63,10 +81,26 @@ int main(){
     printf("arrCount: %i\n", arrCount);
     printf("\n");
 
-    //print multidimentional array
+    //print NON-NULL multidimentional array
     for(int j = 0; j < MAX_Y; j++){
         for(int i = 0; i < MAX_X; i++){
-            printf("%i ", mtrxSolArr[j][i]);
+            if(mtrxSolArr[j][i] != '\0'){
+                printf("%i ", mtrxSolArr[j][i]);
+            }
+        }
+        if(mtrxSolArr[j][0] != '\0'){
+            printf("\n");
+        }
+    }
+
+    printf("\n");
+    printf("\n");
+    printf("\n");
+
+    //print NON-NULL multidimentional array
+    for(int j = 0; j < 3; j++){
+        for(int i = 0; i < 3; i++){
+            printf("%i ", solution[j][i]);
         }
         printf("\n");
     }
