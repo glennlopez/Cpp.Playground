@@ -9,7 +9,7 @@ int sums[730] = {};    //9^3 possible combinations
 
 
 /*****************
- * MAIN ROUTINES
+ * MAIN ROUTINE
 ******************/
 int main(){
 
@@ -25,28 +25,21 @@ int main(){
             for(int i = 0; givens[i] != '\0'; i++){
                 
                 if( (i != j) && (i != k) && (j != k)){
-
                     //store to sums array
                     sums[arrCount] = givens[k] + givens[j] + givens[i];
                     arrCount++; 
 
-                      //output to stdout
-                        
-                        printf("%i + %i + %i = %i \n", 
-                        givens[k], givens[j], givens[i], 
-                        givens[k] + givens[j] + givens[i]);
-                        
+                    //output to stdout
+                    printf("%i + %i + %i = %i \n", 
+                    givens[k], givens[j], givens[i], 
+                    givens[k] + givens[j] + givens[i]);
                 }
-
             }
         }
     }
 
-    // sort array
-    insertion_sort(sums, arrCount);
-
-    // find the most frequent sum
-    frqSum = findFrqSum(arrCount);
+    insertion_sort(sums, arrCount);     // sort array
+    frqSum = findFrqSum(arrCount);      // find most frequent sum
 
     //DEBUG OUTPUT
     printf("Most frequent sum: %i", frqSum);
@@ -62,31 +55,26 @@ int main(){
 
 //find frequent
 int findFrqSum(int param){
-    //find most frequent sum
-    int a = sums[0];
-    int b = sums[1];
-    int sum_counter = 1;
-    int highest_count = 0; 
-    int most_frequent = 0;  //<-- return this
+    int a = sums[0]; int b = sums[1];
+    int sum_counter = 1; int highest_count = 0; 
+    int most_frequent = 0;
+    
     for(int i = 0; i <= param; i++){
-
         if(sums[i] != sums[i+1]){
             int a = sums[i + 0];
             int b = sums[i + 1];
-            //printf("%i: %i\n", a, sum_counter);
 
-            // keep track of most frequent sum
             if(sum_counter > highest_count){
                 highest_count = sum_counter;
                 most_frequent = sums[i];
             }
-
-            sum_counter = 1; //reset sum_counter
+            sum_counter = 1;
         }
         else{
             sum_counter++;
         }
     }
+    
     return most_frequent;
 }
 
@@ -103,17 +91,13 @@ void insertion_sort(int paramArr[], int elementCount){
     int sdx = 0;
     int tdx = sdx + 1;
 
-    //loop through the entire array only once
     for(int i = 0; i < elementCount; i++){
-
         while( (paramArr[tdx] < paramArr[tdx - 1]) && (tdx > 0) && (tdx < elementCount) ){
             swap(&paramArr[tdx], &paramArr[tdx - 1]);
-            tdx--;  //keeps track of where tdx is when a swap function is called
+            tdx--;
         }
-
         sdx++;
         tdx = sdx + 1;
-
     }
 }
 
