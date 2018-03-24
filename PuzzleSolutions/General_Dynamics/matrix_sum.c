@@ -22,30 +22,33 @@ void swap(int *, int *);
 ******************/
 int main(){
 
-    int arrCount = 0;   // counts the number of arr stored
-    int frqSum = 0;
-    int sums[730] = {};    // 9^3 possible combinations
+    const int MAX_Y = 730/4;        // this is arbritrary num
+    const int MAX_X = 3;            // its a 3x3 matrix
+
+    int arrCount = 0;               // track number of arr stored
+    int frqSum = 0;                 // store most freq sum
+    int sums[730] = {};             // 9^3 = 730 combinations
+    int mtrxSolArr[MAX_Y][MAX_X] = {};  // solution matrix
     int givens[] = {
         35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'
     };
     
     popWithSum(givens, sums, &arrCount);    // populate sum array
     insertion_sort(sums, arrCount);         // sort array
-    frqSum = findFrqSum(sums, arrCount);    // find most frq
+    frqSum = findFrqSum(sums, arrCount);    // find most frq sum
 
-
-    //TODO: calculate solution
-    
-    //store solution in n x 3 array
+    //store frqSum solution in multidimentional array
+    int mtrxArrCount = 0;
     for(int k = 0; givens[k] != '\0'; k++){
         for(int j = 0; givens[j] != '\0'; j++){
             for(int i = 0; givens[i] != '\0'; i++){
-                
-                if(givens[k] + givens[j] + givens[i] == frqSum){
-                    //output to stdout
-                    printf("%i + %i + %i = %i \n", 
-                    givens[k], givens[j], givens[i], 
-                    givens[k] + givens[j] + givens[i]);
+                if( (i != j) && (i != k) && (j != k)){
+                    if(givens[k] + givens[j] + givens[i] == frqSum){
+                        mtrxSolArr[mtrxArrCount][0] = givens[k];
+                        mtrxSolArr[mtrxArrCount][1] = givens[j];
+                        mtrxSolArr[mtrxArrCount][2] = givens[i];
+                        mtrxArrCount++;
+                    }
                 }
             }
         }
@@ -59,6 +62,15 @@ int main(){
     printf("Most frequent sum: %i\n", frqSum);
     printf("arrCount: %i\n", arrCount);
     printf("\n");
+
+    //print multidimentional array
+    for(int j = 0; j < MAX_Y; j++){
+        for(int i = 0; i < MAX_X; i++){
+            printf("%i ", mtrxSolArr[j][i]);
+        }
+        printf("\n");
+    }
+
     return 0;
 }
 
@@ -74,11 +86,6 @@ void popWithSum(int givenArr[], int storeArr[], int *counter){
     for(int k = 0; givenArr[k] != '\0'; k++){
         for(int j = 0; givenArr[j] != '\0'; j++){
             for(int i = 0; givenArr[i] != '\0'; i++){
-                
-                /*  FIXME: 
-                 *  a number can show up in a solution
-                 *  more than once.
-                 */
                 
                 if( (i != j) && (i != k) && (j != k)){
                     storeArr[*counter] = givenArr[k] + givenArr[j] + givenArr[i];
