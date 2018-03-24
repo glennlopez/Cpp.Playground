@@ -1,8 +1,9 @@
 #include <stdio.h>
 
 void printArr(int []);
+int findFrqSum(int);
 void insertion_sort(int [], int);
-void swap(int *param1, int *param2);
+void swap(int *, int *);
 
 int sums[730] = {};    //9^3 possible combinations
 
@@ -13,11 +14,12 @@ int sums[730] = {};    //9^3 possible combinations
 int main(){
 
     int arrCount = 0;   // counts the number of arr stored
+    int frqSum = 0;
     int givens[] = {
         35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'
     };
 
-    //add every possible combination of numbers 9^3 = 729
+    //populate array with sum
     for(int k = 0; givens[k] != '\0'; k++){
         for(int j = 0; givens[j] != '\0'; j++){
             for(int i = 0; givens[i] != '\0'; i++){
@@ -29,44 +31,25 @@ int main(){
                     arrCount++; 
 
                       //output to stdout
+                        
                         printf("%i + %i + %i = %i \n", 
                         givens[k], givens[j], givens[i], 
                         givens[k] + givens[j] + givens[i]);
-                    
+                        
                 }
 
             }
         }
     }
 
-    printArr(sums);
-
-    //sort array
+    // sort array
     insertion_sort(sums, arrCount);
-    printArr(sums);
 
-    //find the most frequent repeating sum
-    int a = sums[0];
-    int b = sums[1];
-    int sum_counter = 1;
-    int mostFrequent = 0; //<-- return this
-    for(int i = 0; i <= arrCount; i++){
+    // find the most frequent sum
+    frqSum = findFrqSum(arrCount);
 
-        if(sums[i] != sums[i+1]){
-            int a = sums[i + 0];
-            int b = sums[i + 1];
-            printf("%i: %i\n", a, sum_counter);
-
-            // keep track of most frequent sum
-
-            sum_counter = 1; //reset sum_counter
-        }
-        else{
-            sum_counter++;
-        }
-    }
-    printf("Most frequent sum: %i", mostFrequent);
-
+    //DEBUG OUTPUT
+    printf("Most frequent sum: %i", frqSum);
     printf("\n");
     return 0;
 }
@@ -76,6 +59,36 @@ int main(){
 /*****************
  * SUB ROUTINES
 ******************/
+
+//find frequent
+int findFrqSum(int param){
+    //find most frequent sum
+    int a = sums[0];
+    int b = sums[1];
+    int sum_counter = 1;
+    int highest_count = 0; 
+    int most_frequent = 0;  //<-- return this
+    for(int i = 0; i <= param; i++){
+
+        if(sums[i] != sums[i+1]){
+            int a = sums[i + 0];
+            int b = sums[i + 1];
+            //printf("%i: %i\n", a, sum_counter);
+
+            // keep track of most frequent sum
+            if(sum_counter > highest_count){
+                highest_count = sum_counter;
+                most_frequent = sums[i];
+            }
+
+            sum_counter = 1; //reset sum_counter
+        }
+        else{
+            sum_counter++;
+        }
+    }
+    return most_frequent;
+}
 
 // print array contents
 void printArr(int param[]){
