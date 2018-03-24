@@ -1,4 +1,9 @@
 #include <stdio.h>
+/*
+    Puzzle provided by General Dynamics.
+    Challange: use as little #include overhead as possible.
+        Solution by: github.com/glennlopez
+*/
 
 void printArr(int []);
 int findFrqSum(int);
@@ -74,7 +79,7 @@ int findFrqSum(int param){
             sum_counter++;
         }
     }
-    
+
     return most_frequent;
 }
 
