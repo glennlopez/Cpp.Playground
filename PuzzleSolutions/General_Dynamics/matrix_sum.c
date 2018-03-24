@@ -1,16 +1,15 @@
 #include <stdio.h>
 /*
-    Puzzle provided by General Dynamics.
+    Puzzle provided by General Dynamics (#NEM puzzle).
     Challange: use as little #include overhead as possible.
         Solution by: github.com/glennlopez
 */
 
 void printArr(int []);
-int findFrqSum(int);
+void popWithSum(int [], int [], int *);
+int findFrqSum(int [], int);
 void insertion_sort(int [], int);
 void swap(int *, int *);
-
-int sums[730] = {};    //9^3 possible combinations
 
 
 /*****************
@@ -20,34 +19,18 @@ int main(){
 
     int arrCount = 0;   // counts the number of arr stored
     int frqSum = 0;
+    int sums[730] = {};    //9^3 possible combinations
     int givens[] = {
         35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'
     };
-
-    //populate array with sum
-    for(int k = 0; givens[k] != '\0'; k++){
-        for(int j = 0; givens[j] != '\0'; j++){
-            for(int i = 0; givens[i] != '\0'; i++){
-                
-                if( (i != j) && (i != k) && (j != k)){
-                    //store to sums array
-                    sums[arrCount] = givens[k] + givens[j] + givens[i];
-                    arrCount++; 
-
-                    //output to stdout
-                    printf("%i + %i + %i = %i \n", 
-                    givens[k], givens[j], givens[i], 
-                    givens[k] + givens[j] + givens[i]);
-                }
-            }
-        }
-    }
-
+    
+    popWithSum(givens, sums, &arrCount);
     insertion_sort(sums, arrCount);     // sort array
-    frqSum = findFrqSum(arrCount);      // find most frequent sum
+    frqSum = findFrqSum(sums, arrCount);      // find most frequent sum
 
     //DEBUG OUTPUT
-    printf("Most frequent sum: %i", frqSum);
+    printf("Most frequent sum: %i\n", frqSum);
+    printf("arrCount: %i\n", arrCount);
     printf("\n");
     return 0;
 }
@@ -58,20 +41,42 @@ int main(){
  * SUB ROUTINES
 ******************/
 
+//populate array with sum
+void popWithSum(int givenArr[], int storeArr[], int *counter){
+    //populate array with sum
+    for(int k = 0; givenArr[k] != '\0'; k++){
+        for(int j = 0; givenArr[j] != '\0'; j++){
+            for(int i = 0; givenArr[i] != '\0'; i++){
+                
+                if( (i != j) && (i != k) && (j != k)){
+                    //store to sums array
+                    storeArr[*counter] = givenArr[k] + givenArr[j] + givenArr[i];
+                    (*counter)++; 
+
+                    //output to stdout
+                    printf("%i + %i + %i = %i \n", 
+                    givenArr[k], givenArr[j], givenArr[i], 
+                    givenArr[k] + givenArr[j] + givenArr[i]);
+                }
+            }
+        }
+    }
+}
+
 //find frequent
-int findFrqSum(int param){
-    int a = sums[0]; int b = sums[1];
+int findFrqSum(int arr[], int param){
+    int a = arr[0]; int b = arr[1];
     int sum_counter = 1; int highest_count = 0; 
     int most_frequent = 0;
     
     for(int i = 0; i <= param; i++){
-        if(sums[i] != sums[i+1]){
-            int a = sums[i + 0];
-            int b = sums[i + 1];
+        if(arr[i] != arr[i+1]){
+            int a = arr[i + 0];
+            int b = arr[i + 1];
 
             if(sum_counter > highest_count){
                 highest_count = sum_counter;
-                most_frequent = sums[i];
+                most_frequent = arr[i];
             }
             sum_counter = 1;
         }
