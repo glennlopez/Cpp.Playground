@@ -25,6 +25,7 @@ int main(){
     const int MAX_Y = 730/4;        // this is arbritrary num
     const int MAX_X = 3;            // its a 3x3 matrix
 
+    int solCol1, solCol2, solCol3;
     int arrCount = 0;               // track number of arr stored
     int frqSum = 0;                 // store most freq sum
     int sums[730] = {};             // 9^3 = 730 combinations
@@ -61,7 +62,7 @@ int main(){
 
 
 
-    // Populate solution array with defaults
+    // Populate solution array with initial values
     for(int k = 0; k < 3; k++){
         for(int j = 0; j < 3; j++){
             solution[j][0] = mtrxSolArr[j][0];
@@ -69,6 +70,18 @@ int main(){
             solution[j][2] = mtrxSolArr[j][2];
         }
     }
+
+    // Populate solution columns with initial values
+    solCol1 = solution[0][0] + solution[1][0] + solution[2][0];
+    solCol2 = solution[0][1] + solution[1][1] + solution[2][1];
+    solCol3 = solution[0][2] + solution[1][2] + solution[2][2];
+
+    // Bruteforce solution
+    while((solCol1 != frqSum) && (solCol2 != frqSum) && (solCol3 != frqSum)){
+
+    }
+
+
 
 
 
@@ -78,7 +91,6 @@ int main(){
 
     // DEBUG OUTPUT
     printf("Most frequent sum: %i\n", frqSum);
-    printf("arrCount: %i\n", arrCount);
     printf("\n");
 
     //print NON-NULL multidimentional array
@@ -104,6 +116,14 @@ int main(){
         }
         printf("\n");
     }
+
+    printf("\n");
+    printf("\n");
+    printf("\n");
+
+    printf("solCol1: %i\n", solCol1);
+    printf("solCol2: %i\n", solCol2);
+    printf("solCol3: %i\n", solCol3);
 
     return 0;
 }
