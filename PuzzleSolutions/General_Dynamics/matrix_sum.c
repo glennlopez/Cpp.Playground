@@ -28,18 +28,19 @@ int main(){
     const int MAX_X = MATRIX_SIZE;                  // its a 3x3 matrix
     int sums[730] = {};                             // MATRIX^MATRIX_SIZE + 1 = sums[n]
     int givens[] = {                                // always add a null at the end
-        35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'      //testcase 1
-        //11, 18, 10, 48, 17, 20, 32, 31, 4, '\0'     //testcase 2
+        //35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'    //testcase 1
+        11, 18, 10, 48, 17, 20, 32, 31, 4, '\0'     //testcase 2
     };
 
     //store value var
-    int solCol1 = 0; 
+    int solCol1 = 0;
     int solCol2 = 0;
     int solCol3 = 0;
-    int arrCount = 0;               // track number of arr stored
-    int frqSum = 0;                 // store most freq sum
-    int mtrxSolArr[MAX_Y][MAX_X] = {};
-    int solution[MATRIX_SIZE][MATRIX_SIZE] = {};
+    int arrCount = 0;                               // number of arr stored
+    int frqSum = 0;                                 // most freq sum
+    int mtrxSolArr[MAX_Y][MAX_X] = {};              // possible solution values
+    int usedNum[MATRIX_SIZE * MATRIX_SIZE] = {};    // stores used number (prevent dupes)
+    int solution[MATRIX_SIZE][MATRIX_SIZE] = {};    // solution
     
     popWithSum(givens, sums, &arrCount);    // populate sum array
     insertion_sort(sums, arrCount);         // sort array
