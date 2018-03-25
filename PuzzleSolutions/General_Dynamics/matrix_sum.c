@@ -9,51 +9,53 @@
 void popWithSum(int [], int [], int *);
 int findFrqSum(int [], int);
 
-//debug routines
-void printArr(int []);
-
 //sorting algorythms
 void insertion_sort(int [], int);
 void swap(int *, int *);
 
+//debug routines
+void printArr(int []);
 
 /*****************
  * MAIN ROUTINE
 ******************/
 int main(){
 
-    const int MAX_Y = 730/4;        // this is arbritrary num
-    const int MAX_X = 3;            // its a 3x3 matrix
+    //parametric var
+    const int MATRIX_SIZE = 3;                      // 3 = 3x3 matrix size
+    const int MATRIX = MATRIX_SIZE * MATRIX_SIZE;
+    const int MAX_Y = 730/4;                        // this is arbritrary: 1/4 of (3*3)^3
+    const int MAX_X = MATRIX_SIZE;                  // its a 3x3 matrix
+    int sums[730] = {};                             // MATRIX^MATRIX_SIZE + 1 = sums[n]
+    int givens[] = {                                // always add a null at the end
+        35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'      //testcase 1
+        //11, 18, 10, 48, 17, 20, 32, 31, 4, '\0'     //testcase 2
+    };
 
+    //store value var
     int solCol1 = 0; 
     int solCol2 = 0;
     int solCol3 = 0;
-
     int arrCount = 0;               // track number of arr stored
     int frqSum = 0;                 // store most freq sum
-    int sums[730] = {};             // 9^3 = 730 combinations
     int mtrxSolArr[MAX_Y][MAX_X] = {};
-    int solution[3][3] = {};
-    int givens[] = {
-        35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'
-        //11, 18, 10, 48, 17, 20, 32, 31, 4, '\0'
-    };
+    int solution[MATRIX_SIZE][MATRIX_SIZE] = {};
     
     popWithSum(givens, sums, &arrCount);    // populate sum array
     insertion_sort(sums, arrCount);         // sort array
     frqSum = findFrqSum(sums, arrCount);    // find most frq sum
 
     // store frqSum solution in multidimentional array
-    int mtrxArrCount = 0;
+    int frqSumCount = 0;
     for(int k = 0; givens[k] != '\0'; k++){
         for(int j = 0; givens[j] != '\0'; j++){
             for(int i = 0; givens[i] != '\0'; i++){
                 if( (i != j) && (i != k) && (j != k)){
                     if(givens[k] + givens[j] + givens[i] == frqSum){
-                        mtrxSolArr[mtrxArrCount][0] = givens[k];
-                        mtrxSolArr[mtrxArrCount][1] = givens[j];
-                        mtrxSolArr[mtrxArrCount][2] = givens[i];
-                        mtrxArrCount++;
+                        mtrxSolArr[frqSumCount][0] = givens[k];
+                        mtrxSolArr[frqSumCount][1] = givens[j];
+                        mtrxSolArr[frqSumCount][2] = givens[i];
+                        frqSumCount++;
                     }
                 }
             }
@@ -73,17 +75,17 @@ int main(){
         solution[j][2] = mtrxSolArr[j][2];
     }
 
-        for(int a = 0; a < 36 ; a++){
+        for(int a = 0; a < frqSumCount ; a++){
             solution[0][0] = mtrxSolArr[a][0];
             solution[0][1] = mtrxSolArr[a][1];
             solution[0][2] = mtrxSolArr[a][2];
                 
-            for(int b = 0; b < 36 ; b++){
+            for(int b = 0; b < frqSumCount ; b++){
                 solution[1][0] = mtrxSolArr[b][0];
                 solution[1][1] = mtrxSolArr[b][1];
                 solution[1][2] = mtrxSolArr[b][2];
 
-                for(int c = 0; c < 36 ; c++){
+                for(int c = 0; c < frqSumCount ; c++){
                     solution[2][0] = mtrxSolArr[c][0];
                     solution[2][1] = mtrxSolArr[c][1];
                     solution[2][2] = mtrxSolArr[c][2];
@@ -150,6 +152,8 @@ int main(){
     printf("solCol1: %i\n", solCol1);
     printf("solCol2: %i\n", solCol2);
     printf("solCol3: %i\n", solCol3);
+
+    printf("frqSumCount: %i\n", frqSumCount);
 
     return 0;
 }
