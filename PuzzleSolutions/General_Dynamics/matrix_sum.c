@@ -25,7 +25,10 @@ int main(){
     const int MAX_Y = 730/4;        // this is arbritrary num
     const int MAX_X = 3;            // its a 3x3 matrix
 
-    int solCol1, solCol2, solCol3;
+    int solCol1 = 0; 
+    int solCol2 = 0;
+    int solCol3 = 0;
+
     int arrCount = 0;               // track number of arr stored
     int frqSum = 0;                 // store most freq sum
     int sums[730] = {};             // 9^3 = 730 combinations
@@ -33,6 +36,7 @@ int main(){
     int solution[3][3] = {};
     int givens[] = {
         35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'
+        //11, 18, 10, 48, 17, 20, 32, 31, 4, '\0'
     };
     
     popWithSum(givens, sums, &arrCount);    // populate sum array
@@ -63,22 +67,44 @@ int main(){
 
 
     // Populate solution array with initial values
-    for(int k = 0; k < 3; k++){
-        for(int j = 0; j < 3; j++){
-            solution[j][0] = mtrxSolArr[j][0];
-            solution[j][1] = mtrxSolArr[j][1];
-            solution[j][2] = mtrxSolArr[j][2];
-        }
+    for(int j = 0; j < 3; j++){
+        solution[j][0] = mtrxSolArr[j][0];
+        solution[j][1] = mtrxSolArr[j][1];
+        solution[j][2] = mtrxSolArr[j][2];
     }
 
-    // Populate solution columns with initial values
-    solCol1 = solution[0][0] + solution[1][0] + solution[2][0];
-    solCol2 = solution[0][1] + solution[1][1] + solution[2][1];
-    solCol3 = solution[0][2] + solution[1][2] + solution[2][2];
+        for(int a = 0; a < 36 ; a++){
+            solution[0][0] = mtrxSolArr[a][0];
+            solution[0][1] = mtrxSolArr[a][1];
+            solution[0][2] = mtrxSolArr[a][2];
+                
+            for(int b = 0; b < 36 ; b++){
+                solution[1][0] = mtrxSolArr[b][0];
+                solution[1][1] = mtrxSolArr[b][1];
+                solution[1][2] = mtrxSolArr[b][2];
 
-    // Bruteforce solution
-    while((solCol1 != frqSum) && (solCol2 != frqSum) && (solCol3 != frqSum)){
+                for(int c = 0; c < 36 ; c++){
+                    solution[2][0] = mtrxSolArr[c][0];
+                    solution[2][1] = mtrxSolArr[c][1];
+                    solution[2][2] = mtrxSolArr[c][2];
 
+                    solCol1 = solution[0][0] + solution[1][0] + solution[2][0];
+                    solCol2 = solution[0][1] + solution[1][1] + solution[2][1];
+                    solCol3 = solution[0][2] + solution[1][2] + solution[2][2];
+
+                    //FIXME: too convoluted
+                    if( ((solCol1 == frqSum) && (solCol2 == frqSum) && (solCol3 == frqSum)) && (solution[0][0] != solution[2][1]) ){
+                        printf("--- %i\n", solCol1);
+                        break;
+                    }
+
+                }
+            }
+
+            if(solCol1 == frqSum){
+                printf("--- %i\n", solCol1);
+                break;
+            }
     }
 
 
