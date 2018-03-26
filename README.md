@@ -6,8 +6,9 @@ This is where I keep all my non project related C and C++ source codes. Its an e
 
 Recommended Computer Science Books:
 ---
-Below is a link to a private-encrypted git repository for all the CS books I highly recommend (they are periodically updated). If you wish to clone the cs ebook repo, you'll need to have a **[Keybase account](https://keybase.io)** and have Keybase on your machine before you can continue with git clone.
+Below is a link to a private-encrypted git repository for all the CS books I highly recommend (they are periodically updated). If you wish to clone the cs ebook repo, you'll need to have a **[Keybase account](https://keybase.io)** and have Keybase on your machine. 
 
+- [PDF] zyBooks C++ 
 - [PDF] C++ For Dummies
 - [PDF] C++ Primer: 5th Edition
 - [PDF] Discrete Mathematics with Applications
