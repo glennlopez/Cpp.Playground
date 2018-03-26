@@ -194,7 +194,7 @@ int findFrqSum(int arr[], int param){
     int most_frequent = 0;
     
     for(int i = 0; i <= param; i++){
-        if(arr[i] != arr[i+1]){
+        if(arr[i] != arr[i + 1]){
             int a = arr[i + 0];
             int b = arr[i + 1];
 
