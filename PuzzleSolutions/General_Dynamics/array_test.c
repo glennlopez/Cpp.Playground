@@ -1,27 +1,28 @@
 #include <stdio.h>
-const int MATRIX_SIZE = 10;
+const int ARRSIZE = 10;
 void printArr(int param[]);
 
 int main(){
 
-    int solution[MATRIX_SIZE] = {1,6,7,6,4,7,7,1,6,1};
-    int usedNums[MATRIX_SIZE] = {};
+    int solution[ARRSIZE] = {1,6,7,6,4,7,7,3,6,1};
+    int usedNums[ARRSIZE] = {};
 
-    // solution layer
+    //track used numbers
     int notEqual = 0;
     int usedNumIndex = 0;
-    for(int sol_x = 0; sol_x < MATRIX_SIZE; sol_x++){
+    for(int sol_x = 0; sol_x < ARRSIZE; sol_x++){
 
-        // used num layer
-        notEqual = 0;
-        for(int i = 0; i < MATRIX_SIZE; i++){
+        notEqual = 0;   //resets counter every loop
+        for(int i = 0; i < ARRSIZE; i++){
             printf("%i ",usedNums[i]);
 
+            // count frequency on non-equal numbers
             if(solution[sol_x] != usedNums[i]){
                 notEqual++;
             }
 
-            if(notEqual == MATRIX_SIZE){
+            // assume number is unique
+            if(notEqual == ARRSIZE){
                 usedNums[usedNumIndex] = solution[sol_x];
                 usedNumIndex++;
             }
@@ -87,8 +88,7 @@ int main(){
 
 // print array contents
 void printArr(int param[]){
-    for(int i = 0; i < MATRIX_SIZE
-    ; i++){
+    for(int i = 0; i < ARRSIZE; i++){
         printf("%i ",param[i]);
     }
     printf("\n");
