@@ -1,35 +1,43 @@
 #include <stdio.h>
 const int ARRSIZE = 10;
-void printArr(int param[]);
 
 int main(){
 
-    int solution[ARRSIZE] = {1,6,7,6,4,7,7,3,6,1};
-    int usedNums[ARRSIZE] = {};
+    //int solution[ARRSIZE] = {1,6,7,6,4,7,7,3,6,1};
+    int solution[ARRSIZE][ARRSIZE] ={
+        {1,6,7},
+        {6,4,7},
+        {7,3,6}
+    };
+    int usedNums[ARRSIZE*ARRSIZE] = {};
 
     //track used numbers
     int notEqual = 0;
     int usedNumIndex = 0;
     for(int sol_x = 0; sol_x < ARRSIZE; sol_x++){
+        for(int j = 0; j < ARRSIZE; j++){
 
-        notEqual = 0;   //resets counter every loop
-        for(int i = 0; i < ARRSIZE; i++){
-            printf("%i ",usedNums[i]);
+            notEqual = 0;   //resets counter every loop
+            for(int i = 0; i < ARRSIZE; i++){
+                printf("%i ",usedNums[i]);
 
-            // count frequency on non-equal numbers
-            if(solution[sol_x] != usedNums[i]){
-                notEqual++;
+                // count frequency on non-equal numbers
+                if(solution[j][sol_x] != usedNums[i]){
+                    notEqual++;
+                }
+
+                // assume number is unique
+                if(notEqual == ARRSIZE){
+                    usedNums[usedNumIndex] = solution[j][sol_x];
+                    usedNumIndex++;
+                }
+
             }
-
-            // assume number is unique
-            if(notEqual == ARRSIZE){
-                usedNums[usedNumIndex] = solution[sol_x];
-                usedNumIndex++;
-            }
+            printf("notEqual: %i\n", notEqual);
+            printf("\n");
 
         }
-        printf("notEqual: %i\n", notEqual);
-        printf("\n");
+
     }
 
 
@@ -76,20 +84,22 @@ int main(){
 
 
     printf("solution: ");
-    printArr(solution);
+    for(int i = 0; i < ARRSIZE; i++){
+        for(int j = 0; j < ARRSIZE; j++){
+            printf("%i ",solution[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+
+
 
     printf("usedNums: ");
-    printArr(usedNums);
+    for(int i = 0; i < ARRSIZE; i++){
+        printf("%i ",usedNums[i]);
+    }
+    printf("\n");
 
     printf("\n");
     return 0;
-}
-
-
-// print array contents
-void printArr(int param[]){
-    for(int i = 0; i < ARRSIZE; i++){
-        printf("%i ",param[i]);
-    }
-    printf("\n");
 }
