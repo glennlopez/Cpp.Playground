@@ -19,16 +19,15 @@ void printArr(int []);
 
 
 //parametric var
-const int MATRIX_SIZE = 3;                      // 3 = 3x3 matrix size
-const int MATRIX = MATRIX_SIZE * MATRIX_SIZE;
-const int MAX_Y = 730/4;                        // this is arbritrary: 1/4 of (3*3)^3
-const int MAX_X = MATRIX_SIZE;                  // its a 3x3 matrix
-int sums[730] = {};                             // MATRIX^MATRIX_SIZE + 1 = sums[n]
-int givens[] = {                                // always add a null at the end
-    //35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'    //testcase 1
+#define CALC_VAL 730                      // (MATRIX_SIZE*MATRIX_SIZE)^MATRIX_SIZE + 1
+const int MATRIX_SIZE = 3;                // size of matrix (ie: 3 = 3x3)
+const int MAX_Y = CALC_VAL/4;             // 1/4 of possible sum combination
+const int MAX_X = MATRIX_SIZE;
+int sums[CALC_VAL] = {};
+int givens[] = {
+    //35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'    //testcase 1 :: solveable
     //11, 2, 99, 48, 17, 20, 32, 31, 4, '\0'     //testcase 2 :: unsolvable
-    //35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'    //testcase 1
-    12, 25, 27, 15, 30, 20, 10, 18, 23, '\0'
+    12, 25, 27, 15, 30, 20, 10, 18, 23, '\0'    //testcase 3 :: solveable
 };
 
 //store value var
@@ -70,148 +69,66 @@ int main(){
         }
     }
     
-
-
-
-
-
-
-    // Populate solution array with initial values
-
-    /*
-    for(int j = 0; j < 3; j++){
-        solution[j][0] = mtrxSolArr[j][0];
-        solution[j][1] = mtrxSolArr[j][1];
-        solution[j][2] = mtrxSolArr[j][2];
-    }
-    */
-
-        for(int a = 0; a < frqSumCount ; a++){
-            solution[0][0] = mtrxSolArr[a][0];
-            solution[0][1] = mtrxSolArr[a][1];
-            solution[0][2] = mtrxSolArr[a][2];
+    // brute force solution
+    for(int a = 0; a < frqSumCount ; a++){
+        solution[0][0] = mtrxSolArr[a][0];
+        solution[0][1] = mtrxSolArr[a][1];
+        solution[0][2] = mtrxSolArr[a][2];
                 
-            for(int b = 0; b < frqSumCount ; b++){
-                solution[1][0] = mtrxSolArr[b][0];
-                solution[1][1] = mtrxSolArr[b][1];
-                solution[1][2] = mtrxSolArr[b][2];
-                
+        for(int b = 0; b < frqSumCount ; b++){
+            solution[1][0] = mtrxSolArr[b][0];
+            solution[1][1] = mtrxSolArr[b][1];
+            solution[1][2] = mtrxSolArr[b][2];
 
-                for(int c = 0; c < frqSumCount ; c++){
-                    solution[2][0] = mtrxSolArr[c][0];
-                    solution[2][1] = mtrxSolArr[c][1];
-                    solution[2][2] = mtrxSolArr[c][2];
+            for(int c = 0; c < frqSumCount ; c++){
+                solution[2][0] = mtrxSolArr[c][0];
+                solution[2][1] = mtrxSolArr[c][1];
+                solution[2][2] = mtrxSolArr[c][2];
 
-                    solCol1 = solution[0][0] + solution[1][0] + solution[2][0];
-                    solCol2 = solution[0][1] + solution[1][1] + solution[2][1];
-                    solCol3 = solution[0][2] + solution[1][2] + solution[2][2];
+                // calculate column value
+                // TODO: put solcol var in here
+                solCol1 = solution[0][0] + solution[1][0] + solution[2][0];
+                solCol2 = solution[0][1] + solution[1][1] + solution[2][1];
+                solCol3 = solution[0][2] + solution[1][2] + solution[2][2];
 
-                    
-                    
-                    /*if( ((solCol1 == frqSum) && (solCol2 == frqSum) && (solCol3 == frqSum))  && (solution[0][0] != solution[2][1])  ){ */
-                        //printf("--- %i\n", solCol1);
-                    if( (updateNumTracker() == MATRIX_SIZE * MATRIX_SIZE)  ){
-
-                       printf("FOUND FOUND FOUND! \n");
-
-                        break;
-                        
-                    }
-
-                   
-                    
-
-
-
-
-
-                    //DEBUG PRINT OUT
-                    for(int j = 0; j < 3; j++){
-                        for(int i = 0; i < 3; i++){
-                            printf("%i ", solution[j][i]);
-                        }
-                        printf("\n");
-                    }
-                    printf("solCol1: %i\n", solCol1);
-                    printf("solCol2: %i\n", solCol2);
-                    printf("solCol3: %i\n", solCol3);
-
-                    printf("\n");
-                    printf("\n");
-                    printf("\n");
-                    //END DEBUG
-
+                // when 
+                if( (updateNumTracker() == MATRIX_SIZE * MATRIX_SIZE) ){
+                    break;
                 }
             }
-
-            if( ((solCol1 == frqSum) && (solCol2 == frqSum) && (solCol3 == frqSum)) ){
-                //printf("--- %i\n", solCol1);
-                break;
-            }
         }
 
-
-
-
-
-
-
-/*
-
-    // DEBUG OUTPUT
-    printf("Most frequent sum: %i\n", frqSum);
-    printf("\n");
-
-    //print NON-NULL multidimentional array
-    for(int j = 0; j < MAX_Y; j++){
-        for(int i = 0; i < MAX_X; i++){
-            if(mtrxSolArr[j][i] != '\0'){
-                printf("%i ", mtrxSolArr[j][i]);
-            }
-        }
-        if(mtrxSolArr[j][0] != '\0'){
-            printf("\n");
+        // check column sum 
+        // TODO: make this check parametric
+        if( ((solCol1 == frqSum) && (solCol2 == frqSum) && (solCol3 == frqSum)) ){
+            break;
         }
     }
 
-    printf("\n");
-    printf("\n");
-    printf("\n");
-
-    //print NON-NULL multidimentional array
-    for(int j = 0; j < 3; j++){
-        for(int i = 0; i < 3; i++){
-            printf("%i ", solution[j][i]);
-        }
-        printf("\n");
-    }
-
-    printf("\n");
-    printf("\n");
-    printf("\n");
-
-    printf("solCol1: %i\n", solCol1);
-    printf("solCol2: %i\n", solCol2);
-    printf("solCol3: %i\n", solCol3);
-
-    printf("frqSumCount: %i\n", frqSumCount);
-*/
 
 
                     //DEBUG PRINT OUT
+                    printf("Given Numbers:");
+                    for(int i = 0; i < MATRIX_SIZE*MATRIX_SIZE; i++){
+                        printf(" %i", givens[i]);
+                    }
+                    printf("\n");
+                    printf("\n");
+                    printf("\n");
+                    printf("Solution: \n");
                     for(int j = 0; j < 3; j++){
                         for(int i = 0; i < 3; i++){
                             printf("%i ", solution[j][i]);
                         }
                         printf("\n");
                     }
+
+                    /*
                     printf("solCol1: %i\n", solCol1);
                     printf("solCol2: %i\n", solCol2);
                     printf("solCol3: %i\n", solCol3);
+                    */
 
-                    printf("\n");
-                    printf("\n");
-                    printf("\n");
                     //END DEBUG
 
     return 0;
@@ -245,8 +162,12 @@ void popWithSum(int givenArr[], int storeArr[], int *counter){
     }
 }
 
-//find frequent
-//FIXME: testcase 2 shows most frequent sum is smaller than givens
+//find frequent 
+//TODO: use below suggestion
+/*  THIS IS DEPRICATED;
+        To find frequent sum, 
+        just add all the elements and divide by array size.
+*/
 int findFrqSum(int arr[], int param){
     int a = arr[0]; int b = arr[1];
     int sum_counter = 1; int highest_count = 0; 
@@ -311,7 +232,7 @@ int updateNumTracker(){
 
             notEqual = 0;   //resets counter every loop
             for(int i = 0; i < MATRIX_SIZE*MATRIX_SIZE; i++){
-                printf("%i ",usedNums[i]);
+                //printf("%i ",usedNums[i]);
 
                 // count frequency on non-equal numbers
                 if(solution[sol_x][j] != usedNums[i]){
@@ -325,13 +246,13 @@ int updateNumTracker(){
                 }
 
             }
-            printf("returns: %i\n", notEqual);
-            printf("\n");
+            //printf("returns: %i\n", notEqual);
+            //printf("\n");
 
         }
 
     }
-    printf("\n");
+    //printf("\n");
     for(int i = 0; i < MATRIX_SIZE*MATRIX_SIZE; i++){
         usedNums[i] = '\0';
     }
