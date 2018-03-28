@@ -6,7 +6,8 @@
 
 //solver routines
 void popWithSum(int [], int [], int *);
-int findFrqSum(int [], int);
+//int findFrqSum(int [], int);
+int findFrqSum(int arr[]);
 int updateNumTracker();
 
 //sorting algorythms
@@ -14,15 +15,15 @@ void insertion_sort(int [], int);
 void swap(int *, int *);
 
 
-//parametric var
+//parametric values
 #define CALC_VAL 730                        // (MATRIX_SIZE*MATRIX_SIZE)^MATRIX_SIZE + 1
 #define MATRIX_SIZE 3                       // size of matrix 
 #define MAX_Y CALC_VAL/4                    // 1/4 of possible sum combination
 #define MAX_X MATRIX_SIZE
 int givens[] = {
-    35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'    //testcase 1 :: solveable
+    //35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'    //testcase 1 :: solveable
     //11, 2, 99, 48, 17, 20, 32, 31, 4, '\0'     //testcase 2 :: unsolvable
-    //12, 25, 27, 15, 30, 20, 10, 18, 23, '\0'    //testcase 3 :: solveable
+    12, 25, 27, 15, 30, 20, 10, 18, 23, '\0'    //testcase 3 :: solveable
 };
 
 //store value var
@@ -43,7 +44,8 @@ int solution[MATRIX_SIZE][MATRIX_SIZE] = {};    // solution
 int main(){
     popWithSum(givens, sums, &arrCount);    // populate sum array
     insertion_sort(sums, arrCount);         // sort array
-    frqSum = findFrqSum(sums, arrCount);    // find most frq sum
+    //frqSum = findFrqSum(sums, arrCount);    // find most frq sum
+    frqSum = findFrqSum(givens);
 
     // store frqSum solution in multidimentional array
     //TODO: make parametric
@@ -69,7 +71,9 @@ int main(){
     for(int a = 0; a < frqSumCount ; a++){
         for(int row = 0; row < MATRIX_SIZE; row++){
             solution[0][row] = mtrxSolArr[a][row];
+            printf("solution[%i][%i]: %i\n",a ,row,  solution[0][row]);
         }
+        printf("\n");
         for(int b = 0; b < frqSumCount ; b++){
             for(int row = 0; row < MATRIX_SIZE; row++){
                 solution[1][row] = mtrxSolArr[b][row];
@@ -160,6 +164,7 @@ void popWithSum(int givenArr[], int storeArr[], int *counter){
         To find frequent sum, 
         just add all the elements and divide by array size.
 */
+/*
 int findFrqSum(int arr[], int param){
     int a = arr[0]; int b = arr[1];
     int sum_counter = 1; int highest_count = 0; 
@@ -182,6 +187,15 @@ int findFrqSum(int arr[], int param){
     }
 
     return most_frequent;
+}
+*/
+int findFrqSum(int arr[]){
+    int avg = 0;
+    for(int i = 0; i < MATRIX_SIZE*MATRIX_SIZE; i++){
+        avg += arr[i];
+    }
+    avg /= MATRIX_SIZE;
+    return avg;
 }
 
 //insertion sort subroutine
