@@ -21,9 +21,9 @@ const int MAX_Y = CALC_VAL/4;             // 1/4 of possible sum combination
 const int MAX_X = MATRIX_SIZE;
 int sums[CALC_VAL] = {};
 int givens[] = {
-    //35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'    //testcase 1 :: solveable
+    35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'    //testcase 1 :: solveable
     //11, 2, 99, 48, 17, 20, 32, 31, 4, '\0'     //testcase 2 :: unsolvable
-    12, 25, 27, 15, 30, 20, 10, 18, 23, '\0'    //testcase 3 :: solveable
+    //12, 25, 27, 15, 30, 20, 10, 18, 23, '\0'    //testcase 3 :: solveable
 };
 
 //store value var
@@ -43,7 +43,6 @@ int solution[MATRIX_SIZE][MATRIX_SIZE] = {};    // solution
  * MAIN ROUTINE
 ******************/
 int main(){
-    
     popWithSum(givens, sums, &arrCount);    // populate sum array
     insertion_sort(sums, arrCount);         // sort array
     frqSum = findFrqSum(sums, arrCount);    // find most frq sum
@@ -67,22 +66,21 @@ int main(){
     
     // brute force solution
     for(int a = 0; a < frqSumCount ; a++){
-        solution[0][0] = mtrxSolArr[a][0];
-        solution[0][1] = mtrxSolArr[a][1];
-        solution[0][2] = mtrxSolArr[a][2];
-                
+        for(int row = 0; row < MATRIX_SIZE; row++){
+            solution[0][row] = mtrxSolArr[a][row];
+        }
         for(int b = 0; b < frqSumCount ; b++){
-            solution[1][0] = mtrxSolArr[b][0];
-            solution[1][1] = mtrxSolArr[b][1];
-            solution[1][2] = mtrxSolArr[b][2];
-
+            for(int row = 0; row < MATRIX_SIZE; row++){
+                solution[1][row] = mtrxSolArr[b][row];
+            }
             for(int c = 0; c < frqSumCount ; c++){
-                solution[2][0] = mtrxSolArr[c][0];
-                solution[2][1] = mtrxSolArr[c][1];
-                solution[2][2] = mtrxSolArr[c][2];
+                for(int row = 0; row < MATRIX_SIZE; row++){
+                    solution[2][row] = mtrxSolArr[c][row];
+                }
 
                 // calculate column value
                 // TODO: put solcol var in here
+                // TODO: this needs to be parametric
                 solCol1 = solution[0][0] + solution[1][0] + solution[2][0];
                 solCol2 = solution[0][1] + solution[1][1] + solution[2][1];
                 solCol3 = solution[0][2] + solution[1][2] + solution[2][2];
