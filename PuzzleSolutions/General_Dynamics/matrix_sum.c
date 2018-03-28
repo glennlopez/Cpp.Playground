@@ -21,15 +21,13 @@ const int MAX_Y = CALC_VAL/4;             // 1/4 of possible sum combination
 const int MAX_X = MATRIX_SIZE;
 int sums[CALC_VAL] = {};
 int givens[] = {
-    35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'    //testcase 1 :: solveable
+    //35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'    //testcase 1 :: solveable
     //11, 2, 99, 48, 17, 20, 32, 31, 4, '\0'     //testcase 2 :: unsolvable
-    //12, 25, 27, 15, 30, 20, 10, 18, 23, '\0'    //testcase 3 :: solveable
+    12, 25, 27, 15, 30, 20, 10, 18, 23, '\0'    //testcase 3 :: solveable
 };
 
 //store value var
-int solCol1 = 0;
-int solCol2 = 0;
-int solCol3 = 0;
+int solCol[MATRIX_SIZE] = {};
 int arrCount = 0;                               // number of arr stored
 int frqSum = 0;                                 // most freq sum
 int mtrxSolArr[MAX_Y][MAX_X] = {};              // possible solution values
@@ -79,13 +77,13 @@ int main(){
                 }
 
                 // calculate column value
-                // TODO: put solcol var in here
-                // TODO: this needs to be parametric
-                solCol1 = solution[0][0] + solution[1][0] + solution[2][0];
-                solCol2 = solution[0][1] + solution[1][1] + solution[2][1];
-                solCol3 = solution[0][2] + solution[1][2] + solution[2][2];
-
-                // when 
+                int offset_y = (MATRIX_SIZE - 1);
+                for(int x = 0; x < MATRIX_SIZE; x++){
+                    solCol[x] = 0;
+                    for(int y = 0; y < MATRIX_SIZE; y++){
+                        solCol[x] += solution[y][x];
+                    }
+                }
                 if( (updateNumTracker() == MATRIX_SIZE * MATRIX_SIZE) ){
                     break;
                 }
@@ -93,8 +91,10 @@ int main(){
         }
 
         // check column sum 
-        // TODO: make this check parametric
-        if( ((solCol1 == frqSum) && (solCol2 == frqSum) && (solCol3 == frqSum)) ){
+        // TODO: make this check parametric (read below)
+        // PARAMETRIC: just add up all the solCol1 and div by col size. if it == frqsum then break;
+        if( ((solCol[0] == frqSum) && (solCol[1] == frqSum) && (solCol[2] == frqSum)) ){
+            // (columnAvg == frqSum == column1)
             break;
         }
     }
