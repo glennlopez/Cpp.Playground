@@ -46,6 +46,7 @@ int main(){
     frqSum = findFrqSum(sums, arrCount);    // find most frq sum
 
     // store frqSum solution in multidimentional array
+    //TODO: make parametric
     int frqSumCount = 0;
     for(int k = 0; givens[k] != '\0'; k++){
         for(int j = 0; givens[j] != '\0'; j++){
@@ -63,6 +64,7 @@ int main(){
     }
     
     // brute force solution
+    // TODO: make solution[x] parametric
     for(int a = 0; a < frqSumCount ; a++){
         for(int row = 0; row < MATRIX_SIZE; row++){
             solution[0][row] = mtrxSolArr[a][row];
@@ -93,7 +95,13 @@ int main(){
         // check column sum 
         // TODO: make this check parametric (read below)
         // PARAMETRIC: just add up all the solCol1 and div by col size. if it == frqsum then break;
-        if( ((solCol[0] == frqSum) && (solCol[1] == frqSum) && (solCol[2] == frqSum)) ){
+        /* if( ((solCol[0] == frqSum) && (solCol[1] == frqSum) && (solCol[2] == frqSum)) ){ */
+        int columnAvg = 0;
+        for(int i = 0; i < MATRIX_SIZE; i++){
+            columnAvg += solCol[i];
+        }
+        columnAvg /= MATRIX_SIZE;
+        if( (columnAvg == frqSum == solCol[0]) ){
             // (columnAvg == frqSum == column1)
             break;
         }
