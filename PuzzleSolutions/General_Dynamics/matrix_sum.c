@@ -15,11 +15,10 @@ void swap(int *, int *);
 
 
 //parametric var
-#define CALC_VAL 730                      // (MATRIX_SIZE*MATRIX_SIZE)^MATRIX_SIZE + 1
-const int MATRIX_SIZE = 3;                // size of matrix (ie: 3 = 3x3)
-const int MAX_Y = CALC_VAL/4;             // 1/4 of possible sum combination
-const int MAX_X = MATRIX_SIZE;
-int sums[CALC_VAL] = {};
+#define CALC_VAL 730                        // (MATRIX_SIZE*MATRIX_SIZE)^MATRIX_SIZE + 1
+#define MATRIX_SIZE 3                       // size of matrix 
+#define MAX_Y CALC_VAL/4                    // 1/4 of possible sum combination
+#define MAX_X MATRIX_SIZE
 int givens[] = {
     35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'    //testcase 1 :: solveable
     //11, 2, 99, 48, 17, 20, 32, 31, 4, '\0'     //testcase 2 :: unsolvable
@@ -27,6 +26,7 @@ int givens[] = {
 };
 
 //store value var
+int sums[CALC_VAL] = {};
 int solCol[MATRIX_SIZE] = {};
 int arrCount = 0;                               // number of arr stored
 int frqSum = 0;                                 // most freq sum
@@ -65,6 +65,7 @@ int main(){
     
     // brute force solution
     // TODO: make solution[x] parametric
+    // try (int arr[i]
     for(int a = 0; a < frqSumCount ; a++){
         for(int row = 0; row < MATRIX_SIZE; row++){
             solution[0][row] = mtrxSolArr[a][row];
