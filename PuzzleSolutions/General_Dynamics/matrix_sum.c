@@ -8,7 +8,7 @@
 //solver routines
 void popWithSum(int [], int [], int *);
 int findFrqSum(int [], int);
-void updateNumTracker();
+int updateNumTracker();
 
 //sorting algorythms
 void insertion_sort(int [], int);
@@ -25,8 +25,10 @@ const int MAX_Y = 730/4;                        // this is arbritrary: 1/4 of (3
 const int MAX_X = MATRIX_SIZE;                  // its a 3x3 matrix
 int sums[730] = {};                             // MATRIX^MATRIX_SIZE + 1 = sums[n]
 int givens[] = {                                // always add a null at the end
-    35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'    //testcase 1
-    //11, 2, 99, 48, 17, 20, 32, 31, 4, '\0'     //testcase 2 :: BUG
+    //35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'    //testcase 1
+    //11, 2, 99, 48, 17, 20, 32, 31, 4, '\0'     //testcase 2 :: unsolvable
+    //35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'    //testcase 1
+    12, 25, 27, 15, 30, 20, 10, 18, 23, '\0'
 };
 
 //store value var
@@ -46,8 +48,6 @@ int solution[MATRIX_SIZE][MATRIX_SIZE] = {};    // solution
  * MAIN ROUTINE
 ******************/
 int main(){
-
-    //BUG: testcase 2 shows most frequent sum is smaller than givens
     
     popWithSum(givens, sums, &arrCount);    // populate sum array
     insertion_sort(sums, arrCount);         // sort array
@@ -77,11 +77,14 @@ int main(){
 
 
     // Populate solution array with initial values
+
+    /*
     for(int j = 0; j < 3; j++){
         solution[j][0] = mtrxSolArr[j][0];
         solution[j][1] = mtrxSolArr[j][1];
         solution[j][2] = mtrxSolArr[j][2];
     }
+    */
 
         for(int a = 0; a < frqSumCount ; a++){
             solution[0][0] = mtrxSolArr[a][0];
@@ -92,6 +95,7 @@ int main(){
                 solution[1][0] = mtrxSolArr[b][0];
                 solution[1][1] = mtrxSolArr[b][1];
                 solution[1][2] = mtrxSolArr[b][2];
+                
 
                 for(int c = 0; c < frqSumCount ; c++){
                     solution[2][0] = mtrxSolArr[c][0];
@@ -102,20 +106,49 @@ int main(){
                     solCol2 = solution[0][1] + solution[1][1] + solution[2][1];
                     solCol3 = solution[0][2] + solution[1][2] + solution[2][2];
 
-                    //FIXME: too convoluted
-                    if( ((solCol1 == frqSum) && (solCol2 == frqSum) && (solCol3 == frqSum)) && (solution[0][0] != solution[2][1]) ){
-                        printf("--- %i\n", solCol1);
+                    
+                    
+                    /*if( ((solCol1 == frqSum) && (solCol2 == frqSum) && (solCol3 == frqSum))  && (solution[0][0] != solution[2][1])  ){ */
+                        //printf("--- %i\n", solCol1);
+                    if( (updateNumTracker() == MATRIX_SIZE * MATRIX_SIZE)  ){
+
+                       printf("FOUND FOUND FOUND! \n");
+
                         break;
+                        
                     }
+
+                   
+                    
+
+
+
+
+
+                    //DEBUG PRINT OUT
+                    for(int j = 0; j < 3; j++){
+                        for(int i = 0; i < 3; i++){
+                            printf("%i ", solution[j][i]);
+                        }
+                        printf("\n");
+                    }
+                    printf("solCol1: %i\n", solCol1);
+                    printf("solCol2: %i\n", solCol2);
+                    printf("solCol3: %i\n", solCol3);
+
+                    printf("\n");
+                    printf("\n");
+                    printf("\n");
+                    //END DEBUG
 
                 }
             }
 
-            if(solCol1 == frqSum){
-                printf("--- %i\n", solCol1);
+            if( ((solCol1 == frqSum) && (solCol2 == frqSum) && (solCol3 == frqSum)) ){
+                //printf("--- %i\n", solCol1);
                 break;
             }
-    }
+        }
 
 
 
@@ -123,7 +156,7 @@ int main(){
 
 
 
-
+/*
 
     // DEBUG OUTPUT
     printf("Most frequent sum: %i\n", frqSum);
@@ -162,6 +195,24 @@ int main(){
     printf("solCol3: %i\n", solCol3);
 
     printf("frqSumCount: %i\n", frqSumCount);
+*/
+
+
+                    //DEBUG PRINT OUT
+                    for(int j = 0; j < 3; j++){
+                        for(int i = 0; i < 3; i++){
+                            printf("%i ", solution[j][i]);
+                        }
+                        printf("\n");
+                    }
+                    printf("solCol1: %i\n", solCol1);
+                    printf("solCol2: %i\n", solCol2);
+                    printf("solCol3: %i\n", solCol3);
+
+                    printf("\n");
+                    printf("\n");
+                    printf("\n");
+                    //END DEBUG
 
     return 0;
 }
@@ -182,12 +233,12 @@ void popWithSum(int givenArr[], int storeArr[], int *counter){
                 if( (i != j) && (i != k) && (j != k)){
                     storeArr[*counter] = givenArr[k] + givenArr[j] + givenArr[i];
                     (*counter)++; 
-
+                    /*
                     //output to stdout
                     printf("%i + %i + %i = %i \n", 
                     givenArr[k], givenArr[j], givenArr[i], 
                     givenArr[k] + givenArr[j] + givenArr[i]);
-                    
+                    */
                 }
             }
         }
@@ -195,6 +246,7 @@ void popWithSum(int givenArr[], int storeArr[], int *counter){
 }
 
 //find frequent
+//FIXME: testcase 2 shows most frequent sum is smaller than givens
 int findFrqSum(int arr[], int param){
     int a = arr[0]; int b = arr[1];
     int sum_counter = 1; int highest_count = 0; 
@@ -249,8 +301,9 @@ void swap(int *param1, int *param2){    int buffer = 0;
     *param2 = buffer;
 }
 
-void updateNumTracker(){
+int updateNumTracker(){
     //track used numbers
+    //TODO: take in limited number of parameter
     int notEqual = 0;
     int usedNumIndex = 0;
     for(int sol_x = 0; sol_x < MATRIX_SIZE; sol_x++){
@@ -261,22 +314,26 @@ void updateNumTracker(){
                 printf("%i ",usedNums[i]);
 
                 // count frequency on non-equal numbers
-                if(solution[j][sol_x] != usedNums[i]){
+                if(solution[sol_x][j] != usedNums[i]){
                     notEqual++;
                 }
 
                 // assume number is unique
                 if(notEqual == MATRIX_SIZE*MATRIX_SIZE){
-                    usedNums[usedNumIndex] = solution[j][sol_x];
+                    usedNums[usedNumIndex] = solution[sol_x][j];
                     usedNumIndex++;
                 }
 
             }
-            printf("notEqual: %i\n", notEqual);
+            printf("returns: %i\n", notEqual);
             printf("\n");
 
         }
 
     }
     printf("\n");
+    for(int i = 0; i < MATRIX_SIZE*MATRIX_SIZE; i++){
+        usedNums[i] = '\0';
+    }
+    return usedNumIndex;
 }
