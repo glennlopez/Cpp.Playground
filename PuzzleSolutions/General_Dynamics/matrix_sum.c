@@ -1,8 +1,7 @@
 #include <stdio.h>
 /*
-    Puzzle provided by General Dynamics (#NEM puzzle).
-    Challange: use as little #include overhead as possible.
-        Solution by: github.com/glennlopez
+    General Dynamics #NEM puzzle auto-solver
+        github.com/glennlopez
 */
 
 //solver routines
@@ -13,9 +12,6 @@ int updateNumTracker();
 //sorting algorythms
 void insertion_sort(int [], int);
 void swap(int *, int *);
-
-//debug routines (delete later)
-void printArr(int []);
 
 
 //parametric var
@@ -122,13 +118,6 @@ int main(){
                         }
                         printf("\n");
                     }
-
-                    /*
-                    printf("solCol1: %i\n", solCol1);
-                    printf("solCol2: %i\n", solCol2);
-                    printf("solCol3: %i\n", solCol3);
-                    */
-
                     //END DEBUG
 
     return 0;
@@ -190,14 +179,6 @@ int findFrqSum(int arr[], int param){
     }
 
     return most_frequent;
-}
-
-// print array contents
-void printArr(int param[]){
-    for(int i = 0; param[i] != '\0'; i++){
-        printf("%i ",param[i]);
-    }
-    printf("\n");
 }
 
 //insertion sort subroutine
