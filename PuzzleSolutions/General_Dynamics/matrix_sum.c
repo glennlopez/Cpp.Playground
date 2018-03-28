@@ -21,9 +21,9 @@ const int MAX_Y = CALC_VAL/4;             // 1/4 of possible sum combination
 const int MAX_X = MATRIX_SIZE;
 int sums[CALC_VAL] = {};
 int givens[] = {
-    //35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'    //testcase 1 :: solveable
+    35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'    //testcase 1 :: solveable
     //11, 2, 99, 48, 17, 20, 32, 31, 4, '\0'     //testcase 2 :: unsolvable
-    12, 25, 27, 15, 30, 20, 10, 18, 23, '\0'    //testcase 3 :: solveable
+    //12, 25, 27, 15, 30, 20, 10, 18, 23, '\0'    //testcase 3 :: solveable
 };
 
 //store value var
@@ -92,17 +92,13 @@ int main(){
             }
         }
 
-        // check column sum 
-        // TODO: make this check parametric (read below)
-        // PARAMETRIC: just add up all the solCol1 and div by col size. if it == frqsum then break;
-        /* if( ((solCol[0] == frqSum) && (solCol[1] == frqSum) && (solCol[2] == frqSum)) ){ */
+        // check column sum are all the same
         int columnAvg = 0;
         for(int i = 0; i < MATRIX_SIZE; i++){
             columnAvg += solCol[i];
         }
         columnAvg /= MATRIX_SIZE;
-        if( (columnAvg == frqSum == solCol[0]) ){
-            // (columnAvg == frqSum == column1)
+        if( solCol[0] == columnAvg ){
             break;
         }
     }
