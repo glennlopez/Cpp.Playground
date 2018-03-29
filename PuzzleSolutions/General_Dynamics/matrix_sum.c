@@ -5,15 +5,8 @@
 */
 
 //solver routines
-//void popWithSum(int [], int [], int *);
-//int findFrqSum(int [], int);
 int findFrqSum(int arr[]);
 int updateNumTracker();
-
-//sorting algorythms
-//void insertion_sort(int [], int);
-//void swap(int *, int *);
-
 
 //parametric values
 #define CALC_VAL 730                        // (MATRIX_SIZE*MATRIX_SIZE)^MATRIX_SIZE + 1
@@ -42,9 +35,6 @@ int solution[MATRIX_SIZE][MATRIX_SIZE] = {};    // solution
  * MAIN ROUTINE
 ******************/
 int main(){
-    //popWithSum(givens, sums, &arrCount);    // populate sum array
-    //insertion_sort(sums, arrCount);         // sort array
-    //frqSum = findFrqSum(sums, arrCount);    // find most frq sum
     frqSum = findFrqSum(givens);
 
     // store frqSum solution in multidimentional array
@@ -146,61 +136,6 @@ int main(){
  * SUB ROUTINES
 ******************/
 
-//populate array with sum
-/* DEPRICATED
-void popWithSum(int givenArr[], int storeArr[], int *counter){
-    //populate array with sum
-    for(int k = 0; givenArr[k] != '\0'; k++){
-        for(int j = 0; givenArr[j] != '\0'; j++){
-            for(int i = 0; givenArr[i] != '\0'; i++){
-                
-                if( (i != j) && (i != k) && (j != k)){
-                    storeArr[*counter] = givenArr[k] + givenArr[j] + givenArr[i];
-                    (*counter)++; 
-                    
-                    //output to stdout
-                    printf("%i + %i + %i = %i \n", 
-                    givenArr[k], givenArr[j], givenArr[i], 
-                    givenArr[k] + givenArr[j] + givenArr[i]);
-                    
-                }
-            }
-        }
-    }
-}
-*/
-
-//find frequent 
-//TODO: use below suggestion
-/*  THIS IS DEPRICATED;
-        To find frequent sum, 
-        just add all the elements and divide by array size.
-*/
-/*
-int findFrqSum(int arr[], int param){
-    int a = arr[0]; int b = arr[1];
-    int sum_counter = 1; int highest_count = 0; 
-    int most_frequent = 0;
-    
-    for(int i = 0; i <= param; i++){
-        if(arr[i] != arr[i + 1]){
-            int a = arr[i + 0];
-            int b = arr[i + 1];
-
-            if(sum_counter > highest_count){
-                highest_count = sum_counter;
-                most_frequent = arr[i];
-            }
-            sum_counter = 1;
-        }
-        else{
-            sum_counter++;
-        }
-    }
-
-    return most_frequent;
-}
-*/
 int findFrqSum(int arr[]){
     int avg = 0;
     for(int i = 0; i < MATRIX_SIZE*MATRIX_SIZE; i++){
@@ -209,32 +144,6 @@ int findFrqSum(int arr[]){
     avg /= MATRIX_SIZE;
     return avg;
 }
-
-//insertion sort subroutine
-/* DEPRICATED
-void insertion_sort(int paramArr[], int elementCount){
-    int sdx = 0;
-    int tdx = sdx + 1;
-
-    for(int i = 0; i < elementCount; i++){
-        while( (paramArr[tdx] < paramArr[tdx - 1]) && (tdx > 0) && (tdx < elementCount) ){
-            swap(&paramArr[tdx], &paramArr[tdx - 1]);
-            tdx--;
-        }
-        sdx++;
-        tdx = sdx + 1;
-    }
-}
-*/
-
-//swap subroutine
-/* DEPRICATED
-void swap(int *param1, int *param2){    int buffer = 0;
-    buffer = *param1;
-    *param1 = *param2;
-    *param2 = buffer;
-}
-*/
 
 int updateNumTracker(){
     //track used numbers
