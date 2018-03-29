@@ -9,20 +9,18 @@ int findFrqSum(int arr[]);
 int updateNumTracker();
 
 //parametric values
-#define CALC_VAL 730                        // (MATRIX_SIZE*MATRIX_SIZE)^MATRIX_SIZE + 1
 #define MATRIX_SIZE 3                       // size of matrix 
+#define CALC_VAL 730                        // (MATRIX_SIZE*MATRIX_SIZE)^MATRIX_SIZE + 1
 #define MAX_Y CALC_VAL/4                    // 1/4 of possible sum combination
 #define MAX_X MATRIX_SIZE
 int givens[] = {
-    35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'    //testcase 1 :: solveable
+    //35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'    //testcase 1 :: solveable
     //11, 2, 99, 48, 17, 20, 32, 31, 4, '\0'     //testcase 2 :: unsolvable
-    //12, 25, 27, 15, 30, 20, 10, 18, 23, '\0'    //testcase 3 :: solveable
+    12, 25, 27, 15, 30, 20, 10, 18, 23, '\0'    //testcase 3 :: solveable
 };
 
 //store value var
-int sums[CALC_VAL] = {};
 int solCol[MATRIX_SIZE] = {};
-int arrCount = 0;                               // number of arr stored
 int frqSum = 0;                                 // most freq sum
 int mtrxSolArr[MAX_Y][MAX_X] = {};              // possible solution values
 int usedNums[MATRIX_SIZE * MATRIX_SIZE] = {};
@@ -38,7 +36,7 @@ int main(){
     frqSum = findFrqSum(givens);
 
     // store frqSum solution in multidimentional array
-    //TODO: make parametric
+    // TODO: make parametric
     // ??? how <- itterate through every possible combination with 2 loops in n*n matrix
     int frqSumCount = 0;
     for(int k = 0; givens[k] != '\0'; k++){
@@ -94,12 +92,13 @@ int main(){
             columnAvg += solCol[i];
         }
         columnAvg /= MATRIX_SIZE;
-        if( solCol[0] == columnAvg ){
+        // TODO: needs to check if solCol[0] to solCol[0-n] is equal
+        if( solCol[0] == columnAvg ){ //<-- columnAvg is not enough to gate a working solution
             break;
         }
     }
 
-    //print array
+    // print array
     for(int i = 0; i < frqSumCount; i++){
         for(int j = 0; j < MATRIX_SIZE; j++){
             printf("%i ", mtrxSolArr[i][j]);
@@ -136,6 +135,7 @@ int main(){
  * SUB ROUTINES
 ******************/
 
+// matrix key finder
 int findFrqSum(int arr[]){
     int avg = 0;
     for(int i = 0; i < MATRIX_SIZE*MATRIX_SIZE; i++){
@@ -145,6 +145,7 @@ int findFrqSum(int arr[]){
     return avg;
 }
 
+// 
 int updateNumTracker(){
     //track used numbers
     //TODO: take in limited number of parameter
