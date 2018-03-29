@@ -5,14 +5,14 @@
 */
 
 //solver routines
-void popWithSum(int [], int [], int *);
+//void popWithSum(int [], int [], int *);
 //int findFrqSum(int [], int);
 int findFrqSum(int arr[]);
 int updateNumTracker();
 
 //sorting algorythms
-void insertion_sort(int [], int);
-void swap(int *, int *);
+//void insertion_sort(int [], int);
+//void swap(int *, int *);
 
 
 //parametric values
@@ -21,9 +21,9 @@ void swap(int *, int *);
 #define MAX_Y CALC_VAL/4                    // 1/4 of possible sum combination
 #define MAX_X MATRIX_SIZE
 int givens[] = {
-    //35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'    //testcase 1 :: solveable
+    35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'    //testcase 1 :: solveable
     //11, 2, 99, 48, 17, 20, 32, 31, 4, '\0'     //testcase 2 :: unsolvable
-    12, 25, 27, 15, 30, 20, 10, 18, 23, '\0'    //testcase 3 :: solveable
+    //12, 25, 27, 15, 30, 20, 10, 18, 23, '\0'    //testcase 3 :: solveable
 };
 
 //store value var
@@ -42,13 +42,14 @@ int solution[MATRIX_SIZE][MATRIX_SIZE] = {};    // solution
  * MAIN ROUTINE
 ******************/
 int main(){
-    popWithSum(givens, sums, &arrCount);    // populate sum array
-    insertion_sort(sums, arrCount);         // sort array
+    //popWithSum(givens, sums, &arrCount);    // populate sum array
+    //insertion_sort(sums, arrCount);         // sort array
     //frqSum = findFrqSum(sums, arrCount);    // find most frq sum
     frqSum = findFrqSum(givens);
 
     // store frqSum solution in multidimentional array
     //TODO: make parametric
+    // ??? how <- itterate through every possible combination with 2 loops in n*n matrix
     int frqSumCount = 0;
     for(int k = 0; givens[k] != '\0'; k++){
         for(int j = 0; givens[j] != '\0'; j++){
@@ -108,8 +109,16 @@ int main(){
         }
     }
 
+    //print array
+    for(int i = 0; i < frqSumCount; i++){
+        for(int j = 0; j < MATRIX_SIZE; j++){
+            printf("%i ", mtrxSolArr[i][j]);
+        }
+        printf("\n");
+    }
 
 
+                    
                     //DEBUG PRINT OUT
                     printf("Given Numbers:");
                     for(int i = 0; i < MATRIX_SIZE*MATRIX_SIZE; i++){
@@ -126,6 +135,7 @@ int main(){
                         printf("\n");
                     }
                     //END DEBUG
+                    
 
     return 0;
 }
@@ -137,6 +147,7 @@ int main(){
 ******************/
 
 //populate array with sum
+/* DEPRICATED
 void popWithSum(int givenArr[], int storeArr[], int *counter){
     //populate array with sum
     for(int k = 0; givenArr[k] != '\0'; k++){
@@ -146,17 +157,18 @@ void popWithSum(int givenArr[], int storeArr[], int *counter){
                 if( (i != j) && (i != k) && (j != k)){
                     storeArr[*counter] = givenArr[k] + givenArr[j] + givenArr[i];
                     (*counter)++; 
-                    /*
+                    
                     //output to stdout
                     printf("%i + %i + %i = %i \n", 
                     givenArr[k], givenArr[j], givenArr[i], 
                     givenArr[k] + givenArr[j] + givenArr[i]);
-                    */
+                    
                 }
             }
         }
     }
 }
+*/
 
 //find frequent 
 //TODO: use below suggestion
@@ -199,6 +211,7 @@ int findFrqSum(int arr[]){
 }
 
 //insertion sort subroutine
+/* DEPRICATED
 void insertion_sort(int paramArr[], int elementCount){
     int sdx = 0;
     int tdx = sdx + 1;
@@ -212,13 +225,16 @@ void insertion_sort(int paramArr[], int elementCount){
         tdx = sdx + 1;
     }
 }
+*/
 
 //swap subroutine
+/* DEPRICATED
 void swap(int *param1, int *param2){    int buffer = 0;
     buffer = *param1;
     *param1 = *param2;
     *param2 = buffer;
 }
+*/
 
 int updateNumTracker(){
     //track used numbers
@@ -230,7 +246,6 @@ int updateNumTracker(){
 
             notEqual = 0;   //resets counter every loop
             for(int i = 0; i < MATRIX_SIZE*MATRIX_SIZE; i++){
-                //printf("%i ",usedNums[i]);
 
                 // count frequency on non-equal numbers
                 if(solution[sol_x][j] != usedNums[i]){
@@ -242,13 +257,8 @@ int updateNumTracker(){
                     usedNums[usedNumIndex] = solution[sol_x][j];
                     usedNumIndex++;
                 }
-
             }
-            //printf("returns: %i\n", notEqual);
-            //printf("\n");
-
         }
-
     }
     //printf("\n");
     for(int i = 0; i < MATRIX_SIZE*MATRIX_SIZE; i++){
