@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include <cs50.h>
 
-int binarySearch(int [], int);
+
+int binarySearch(int [], int, int);
 
 int main(){
 
@@ -9,7 +9,7 @@ int main(){
     int ar[] = {1,2,3,4,5,6,7,8,9,10};
     int arSize = sizeof(ar)/sizeof(int);
 
-    if(binarySearch(ar, arSize)){
+    if(binarySearch(ar, arSize, 20)){
         printf("Found!\n");
     }
     else{
@@ -23,10 +23,10 @@ int main(){
 
 
 /* SUBROUTINE */
-int binarySearch(int param[], int paramSize){
+int binarySearch(int param[], int paramSize, int paramTarget){
 
     //initial variable sets
-    int target = get_int("Search: ");
+    int target = paramTarget;
     int startPoint = 0;
     int endPoint = paramSize;
     int midPoint = paramSize;
@@ -47,7 +47,6 @@ int binarySearch(int param[], int paramSize){
         }
         else if(startPoint == midPoint){
             return 0;
-            break;
         }
         else if(target < param[midPoint]){
             endPoint = midPoint;
