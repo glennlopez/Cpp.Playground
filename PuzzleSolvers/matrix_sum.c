@@ -1,4 +1,6 @@
 #include <stdio.h>
+//TODO: make parametric to any size matrix 
+// currently only does 3x3 matrix
 
 //solver routines
 int findAvgSum(int arr[]);
@@ -41,14 +43,13 @@ int main(){
         return 1;
     }
 
-    // store all possible solutions in array
+    // brute force ROW solutions
     // calculate every possible sum using the given numbers
     for(int k = 0; givens[k] != '\0'; k++){
         for(int j = 0; givens[j] != '\0'; j++){
             for(int i = 0; givens[i] != '\0'; i++){
 
-                //store only the numbers that sum to avgSum
-                //if( (i != j) && (i != k) && (j != k)){
+                //store combinations that sum to avgSum (no repeating numbers)
                 if(k != j != i){
                     if(givens[k] + givens[j] + givens[i] == avgSum){
                         sumSolutionArr[avgSumCount][0] = givens[k];
@@ -61,13 +62,11 @@ int main(){
         }
     }
     
-    // Brute force final solution using stored solutions (fixed to 3x3 matrix)
+    // Brute force matrix solution using stored solutions (fixed to 3x3 matrix)
     for(int a = 0; a < avgSumCount ; a++){
         for(int row = 0; row < MATRIX_SIZE; row++){
             solution[0][row] = sumSolutionArr[a][row];
-            printf("solution[%i][%i]: %i\n",a ,row,  solution[0][row]);
         }
-        printf("\n");
         for(int b = 0; b < avgSumCount ; b++){
             for(int row = 0; row < MATRIX_SIZE; row++){
                 solution[1][row] = sumSolutionArr[b][row];
@@ -107,13 +106,7 @@ int main(){
         }
     }
 
-    // DEBUG: print array
-    for(int i = 0; i < avgSumCount; i++){
-        for(int j = 0; j < MATRIX_SIZE; j++){
-            printf("%i ", sumSolutionArr[i][j]);
-        }
-        printf("\n");
-    }
+
 
 
                     
