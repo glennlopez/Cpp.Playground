@@ -1,12 +1,10 @@
 #include <stdio.h>
-/*
-    General Dynamics #NEM puzzle auto-solver
-        github.com/glennlopez
-*/
 
 //solver routines
-int findFrqSum(int arr[]);
-int updateNumTracker();
+int findAvgSum(int arr[]);
+int uniqueNumTracker();
+int largestNum (int []);
+int isFloatingAvgSum(int []);
 
 //parametric values
 #define MATRIX_SIZE 3                       // size of matrix 
@@ -16,12 +14,13 @@ int updateNumTracker();
 int givens[] = {
     //35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'    //testcase 1 :: solveable
     //11, 2, 99, 48, 17, 20, 32, 31, 4, '\0'     //testcase 2 :: unsolvable
-    12, 25, 27, 15, 30, 20, 10, 18, 23, '\0'    //testcase 3 :: solveable
+    35, 18, 19, 48, 3, 20, 32, 31, 5, '\0'    //testcase 3 :: unsolveable
+    //12, 25, 27, 15, 30, 20, 10, 18, 23, '\0'    //testcase 4 :: solveable
 };
 
 //store value var
 int solCol[MATRIX_SIZE] = {};
-int frqSum = 0;                                 // most freq sum
+int avgSum = 0;                                 // most freq sum
 int mtrxSolArr[MAX_Y][MAX_X] = {};              // possible solution values
 int usedNums[MATRIX_SIZE * MATRIX_SIZE] = {};
 int solution[MATRIX_SIZE][MATRIX_SIZE] = {};    // solution
@@ -33,41 +32,47 @@ int solution[MATRIX_SIZE][MATRIX_SIZE] = {};    // solution
  * MAIN ROUTINE
 ******************/
 int main(){
-    frqSum = findFrqSum(givens);
+    avgSum = findAvgSum(givens);
 
-    // store frqSum solution in multidimentional array
-    // TODO: make parametric
-    // ??? how <- itterate through every possible combination with 2 loops in n*n matrix
-    int frqSumCount = 0;
+    // unsoveable
+    if( (largestNum(givens) > avgSum) || (isFloatingAvgSum(givens)) ){
+        printf("Unsolveable: Invalid numeric values!\n");
+        return 1;
+    }
+
+    // store all possible solutions in array
+    int avgSumCount = 0;
+    //calculate every possible sum using the given numbers
     for(int k = 0; givens[k] != '\0'; k++){
         for(int j = 0; givens[j] != '\0'; j++){
             for(int i = 0; givens[i] != '\0'; i++){
-                if( (i != j) && (i != k) && (j != k)){
-                    if(givens[k] + givens[j] + givens[i] == frqSum){
-                        mtrxSolArr[frqSumCount][0] = givens[k];
-                        mtrxSolArr[frqSumCount][1] = givens[j];
-                        mtrxSolArr[frqSumCount][2] = givens[i];
-                        frqSumCount++;
+
+                //store only the numbers that sum to avgSum
+                //if( (i != j) && (i != k) && (j != k)){
+                if(k != j != i){
+                    if(givens[k] + givens[j] + givens[i] == avgSum){
+                        mtrxSolArr[avgSumCount][0] = givens[k];
+                        mtrxSolArr[avgSumCount][1] = givens[j];
+                        mtrxSolArr[avgSumCount][2] = givens[i];
+                        avgSumCount++;
                     }
                 }
             }
         }
     }
     
-    // brute force solution
-    // TODO: make solution[x] parametric
-    // try (int arr[i]
-    for(int a = 0; a < frqSumCount ; a++){
+    // Brute force final solution using stored solutions (fixed to 3x3 matrix)
+    for(int a = 0; a < avgSumCount ; a++){
         for(int row = 0; row < MATRIX_SIZE; row++){
             solution[0][row] = mtrxSolArr[a][row];
             printf("solution[%i][%i]: %i\n",a ,row,  solution[0][row]);
         }
         printf("\n");
-        for(int b = 0; b < frqSumCount ; b++){
+        for(int b = 0; b < avgSumCount ; b++){
             for(int row = 0; row < MATRIX_SIZE; row++){
                 solution[1][row] = mtrxSolArr[b][row];
             }
-            for(int c = 0; c < frqSumCount ; c++){
+            for(int c = 0; c < avgSumCount ; c++){
                 for(int row = 0; row < MATRIX_SIZE; row++){
                     solution[2][row] = mtrxSolArr[c][row];
                 }
@@ -80,7 +85,8 @@ int main(){
                         solCol[x] += solution[y][x];
                     }
                 }
-                if( (updateNumTracker() == MATRIX_SIZE * MATRIX_SIZE) ){
+                // break from loop when all numbers are unique
+                if( (uniqueNumTracker() == MATRIX_SIZE * MATRIX_SIZE) ){
                     break;
                 }
             }
@@ -88,18 +94,21 @@ int main(){
 
         // check column sum are all the same
         int columnAvg = 0;
+        int columnEql = 1;
         for(int i = 0; i < MATRIX_SIZE; i++){
             columnAvg += solCol[i];
+            if(solCol[MATRIX_SIZE - 1 ] != solCol[i]){
+                columnEql = 0;
+            }
         }
         columnAvg /= MATRIX_SIZE;
-        // TODO: needs to check if solCol[0] to solCol[0-n] is equal
-        if( solCol[0] == columnAvg ){ //<-- columnAvg is not enough to gate a working solution
+        if( (solCol[0] == columnAvg) && columnEql){
             break;
         }
     }
 
-    // print array
-    for(int i = 0; i < frqSumCount; i++){
+    // DEBUG: print array
+    for(int i = 0; i < avgSumCount; i++){
         for(int j = 0; j < MATRIX_SIZE; j++){
             printf("%i ", mtrxSolArr[i][j]);
         }
@@ -135,8 +144,8 @@ int main(){
  * SUB ROUTINES
 ******************/
 
-// matrix key finder
-int findFrqSum(int arr[]){
+// find the average of the given numbers
+int findAvgSum(int arr[]){
     int avg = 0;
     for(int i = 0; i < MATRIX_SIZE*MATRIX_SIZE; i++){
         avg += arr[i];
@@ -146,7 +155,7 @@ int findFrqSum(int arr[]){
 }
 
 // 
-int updateNumTracker(){
+int uniqueNumTracker(){
     //track used numbers
     //TODO: take in limited number of parameter
     int notEqual = 0;
@@ -175,4 +184,35 @@ int updateNumTracker(){
         usedNums[i] = '\0';
     }
     return usedNumIndex;
+}
+
+// find largest number in the array
+int largestNum (int arrParam[]){
+    int largestNum = 0;
+    for(int i = 0; i < MATRIX_SIZE*MATRIX_SIZE; i++){
+        if(givens[i] > largestNum){
+            largestNum = givens[i];
+        }
+    }
+
+    return largestNum;
+}
+
+// check if avgsum is floating
+int isFloatingAvgSum(int arrParam[]){
+    double AvgNumFloat = 0;
+    int avgNum = 0;
+    for(int i = 0; i < MATRIX_SIZE*MATRIX_SIZE; i++){
+        AvgNumFloat += givens[i];
+        avgNum += givens[i];
+    }
+    avgNum /= (MATRIX_SIZE);
+    AvgNumFloat /= (MATRIX_SIZE);
+
+    if(avgNum != AvgNumFloat){
+        return 1;
+    }
+    else{
+        return 0;
+    }
 }
