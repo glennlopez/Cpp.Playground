@@ -12,16 +12,16 @@ int isFloatingAvgSum(int []);
 #define MAX_Y CALC_VAL/4                    // 1/4 of possible sum combination
 #define MAX_X MATRIX_SIZE
 int givens[] = {
-    //35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'    //testcase 1 :: solveable
+    35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'    //testcase 1 :: solveable
     //11, 2, 99, 48, 17, 20, 32, 31, 4, '\0'     //testcase 2 :: unsolvable
-    35, 18, 19, 48, 3, 20, 32, 31, 5, '\0'    //testcase 3 :: unsolveable
+    //35, 18, 19, 48, 3, 20, 32, 31, 5, '\0'    //testcase 3 :: unsolveable
     //12, 25, 27, 15, 30, 20, 10, 18, 23, '\0'    //testcase 4 :: solveable
 };
 
 //store value var
 int solCol[MATRIX_SIZE] = {};
 int avgSum = 0;                                 // most freq sum
-int mtrxSolArr[MAX_Y][MAX_X] = {};              // possible solution values
+int sumSolutionArr[MAX_Y][MAX_X] = {};              // possible solution values
 int usedNums[MATRIX_SIZE * MATRIX_SIZE] = {};
 int solution[MATRIX_SIZE][MATRIX_SIZE] = {};    // solution
 
@@ -34,7 +34,7 @@ int solution[MATRIX_SIZE][MATRIX_SIZE] = {};    // solution
 int main(){
     avgSum = findAvgSum(givens);
 
-    // unsoveable
+    // check if unsoveable
     if( (largestNum(givens) > avgSum) || (isFloatingAvgSum(givens)) ){
         printf("Unsolveable: Invalid numeric values!\n");
         return 1;
@@ -51,9 +51,9 @@ int main(){
                 //if( (i != j) && (i != k) && (j != k)){
                 if(k != j != i){
                     if(givens[k] + givens[j] + givens[i] == avgSum){
-                        mtrxSolArr[avgSumCount][0] = givens[k];
-                        mtrxSolArr[avgSumCount][1] = givens[j];
-                        mtrxSolArr[avgSumCount][2] = givens[i];
+                        sumSolutionArr[avgSumCount][0] = givens[k];
+                        sumSolutionArr[avgSumCount][1] = givens[j];
+                        sumSolutionArr[avgSumCount][2] = givens[i];
                         avgSumCount++;
                     }
                 }
@@ -64,17 +64,17 @@ int main(){
     // Brute force final solution using stored solutions (fixed to 3x3 matrix)
     for(int a = 0; a < avgSumCount ; a++){
         for(int row = 0; row < MATRIX_SIZE; row++){
-            solution[0][row] = mtrxSolArr[a][row];
+            solution[0][row] = sumSolutionArr[a][row];
             printf("solution[%i][%i]: %i\n",a ,row,  solution[0][row]);
         }
         printf("\n");
         for(int b = 0; b < avgSumCount ; b++){
             for(int row = 0; row < MATRIX_SIZE; row++){
-                solution[1][row] = mtrxSolArr[b][row];
+                solution[1][row] = sumSolutionArr[b][row];
             }
             for(int c = 0; c < avgSumCount ; c++){
                 for(int row = 0; row < MATRIX_SIZE; row++){
-                    solution[2][row] = mtrxSolArr[c][row];
+                    solution[2][row] = sumSolutionArr[c][row];
                 }
 
                 // calculate column value
@@ -110,7 +110,7 @@ int main(){
     // DEBUG: print array
     for(int i = 0; i < avgSumCount; i++){
         for(int j = 0; j < MATRIX_SIZE; j++){
-            printf("%i ", mtrxSolArr[i][j]);
+            printf("%i ", sumSolutionArr[i][j]);
         }
         printf("\n");
     }
@@ -215,4 +215,9 @@ int isFloatingAvgSum(int arrParam[]){
     else{
         return 0;
     }
+}
+
+
+void calcSums(int givenNums, int storageArr){
+    
 }
