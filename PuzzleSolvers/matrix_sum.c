@@ -12,17 +12,18 @@ int isFloatingAvgSum(int []);
 #define MAX_Y CALC_VAL/4                    // 1/4 of possible sum combination
 #define MAX_X MATRIX_SIZE
 int givens[] = {
-    35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'    //testcase 1 :: solveable
-    //11, 2, 99, 48, 17, 20, 32, 31, 4, '\0'     //testcase 2 :: unsolvable
-    //35, 18, 19, 48, 3, 20, 32, 31, 5, '\0'    //testcase 3 :: unsolveable
+    35, 18, 19, 48, 3, 20, 32, 31, 4, '\0'      //testcase 1 :: solveable
+    //11, 2, 99, 48, 17, 20, 32, 31, 4, '\0'      //testcase 2 :: unsolvable
+    //35, 18, 19, 48, 3, 20, 32, 31, 5, '\0'      //testcase 3 :: unsolveable
     //12, 25, 27, 15, 30, 20, 10, 18, 23, '\0'    //testcase 4 :: solveable
 };
 
 //store value var
 int solCol[MATRIX_SIZE] = {};
 int avgSum = 0;                                 // most freq sum
-int sumSolutionArr[MAX_Y][MAX_X] = {};              // possible solution values
-int usedNums[MATRIX_SIZE * MATRIX_SIZE] = {};
+int avgSumCount = 0;                            // avg sum frequency
+int sumSolutionArr[MAX_Y][MAX_X] = {};          // possible solution values
+int usedNums[MATRIX_SIZE * MATRIX_SIZE] = {};   // unique number used in solution
 int solution[MATRIX_SIZE][MATRIX_SIZE] = {};    // solution
 
 
@@ -41,8 +42,7 @@ int main(){
     }
 
     // store all possible solutions in array
-    int avgSumCount = 0;
-    //calculate every possible sum using the given numbers
+    // calculate every possible sum using the given numbers
     for(int k = 0; givens[k] != '\0'; k++){
         for(int j = 0; givens[j] != '\0'; j++){
             for(int i = 0; givens[i] != '\0'; i++){
@@ -219,5 +219,5 @@ int isFloatingAvgSum(int arrParam[]){
 
 
 void calcSums(int givenNums, int storageArr){
-    
+    //TODO
 }
