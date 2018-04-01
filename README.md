@@ -27,8 +27,6 @@ $ keybase team request-access hackup
 $ git clone keybase://team/hackup/cs-books
 ```
 
-> Not on a Unix/Linux/MacOS and don't have a terminal to type the commands? Simply sign up to (https://c9.io/)[https://c9.io/] 
-
 ### Noteworthy folders
 
 | Folder Name        | Description           |
