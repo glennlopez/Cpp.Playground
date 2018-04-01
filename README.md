@@ -8,6 +8,8 @@ Recommended Computer Science Books:
 ---
 Below is a link to a private-encrypted git repository for all the CS books I highly recommend (they are periodically updated). If you wish to clone the cs ebook repo, you'll need to have a **[Keybase account](https://keybase.io)** and have Keybase on your machine. 
 
+> **Looking for zyBooks?** I've removed zyBooks chapters from this repo to avoid piracy complaints, but you can still access them from [older commit histories](https://github.com/glennlopez/Cpp.Playground/tree/222c9c6a2cd0b78a1befc62a4a301f3a948d3469/zyBooks), through [repo forks](https://github.com/glennlopez/Cpp.Playground/network/members), or through my private repository below.
+
 - [PDF] zyBooks C++ 
 - [PDF] C++ For Dummies
 - [PDF] C++ Primer: 5th Edition
@@ -24,6 +26,8 @@ $ keybase team request-access hackup
 ```
 $ git clone keybase://team/hackup/cs-books
 ```
+
+> Not on a Unix/Linux/MacOS and don't have a terminal to type the commands? Simply sign up to (https://c9.io/)[https://c9.io/] 
 
 ### Noteworthy folders
 
