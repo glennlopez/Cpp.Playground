@@ -1,6 +1,7 @@
 #include <stdio.h>
 //TODO: make parametric to any size matrix 
 // currently only does 3x3 matrix
+// TODO: learn how to pass multidimentional array as a function param
 
 //solver routines
 int findAvgSum(int arr[]);
