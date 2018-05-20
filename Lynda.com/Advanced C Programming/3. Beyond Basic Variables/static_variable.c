@@ -13,6 +13,7 @@
 int staticVariable(void);
 int normalVariable(void);
 int *primeNums(void);
+int *regNums(void);
 
 int main(){
 
@@ -36,6 +37,7 @@ int main(){
     printf("\n---------- CHALLENGE SOLUTION ----------\n");
     int *array; //<-- pointer made
     array = primeNums(); //<-- point the array to the address of what primeNums returned (address to an array)
+    //array = regNums(); //<-- point array to another address
 
     //print the static array
     printf("Pointer pointing to static array: ");
@@ -43,7 +45,6 @@ int main(){
     {
         printf("%i ", array[i]);
     }
-
 
     printf("\n");
     return 0;
@@ -69,4 +70,18 @@ int *primeNums(void) //<-- int * returns a pointer address
     //int p[5] = {2, 3, 5, 7, 11};
     static int p[5] = {2, 3, 5, 7, 11}; //<-- static = do not discard the array when function is done
     return (p); // <-- return the address NOT the array
+}
+
+/*
+    Static variables are stored in data segment of memory (below heap).
+    The size of the data segment is determained by size of the values of the sourcecode
+    and does not change at runtime. 
+
+    Static arrays are just address to a pointer and cannot be destroyed/free-ed (blocks of memory cannot be destroyed). However, the link to the pointer (the address) can be "forgotten" if required and block of memory can be used by another function
+*/
+
+int *regNums(void)
+{
+    static int new[6] = {1, 2, 3, 4, 5};
+    return (new);
 }
