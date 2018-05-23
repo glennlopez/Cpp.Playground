@@ -6,6 +6,8 @@
         [] Display modified text
 */
 
+//solution: https://www.lynda.com/C-tutorials/Solution-array-modification-function/195668/369023-4.html?autoplay=true
+
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
@@ -38,7 +40,7 @@ void usrPrompt(char *s)
 {
     printf("String [150]: ");
     //scanf("%s", s); //<-- will not scan anything after spaces
-    gets(s);
+    fgets(s, 150, stdin);
 }
 
 // lowerToUpper subroutine
@@ -66,10 +68,10 @@ void spaceToUnderline(char *s)
 // display text subroutine
 void displayTxt(char *s)
 {
-    for(int i = 0; s[i]!= '\0'; i++)
+    while (*s)
     {
-        printf("%c", s[i]);
+        printf("%c", *s);
+        s++;
     }
-    printf("\n");
 
 }
