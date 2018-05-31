@@ -23,6 +23,7 @@ typedef struct
 
 void fillStruct(person *p);
 void displayStruct(person *p);
+void underline(person *p);
 int num;
 
 
@@ -63,8 +64,11 @@ void fillStruct(person *p)
 {
     for(int i = 0; i < num ; i++)
     {
-        printf("Enter Name: ");
+        printf("Person %i Name: ", i+1);
         scanf("%s", p[i].name);
+        printf("Person %i Age: ", i+1);
+        scanf("%d", &p[i].age);
+        printf("\n");
     }
 }
 
@@ -74,6 +78,8 @@ void displayStruct(person *p)
 {
     for(int i = 0; i < num; i++)
     {
-        printf("Name: %s\n", p[i].name);
+        printf("%s is ", p[i].name);
+        printf("%d years old.\n", p[i].age);
     }
 }
+
