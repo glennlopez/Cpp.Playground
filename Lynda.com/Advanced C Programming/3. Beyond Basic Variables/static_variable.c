@@ -3,9 +3,7 @@
         [] Write a function that returns an int array
         [] Have the array hold the values 2, 3, 5, 7, and 11
         [] Display the values in the main() function
-*/
-
-// solution: 
+*/ 
 
 #include <stdio.h>
 #include <string.h>
