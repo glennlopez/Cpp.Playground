@@ -10,7 +10,7 @@ using namespace std;
 void PrintPopcornTime(int bagOunces) {
 
    /* Your solution goes here  */
-	if(bagOunces < 3){
+	if(bagOunces < 2){
 		cout << "Too small";
 		cout << endl;
 	}
