@@ -50,3 +50,7 @@ $ git clone keybase://team/hackup/cs-books
 * https://www.youtube.com/playlist?list=PL2_aWCzGMAwLZp6LMUKI3cc7pgGsasm2_
 * http://alumni.cs.ucr.edu/~pdiloren/C++_Pointers/
 * http://codeforces.com/blog/entry/15643
+
+### Start Coding:
+* Getting Started with the Sport of Programming:  http://sportprogramming.blogspot.com/2014/07/getting-started-with-sport-of.html
+
