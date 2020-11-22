@@ -44,6 +44,11 @@ int main() {
    StudentData courseStudent;
 
    /* Your solution goes here  */
+  courseStudent.SetName("Smith");
+  courseStudent.SetAge(20);
+  courseStudent.SetID(9999);
+  courseStudent.PrintAll();
+  cout << ", ID: " << courseStudent.GetID() << endl;
 
    return 0;
 }
