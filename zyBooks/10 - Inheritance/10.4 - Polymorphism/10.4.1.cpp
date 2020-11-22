@@ -18,6 +18,9 @@ public:
    // FIXME: Define PrintItem() member function
 
    /* Your solution goes here  */
+  virtual void PrintItem() {
+      cout << "Last name: " << lastName << endl;  
+   }
 
 protected:
    string lastName;
