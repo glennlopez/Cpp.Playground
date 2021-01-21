@@ -21,7 +21,7 @@ Below is a link to a private-encrypted git repository for all the CS books I hig
 - [PDF] Dive into Design Patterns
 - [PDF] Dive into Refactoring C# (offline eddition)
 
-**Request access to private repo:**
+**Request access to private repo (requires keybase.io client):**
 ```
 $ keybase team request-access hackup
 ```
