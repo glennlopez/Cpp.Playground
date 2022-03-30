@@ -12,6 +12,6 @@ typedef struct Person person;
 
 int main()
 {
-    
+    printf("testing on lnx\n");    
 
 }
