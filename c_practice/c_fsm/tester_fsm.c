@@ -44,14 +44,14 @@ typedef struct state_struct{
     unsigned int input;             // stores the user input 
 } state;
 
-state FSM[7] = {
+state FSM[7] = {//Output {Back, Next}
     /* S0 */ {SETTINGS,  {S0, S2}},
     /* S1 */ {VERSION,   {S0, S2}},
-    /* S2 */ {START,     {S2, S3}}, // *
-    /* S3 */ {OPEN,      {S3, S4}}, // *
-    /* S4 */ {SHORT,     {S4, S5}}, // *
-    /* S5 */ {PTTBTN,    {S5, S6}}, // *
-    /* S6 */ {PASSFAIL,  {S6, S2}}  // *
+    /* S2 */ {START,     {S2, S3}},
+    /* S3 */ {OPEN,      {S3, S4}},
+    /* S4 */ {SHORT,     {S4, S5}},
+    /* S5 */ {PTTBTN,    {S5, S6}},
+    /* S6 */ {PASSFAIL,  {S6, S2}}
 };
 
 // Global variables
@@ -66,7 +66,7 @@ int main()
         // 2. run the output of the running state
         FSM[runningState].out();
 
-        // 3. get next state from runningstate's stored input
+        // 3. set the next state using runningstate's stored input
         nextState = FSM[runningState].input;
         
         // 4. setup the runningState to the current state's nextState, for the next loop iteration
@@ -91,6 +91,8 @@ void s1()
     printf("Fault Finder\n");
     printf("Version 1.00\n");
     printf("\n");
+
+    // TODO: user presses the back button
 
     // simulated hardware-timer go to the next state
     sleep(3);
