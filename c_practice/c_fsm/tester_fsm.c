@@ -23,6 +23,7 @@
 void s0(); void s1(); void s2(); 
 void s3(); void s4(); void s5(); 
 void s6(); 
+void getUsrInput();
 
 /* -------------------------------------------------
  *                  FINITE STATE MODEL
@@ -60,7 +61,7 @@ int nextState = 0;
 
 int main()
 {
-    
+    // Finite state machine engine - DO NOT CHANGE THIS
     while (1)
     {
         // 2. run the output of the running state
@@ -95,10 +96,11 @@ void s1()
     // TODO: user presses the back button
 
     // simulated hardware-timer go to the next state
-    sleep(3);
+    sleep(2);
 
     // set the input and store the value in the current state's struct
     FSM[runningState].input = NEXT;
+
 
 }
 
@@ -108,13 +110,17 @@ void s2()
     printf("Press Next\n");
     printf("  To Start\n");
     printf("\n");
-}
+
+    getUsrInput(); 
+    }
 
 // S3: Open Circuit
 void s3()
 {
     printf("Open Circuit\n");
     printf("\n");
+
+    getUsrInput(); 
 }
 
 // S4: Short Circuit
@@ -122,6 +128,8 @@ void s4()
 {
     printf("Short Circuit\n");
     printf("\n");
+
+    getUsrInput(); 
 }
 
 // S5: PTT test
@@ -129,6 +137,9 @@ void s5()
 {
     printf("PTT Test\n");
     printf("\n");
+
+    sleep(2);
+    FSM[runningState].input = NEXT;
 }
 
 // S6: Pass-fail Screen
@@ -136,4 +147,34 @@ void s6()
 {
     printf("Pass-Fail screen\n");
     printf("\n");
+
+    getUsrInput(); 
 }
+
+
+// get simulated button input from user
+// TODO: this needs to be recreated for AeroPTT
+void getUsrInput()
+{
+    char usrInput = '\0';
+    printf("[P]rev -or- [N]ext: ");
+    do
+    {
+        scanf("%c", &usrInput);
+
+        if (usrInput == 'p')
+        {
+            FSM[runningState].input = BACK;
+            break;
+        }
+
+        else if (usrInput == 'n')
+        {
+            FSM[runningState].input = NEXT;
+            break;
+        }
+    } while(1);
+
+    
+}
+
