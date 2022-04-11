@@ -24,6 +24,7 @@ void s0(); void s1(); void s2();
 void s3(); void s4(); void s5(); 
 void s6(); 
 void getUsrInput();
+void waitGetUsrInput();
 
 /* -------------------------------------------------
  *                  FINITE STATE MODEL
@@ -93,7 +94,8 @@ void s1()
     printf("Version 1.00\n");
     printf("\n");
 
-    // TODO: user presses the back button
+    // todo: wait or getUserInput
+    waitGetUsrInput();
 
     // simulated hardware-timer go to the next state
     sleep(2);
@@ -174,7 +176,11 @@ void getUsrInput()
             break;
         }
     } while(1);
+}
 
-    
+//TODO: special wait or getInput function
+void waitGetUsrInput()
+{
+
 }
 
