@@ -1,0 +1,31 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+
+   vector<int> user_nums;
+    vector<int> user_nums_copy;
+    int i;
+    int temp_val;
+
+    temp_val = 0;
+    while (temp_val > -1) {
+        cin >> temp_val;
+        user_nums.push_back(temp_val);
+    }
+
+    if (user_nums.size() <= 10) {
+        for (i = 0; i < user_nums.size() / 2; ++i) {
+            if (user_nums.at(i) >= 0) {
+                user_nums_copy.resize(user_nums.size() / 2);
+                user_nums_copy.at(i) = user_nums.at(i);
+            }
+        }
+        cout << user_nums_copy.back() << endl;
+    } else {
+        cout << "Too many inputs" << endl;
+    }
+
+   return 0;
+}
