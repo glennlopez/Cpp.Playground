@@ -16,9 +16,9 @@ Below is a link to a private-encrypted git repository for all the CS books I hig
 - [PDF] [C++ For Dummies](https://lib-m75jirhusw6n3ja77ils54cr.1lib.ph/dtoken/79427203940a56d10a1305de03fbc7ba/C%2B%2B%20For%20Dummies%2C%207th%20Edition%20%28Stephen%20R.%20Davis%29%20%28Z-Library%29.pdf)
 - [PDF] [C++ Primer: 5th Edition](https://lib-3ukrid7fzeziwpzube547j34.1lib.at/dtoken/27e299212e73b5cb62dfafcea6502032/C%2B%2B%20Primer%2C%205th%20Edition%20%28Stanley%20B.%20Lippman%2C%20Josee%20LaJoie%20etc.%29%20%28Z-Library%29.pdf)
 - [PDF] [Discrete Mathematics with Applications](https://lib-qnjd3xq6qe2vkfjzxwduka7l.1lib.ph/dtoken/3e5491686617ffd5842bd3aab6e423f5/Discrete%20Mathematics%20with%20Applications%2C%20Metric%20Version%20%28Susanna%20S.%20Epp%29%20%28Z-Library%29.pdf)
-- [PDF] Effective Modern C++
-- [EPUB] Think Like a Programmer
-- [PDF] Computer Science Distilled
+- [PDF] [Effective Modern C++](https://lib-hw3qrciop7anlyvqeynmevdl.1lib.ph/dtoken/b435aba5aed75077492f974c574dbeed/Effective%20Modern%20C%2B%2B%2042%20Specific%20Ways%20to%20Improve%20Your%20Use%20of%20C%2B%2B11%20and%20C%2B%2B14%20%28Scott%20Meyers%29%20%28Z-Library%29.pdf)
+- [EPUB] [Think Like a Programmer](https://lib-hveaqctecvvfdxdkmopengmq.1lib.ph/dtoken/9bf3d7ce8cbdaf3ddb6bacafd6b848e7/Think%20Like%20a%20Programmer%20An%20Introduction%20to%20Creative%20Problem%20Solving%20%28V.%20Anton%20Spraul%29%20%28Z-Library%29.pdf)
+- [PDF] [Computer Science Distilled](https://lib-6inbw4x5h3e5e4djpxicc6vb.1lib.ph/dtoken/4a7aa39eb6159a3f11600eb4bd9404f0/Computer%20Science%20Distilled%20Learn%20the%20Art%20of%20Solving%20Computational%20Problems%20%28Wladston%20Ferreira%20Filho%29%20%28Z-Library%29.pdf)
 - [PDF] Cracking the Coding Interview
 - [PDF] Dive into Design Patterns
 - [PDF] Dive into Refactoring C# (offline eddition)
