@@ -15,7 +15,7 @@ Below is a link to a private-encrypted git repository for all the CS books I hig
 - [PDF] zyBooks C++
 - [PDF] [C++ For Dummies](https://lib-m75jirhusw6n3ja77ils54cr.1lib.ph/dtoken/79427203940a56d10a1305de03fbc7ba/C%2B%2B%20For%20Dummies%2C%207th%20Edition%20%28Stephen%20R.%20Davis%29%20%28Z-Library%29.pdf)
 - [PDF] [C++ Primer: 5th Edition](https://lib-3ukrid7fzeziwpzube547j34.1lib.at/dtoken/27e299212e73b5cb62dfafcea6502032/C%2B%2B%20Primer%2C%205th%20Edition%20%28Stanley%20B.%20Lippman%2C%20Josee%20LaJoie%20etc.%29%20%28Z-Library%29.pdf)
-- [PDF] Discrete Mathematics with Applications
+- [PDF] [Discrete Mathematics with Applications](https://lib-qnjd3xq6qe2vkfjzxwduka7l.1lib.ph/dtoken/3e5491686617ffd5842bd3aab6e423f5/Discrete%20Mathematics%20with%20Applications%2C%20Metric%20Version%20%28Susanna%20S.%20Epp%29%20%28Z-Library%29.pdf)
 - [PDF] Effective Modern C++
 - [EPUB] Think Like a Programmer
 - [PDF] Computer Science Distilled
