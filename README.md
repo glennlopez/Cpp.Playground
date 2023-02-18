@@ -19,10 +19,10 @@ Below is a link to a private-encrypted git repository for all the CS books I hig
 - [PDF] [Effective Modern C++](https://lib-hw3qrciop7anlyvqeynmevdl.1lib.ph/dtoken/b435aba5aed75077492f974c574dbeed/Effective%20Modern%20C%2B%2B%2042%20Specific%20Ways%20to%20Improve%20Your%20Use%20of%20C%2B%2B11%20and%20C%2B%2B14%20%28Scott%20Meyers%29%20%28Z-Library%29.pdf)
 - [EPUB] [Think Like a Programmer](https://lib-hveaqctecvvfdxdkmopengmq.1lib.ph/dtoken/9bf3d7ce8cbdaf3ddb6bacafd6b848e7/Think%20Like%20a%20Programmer%20An%20Introduction%20to%20Creative%20Problem%20Solving%20%28V.%20Anton%20Spraul%29%20%28Z-Library%29.pdf)
 - [PDF] [Computer Science Distilled](https://lib-6inbw4x5h3e5e4djpxicc6vb.1lib.ph/dtoken/4a7aa39eb6159a3f11600eb4bd9404f0/Computer%20Science%20Distilled%20Learn%20the%20Art%20of%20Solving%20Computational%20Problems%20%28Wladston%20Ferreira%20Filho%29%20%28Z-Library%29.pdf)
-- [PDF] Cracking the Coding Interview
-- [PDF] Dive into Design Patterns
-- [PDF] Dive into Refactoring C# (offline eddition)
-
+- [PDF] [Cracking the Coding Interview](https://lib-mr463xrj6ivojj3lclsokow5.1lib.ph/dtoken/808d27183d3c22479560b391ac688ec8/Cracking%20the%20Coding%20Interview%20189%20Programming%20Questions%20and%20Solutions%20%28Gayle%20Laakmann%20McDowell%29%20%28Z-Library%29.pdf)
+- [PDF] [Dive into Design Patterns](https://lib-rsak237khs26rqehszoqqwne.1lib.cz/dtoken/2a80e031705f3dd3f7d12a6dcc101e22/Dive%20Into%20Design%20Patterns%20%28Alexander%20Shvets%29%20%28Z-Library%29.pdf)
+- [PDF] [Dive into Refactoring C#](https://lib-g7clbs5yaftfhxcnbydn3h43.1lib.ph/dtoken/4ede490c26d41abe90046bf1ab073f8e/Dive%20Into%20Refactoring%20%28Alexander%20Shvets%29%20%28Z-Library%29.pdf)
+- 
 **Request access to private repo (requires keybase.io client):**
 ```
 $ keybase team request-access hackup
