@@ -22,7 +22,7 @@ Below is a link to a private-encrypted git repository for all the CS books I hig
 - [PDF] [Cracking the Coding Interview](https://lib-mr463xrj6ivojj3lclsokow5.1lib.ph/dtoken/808d27183d3c22479560b391ac688ec8/Cracking%20the%20Coding%20Interview%20189%20Programming%20Questions%20and%20Solutions%20%28Gayle%20Laakmann%20McDowell%29%20%28Z-Library%29.pdf)
 - [PDF] [Dive into Design Patterns](https://lib-rsak237khs26rqehszoqqwne.1lib.cz/dtoken/2a80e031705f3dd3f7d12a6dcc101e22/Dive%20Into%20Design%20Patterns%20%28Alexander%20Shvets%29%20%28Z-Library%29.pdf)
 - [PDF] [Dive into Refactoring C#](https://lib-g7clbs5yaftfhxcnbydn3h43.1lib.ph/dtoken/4ede490c26d41abe90046bf1ab073f8e/Dive%20Into%20Refactoring%20%28Alexander%20Shvets%29%20%28Z-Library%29.pdf)
-- 
+
 **Request access to private repo (requires keybase.io client):**
 ```
 $ keybase team request-access hackup
