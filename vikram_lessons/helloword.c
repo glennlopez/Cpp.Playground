@@ -1,7 +1,13 @@
 #include <stdio.h>
 
+//TODO: debug this so that Count and Final number is the same number when the code finishes running
 int main() {
+    int i;
 
-    printf("hello world!\n");
-    printf("This is a second test \n");
+    for (i = 0; i <= 10; i++)
+    {
+        printf("Count: %i\n", i);
+    }
+
+    printf("Final number is: %i", i);
 }
