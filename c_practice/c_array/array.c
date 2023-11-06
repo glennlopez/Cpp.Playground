@@ -3,7 +3,7 @@
 
 int main(){
 
-	int myArray[8] = {5,190,-12,1011,2,-1,0,900};
+	int myArray[8] = {5,9999190,-12000,1011,2,-1,0,900};
 	int largestNum, smallestNum, i;
 
 	//vars set to max val to avoid iteration bugs
