@@ -9,5 +9,7 @@ int main() {
         printf("Count: %i\n", i);
     }
 
-    printf("Final number is: %i", i);
+    printf("Final number is: %i \n", i);
+    printf("This is a test for LiveShare\n");
+    printf("Another test...\n");
 }
