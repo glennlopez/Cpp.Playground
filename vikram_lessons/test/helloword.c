@@ -1,45 +1,75 @@
 #include <stdio.h>
 
-//TODO: debug this so that Count and Final number is the same number when the code finishes running
-int main() {
-    int i;
+int main() 
+{
+    // simple hello world
+    printf("Hello World!\n");
 
-    for (i = 0; i <= 10; i++)
-    {
-        printf("Count: %i\n", i);
-    }
+    // ask the user for a number and store it in uNum
+    int uNum; 
+    printf("Enter a number: ");
+    scanf("%d", &uNum);
 
-    printf("Final number is: %i \n", i);
-    printf("This is a test for LiveShare\n");
-    printf("Another test...\n");
-    
-    // calculate factorial of an integer - copilot test
-    int n = 10;
+    // take uNum and calculate the factorial of it
     int factorial = 1;
-    for (int j = 1; j <= n; j++)
-    {
-        factorial *= j;
+    for (int i = 1; i <= uNum; i++) {
+        factorial *= i;
     }
-    printf("Factorial of %i is %i\n", n, factorial);
-    
-    //check if a number is prime or not - copilot test
-    int num = factorial;
+
+    // print the factorial
+    printf("The factorial of %d is %d\n", uNum, factorial);
+
+    // check if the factorial is even or odd
+    if (factorial % 2 == 0) {
+        printf("The factorial is even\n");
+    } else {
+        printf("The factorial is odd\n");
+    }   
+
+    // check if the factorial is prime and print the result
     int isPrime = 1;
-    for (int k = 2; k < num; k++)
-    {
-        if (num % k == 0)
-        {
+    for (int i = 2; i < factorial; i++) {
+        if (factorial % i == 0) {
             isPrime = 0;
             break;
         }
     }
-    if (isPrime)
-    {
-        printf("%i is a prime number\n", num);
+    if (isPrime) {
+        printf("The factorial is prime\n");
+    } else {
+        printf("The factorial is not prime\n");
     }
-    else
-    {
-        printf("%i is not a prime number\n", num);
+
+    // check if the factorial is a perfect square and print the result
+    int isPerfectSquare = 0;
+    for (int i = 1; i <= factorial; i++) {
+        if (i * i == factorial) {
+            isPerfectSquare = 1;
+            break;
+        }
+    }
+    if (isPerfectSquare) {
+        printf("The factorial is a perfect square\n");
+    } else {
+        printf("The factorial is not a perfect square\n");
+    }
+
+    // check if the factorial is a palindrome and print the result
+    int isPalindrome = 1;
+    int num = factorial;
+    int reverse = 0;
+    while (num != 0) {
+        reverse = reverse * 10 + num % 10;
+        num /= 10;
+    }
+    if (factorial != reverse) {
+        isPalindrome = 0;
+    }
+    if (isPalindrome) {
+        printf("The factorial is a palindrome\n");
+    } else {
+        printf("The factorial is not a palindrome\n");
     }
     
+
 }
