@@ -5,19 +5,19 @@ int main()
     // simple hello world
     printf("Hello World!\n");
 
-    // ask the user for a number and store it in uNum
-    int uNum; 
+    // ask the user for a number and store it in userNum
+    int userNum; 
     printf("Enter a number: ");
-    scanf("%d", &uNum);
+    scanf("%d", &userNum);
 
-    // take uNum and calculate the factorial of it
+    // take userNum and calculate the factorial of it
     int factorial = 1;
-    for (int i = 1; i <= uNum; i++) {
+    for (int i = 1; i <= userNum; i++) {
         factorial *= i;
     }
 
     // print the factorial
-    printf("The factorial of %d is %d\n", uNum, factorial);
+    printf("The factorial of %d is %d\n", userNum, factorial);
 
     // check if the factorial is even or odd
     if (factorial % 2 == 0) {
@@ -70,6 +70,6 @@ int main()
     } else {
         printf("The factorial is not a palindrome\n");
     }
-    
+
 
 }
